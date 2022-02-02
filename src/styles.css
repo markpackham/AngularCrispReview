@@ -1,1 +1,36 @@
-/* You can add global styles to this file, and also import other style files */
+/* Defaults */
+
+:root {
+  --color-primary: hsl(343, 99%, 39%);
+  --color-secondary: hsl(197, 57%, 38%);
+  --color-tertiary: hsl(54, 81%, 63%);
+  --color-background: hsl(300, 2%, 74%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+@media(max-width: 60rem) {}
+
+@media(max-width:48rem) {}
+
+@media(min-width: 90rem) {}
