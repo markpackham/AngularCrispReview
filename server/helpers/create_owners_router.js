@@ -5,7 +5,7 @@ const createOwnersRouter = function (collection) {
   const router = express.Router();
 
   // INDEX
-  router.get("/", (req, res) => {
+  router.get("/owners", (req, res) => {
     collection
       .find()
       .toArray()
@@ -18,7 +18,7 @@ const createOwnersRouter = function (collection) {
   });
 
   // CREATE
-  router.post("/", (req, res) => {
+  router.post("/owners", (req, res) => {
     const newFact = req.body;
     collection
       .insertOne(newFact)
@@ -33,7 +33,7 @@ const createOwnersRouter = function (collection) {
   });
 
   // DESTROY
-  router.delete("/:id", (req, res) => {
+  router.delete("/owners:id", (req, res) => {
     const id = req.params.id;
     collection
       .deleteOne({ _id: ObjectID(id) })
