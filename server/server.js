@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 MongoClient.connect("mongodb://localhost:27017")
   .then((client) => {
     const db = client.db("crisps_review");
-    const ownersCollection = db.collection("owner");
+    const ownersCollection = db.collection("owners");
     const ownersRouter = createOwnersRouter(ownersCollection);
     app.use("/", ownersRouter);
   })
