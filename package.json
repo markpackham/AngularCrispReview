@@ -8,6 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "seed_owners": "mongo < ./server/db/owners.js",
+    "seed_brands": "mongo < ./server/db/brands.js",
     "server": "node server/server.js",
     "dev": "nodemon server/server.js"
   },
