@@ -19,9 +19,9 @@ const createBrandsRouter = function (collection) {
 
   // CREATE
   router.post("/brands", (req, res) => {
-    const newFact = req.body;
+    const newBrand = req.body;
     collection
-      .insertOne(newFact)
+      .insertOne(newBrand)
       .then((result) => {
         res.json(result.ops[0]);
       })

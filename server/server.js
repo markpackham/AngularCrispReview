@@ -12,13 +12,18 @@ app.use(bodyParser.json());
 
 MongoClient.connect("mongodb://localhost:27017")
   .then((client) => {
+    // Database selected
     let db = client.db("crisps_review");
+
+    // Database collections selected
     const brandsCollection = db.collection("brands");
     const brandsRouter = createBrandsRouter(brandsCollection);
     const flavoursCollection = db.collection("flavours");
     const flavoursRouter = createFlavoursRouter(flavoursCollection);
     const ownersCollection = db.collection("owners");
     const ownersRouter = createOwnersRouter(ownersCollection);
+
+    // Route paths
     app.use("/", brandsRouter);
     app.use("/", flavoursRouter);
     app.use("/", ownersRouter);

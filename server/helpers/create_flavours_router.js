@@ -19,9 +19,9 @@ const createFlavoursRouter = function (collection) {
 
   // CREATE
   router.post("/flavours", (req, res) => {
-    const newFact = req.body;
+    const newFlavour = req.body;
     collection
-      .insertOne(newFact)
+      .insertOne(newFlavour)
       .then((result) => {
         res.json(result.ops[0]);
       })

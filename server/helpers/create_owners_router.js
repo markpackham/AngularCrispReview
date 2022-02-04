@@ -19,9 +19,9 @@ const createOwnersRouter = function (collection) {
 
   // CREATE
   router.post("/owners", (req, res) => {
-    const newFact = req.body;
+    const newOwner = req.body;
     collection
-      .insertOne(newFact)
+      .insertOne(newOwner)
       .then((result) => {
         res.json(result.ops[0]);
       })
