@@ -36,7 +36,7 @@ const createBrandsRouter = function (collection) {
     collection
       .insertOne(newBrand)
       .then((result) => {
-        console.log(res.json(result));
+        res.status(201).json(newBrand);
       })
       .catch((err) => {
         console.error(err);

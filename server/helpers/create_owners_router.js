@@ -36,7 +36,7 @@ const createOwnersRouter = function (collection) {
     collection
       .insertOne(newOwner)
       .then((result) => {
-        console.log(res.json(result));
+        res.status(201).json(newOwner);
       })
       .catch((err) => {
         console.error(err);

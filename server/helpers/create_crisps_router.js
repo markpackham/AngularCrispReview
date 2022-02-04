@@ -36,7 +36,7 @@ const createCrispsRouter = function (collection) {
     collection
       .insertOne(newCrisp)
       .then((result) => {
-        console.log(res.json(result));
+        res.status(201).json(newCrisp);
       })
       .catch((err) => {
         console.error(err);

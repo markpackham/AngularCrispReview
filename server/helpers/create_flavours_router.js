@@ -37,8 +37,7 @@ const createFlavoursRouter = function (collection) {
     collection
       .insertOne(newFlavour)
       .then((result) => {
-        // res.json(result.ops[0]);
-        console.log(res.json(result));
+        res.status(201).json(newFlavour);
       })
       .catch((err) => {
         console.error(err);
