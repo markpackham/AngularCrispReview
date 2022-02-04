@@ -60,6 +60,26 @@ const createCrispsRouter = function (collection) {
       });
   });
 
+  // UPDATE (PUT)
+  router.put("/crisps/update/:id", (req, res) => {
+    const id = req.params.id;
+    const updatedData = req.body;
+    collection
+      .findOneAndUpdate(
+        { _id: ObjectID(id) },
+        { $set: updatedData },
+        { returnOriginal: false }
+      )
+      .then((result) => {
+        res.json(updatedData);
+      })
+      .catch((err) => {
+        console.error(err);
+        res.status(500);
+        res.json({ status: 500, error: err });
+      });
+  });
+
   return router;
 };
 

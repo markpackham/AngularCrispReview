@@ -62,6 +62,27 @@ const createFlavoursRouter = function (collection) {
       });
   });
 
+  // UPDATE (PUT)
+  // http://localhost:3000/flavours/update/61fd20f5d74ea401912cf911
+  router.put("/flavours/update/:id", (req, res) => {
+    const id = req.params.id;
+    const updatedData = req.body;
+    collection
+      .findOneAndUpdate(
+        { _id: ObjectID(id) },
+        { $set: updatedData },
+        { returnOriginal: false }
+      )
+      .then((result) => {
+        res.json(updatedData);
+      })
+      .catch((err) => {
+        console.error(err);
+        res.status(500);
+        res.json({ status: 500, error: err });
+      });
+  });
+
   return router;
 };
 
