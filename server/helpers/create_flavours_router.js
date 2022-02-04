@@ -17,6 +17,20 @@ const createFlavoursRouter = function (collection) {
       });
   });
 
+  // SHOW
+  // example http://localhost:3000/flavours/61fc0c47e2f0ce561a75a22e
+  router.get("/flavours/:id", (req, res) => {
+    const id = req.params.id;
+    collection
+      .findOne({ _id: ObjectID(id) })
+      .then((doc) => res.json(doc))
+      .catch((err) => {
+        console.error(err);
+        res.status(500);
+        res.json({ status: 500, error: err });
+      });
+  });
+
   // CREATE
   router.post("/flavours", (req, res) => {
     const newFlavour = req.body;
