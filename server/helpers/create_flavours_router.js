@@ -33,7 +33,7 @@ const createFlavoursRouter = function (collection) {
   });
 
   // DESTROY
-  router.delete("/flavours:id", (req, res) => {
+  router.delete("/flavours/delete/:id", (req, res) => {
     const id = req.params.id;
     collection
       .deleteOne({ _id: ObjectID(id) })

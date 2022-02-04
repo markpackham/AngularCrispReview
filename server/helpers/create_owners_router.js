@@ -33,7 +33,7 @@ const createOwnersRouter = function (collection) {
   });
 
   // DESTROY
-  router.delete("/owners:id", (req, res) => {
+  router.delete("/owners/delete/:id", (req, res) => {
     const id = req.params.id;
     collection
       .deleteOne({ _id: ObjectID(id) })
