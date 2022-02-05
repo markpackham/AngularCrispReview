@@ -33,7 +33,9 @@ const createBrandsRouter = function (collection) {
   // CREATE
   router.post("/brands", (req, res) => {
     const newBrand = req.body;
-    if (newBrand.brand.length > 1) {
+    if (newBrand.brand.length < 2) {
+      res.status(422);
+      res.json({ status: 422, error: "422 Unprocessable Entity" });
     }
 
     collection

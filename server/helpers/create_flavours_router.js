@@ -34,7 +34,9 @@ const createFlavoursRouter = function (collection) {
   // CREATE
   router.post("/flavours", (req, res) => {
     const newFlavour = req.body;
-    if (newFlavour.flavour.length > 2) {
+    if (newFlavour.flavour.length < 3) {
+      res.status(422);
+      res.json({ status: 422, error: "422 Unprocessable Entity" });
     }
 
     collection
