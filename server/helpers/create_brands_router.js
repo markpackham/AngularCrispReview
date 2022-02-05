@@ -36,18 +36,18 @@ const createBrandsRouter = function (collection) {
     if (newBrand.brand.length < 2) {
       res.status(422);
       res.json({ status: 422, error: "422 Unprocessable Entity" });
+    } else {
+      collection
+        .insertOne(newBrand)
+        .then((result) => {
+          res.status(201).json(newBrand);
+        })
+        .catch((err) => {
+          console.error(err);
+          res.status(500);
+          res.json({ status: 500, error: err });
+        });
     }
-
-    collection
-      .insertOne(newBrand)
-      .then((result) => {
-        res.status(201).json(newBrand);
-      })
-      .catch((err) => {
-        console.error(err);
-        res.status(500);
-        res.json({ status: 500, error: err });
-      });
   });
 
   // DESTROY

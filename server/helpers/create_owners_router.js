@@ -43,18 +43,18 @@ const createOwnersRouter = function (collection) {
     if (newOwner.owner.length < 5 || newOwner.owner_address.length < 6) {
       res.status(422);
       res.json({ status: 422, error: "422 Unprocessable Entity" });
+    } else {
+      collection
+        .insertOne(newOwner)
+        .then((result) => {
+          res.status(201).json(newOwner);
+        })
+        .catch((err) => {
+          console.error(err);
+          res.status(500);
+          res.json({ status: 500, error: err });
+        });
     }
-
-    collection
-      .insertOne(newOwner)
-      .then((result) => {
-        res.status(201).json(newOwner);
-      })
-      .catch((err) => {
-        console.error(err);
-        res.status(500);
-        res.json({ status: 500, error: err });
-      });
   });
 
   // DESTROY

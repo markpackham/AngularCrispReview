@@ -37,18 +37,18 @@ const createFlavoursRouter = function (collection) {
     if (newFlavour.flavour.length < 3) {
       res.status(422);
       res.json({ status: 422, error: "422 Unprocessable Entity" });
+    } else {
+      collection
+        .insertOne(newFlavour)
+        .then((result) => {
+          res.status(201).json(newFlavour);
+        })
+        .catch((err) => {
+          console.error(err);
+          res.status(500);
+          res.json({ status: 500, error: err });
+        });
     }
-
-    collection
-      .insertOne(newFlavour)
-      .then((result) => {
-        res.status(201).json(newFlavour);
-      })
-      .catch((err) => {
-        console.error(err);
-        res.status(500);
-        res.json({ status: 500, error: err });
-      });
   });
 
   // DESTROY
