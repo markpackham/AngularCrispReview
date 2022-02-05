@@ -40,6 +40,9 @@ const createOwnersRouter = function (collection) {
   //    }
   router.post("/owners", (req, res) => {
     const newOwner = req.body;
+    if (newOwner.owner.length > 4 && newOwner.owner_address.length > 5) {
+    }
+
     collection
       .insertOne(newOwner)
       .then((result) => {
