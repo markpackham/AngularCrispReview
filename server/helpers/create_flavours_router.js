@@ -34,16 +34,18 @@ const createFlavoursRouter = function (collection) {
   // CREATE
   router.post("/flavours", (req, res) => {
     const newFlavour = req.body;
-    collection
-      .insertOne(newFlavour)
-      .then((result) => {
-        res.status(201).json(newFlavour);
-      })
-      .catch((err) => {
-        console.error(err);
-        res.status(500);
-        res.json({ status: 500, error: err });
-      });
+    if (newFlavour.flavour.length > 2) {
+      collection
+        .insertOne(newFlavour)
+        .then((result) => {
+          res.status(201).json(newFlavour);
+        })
+        .catch((err) => {
+          console.error(err);
+          res.status(500);
+          res.json({ status: 500, error: err });
+        });
+    }
   });
 
   // DESTROY
