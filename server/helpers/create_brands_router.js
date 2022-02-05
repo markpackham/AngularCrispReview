@@ -33,16 +33,18 @@ const createBrandsRouter = function (collection) {
   // CREATE
   router.post("/brands", (req, res) => {
     const newBrand = req.body;
-    collection
-      .insertOne(newBrand)
-      .then((result) => {
-        res.status(201).json(newBrand);
-      })
-      .catch((err) => {
-        console.error(err);
-        res.status(500);
-        res.json({ status: 500, error: err });
-      });
+    if (newFlavour.brand.length > 1) {
+      collection
+        .insertOne(newBrand)
+        .then((result) => {
+          res.status(201).json(newBrand);
+        })
+        .catch((err) => {
+          console.error(err);
+          res.status(500);
+          res.json({ status: 500, error: err });
+        });
+    }
   });
 
   // DESTROY
