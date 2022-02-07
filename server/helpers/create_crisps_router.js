@@ -33,16 +33,26 @@ const createCrispsRouter = function (collection) {
   // CREATE
   router.post("/crisps", (req, res) => {
     const newCrisp = req.body;
-    collection
-      .insertOne(newCrisp)
-      .then((result) => {
-        res.status(201).json(newCrisp);
-      })
-      .catch((err) => {
-        console.error(err);
-        res.status(500);
-        res.json({ status: 500, error: err });
-      });
+    if (
+      newCrisp.crisp_name.length < 3 ||
+      newCrisp.brand.length < 3 ||
+      newCrisp.flavour.length < 3 ||
+      newCrisp.weight.length < 1
+    ) {
+      res.status(422);
+      res.json({ status: 422, error: "422 Unprocessable Entity" });
+    } else {
+      collection
+        .insertOne(newCrisp)
+        .then((result) => {
+          res.status(201).json(newCrisp);
+        })
+        .catch((err) => {
+          console.error(err);
+          res.status(500);
+          res.json({ status: 500, error: err });
+        });
+    }
   });
 
   // DESTROY
