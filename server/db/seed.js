@@ -51,3 +51,15 @@ db.flavours.insertMany([
     flavour : "Pickled Onion",
   }
 ]);
+
+db.crisps.insertMany([
+  {
+    crisp_name : "Walkers Monster Munch Mega Pickled Onion Snack",
+    crisp_image: "https://digitalcontent.api.tesco.com/v2/media/ghs/71136d56-96c4-4598-92a9-933efc472b4c/a9afb0dd-1305-4ed7-af82-ee0e8316ea37_364765077.jpeg",
+    flavour : "Pickled Onion",
+    brand: "Monster Munch",
+    weight: "40",
+    review: "Amazing strong if polarizing taste, lots of pickle but little onion flavour",
+    review_score : "4"
+  }
+]);
