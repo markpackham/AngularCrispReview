@@ -30,6 +30,10 @@ img {
   max-width: 100%;
 }
 
+.container {
+  padding: 5px;
+}
+
 @media(max-width: 60rem) {}
 
 @media(max-width:48rem) {}
