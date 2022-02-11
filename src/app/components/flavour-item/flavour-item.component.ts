@@ -7,10 +7,10 @@ import {Flavour} from '../../model/Flavour';
   styleUrls: ['./flavour-item.component.css']
 })
 export class FlavourItemComponent implements OnInit {
-  flavour: Flavour;
+  @Input() flavour: Flavour;
 
   constructor() {
-    
+ 
    }
 
   ngOnInit(): void {

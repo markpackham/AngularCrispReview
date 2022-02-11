@@ -13,7 +13,8 @@ export class FlavourComponent implements OnInit {
 
   flavours: Flavour[] = [];
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient) { 
+  }
 
   ngOnInit(): void {
     this.getFlavours().subscribe((flavours) => (this.flavours = flavours));
