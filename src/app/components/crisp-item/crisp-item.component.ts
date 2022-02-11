@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Owner } from '../../model/Owner';
+import { Component, OnInit, Input } from '@angular/core';
+import { Crisp } from '../../model/Crisp';
 
 @Component({
   selector: 'app-crisp-item',
@@ -7,6 +7,7 @@ import { Owner } from '../../model/Owner';
   styleUrls: ['./crisp-item.component.css']
 })
 export class CrispItemComponent implements OnInit {
+  @Input() crisp: Crisp;
 
   constructor() { }
 
