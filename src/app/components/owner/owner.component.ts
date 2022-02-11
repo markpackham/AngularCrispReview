@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Owner} from '../../model/Owner';
+import { Owner } from '../../model/Owner';
 
 @Component({
   selector: 'app-owner',

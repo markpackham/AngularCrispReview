@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {Flavour} from '../../model/Flavour';
+import { Flavour } from '../../model/Flavour';
 
 @Component({
   selector: 'app-flavour-item',

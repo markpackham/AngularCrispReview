@@ -11,6 +11,9 @@ import { OwnerComponent } from './components/owner/owner.component';
 import { HeaderComponent } from './components/layouts/header/header.component';
 import { FooterComponent } from './components/layouts/footer/footer.component';
 import { FlavourItemComponent } from './components/flavour-item/flavour-item.component';
+import { BrandItemComponent } from './components/brand-item/brand-item.component';
+import { CrispItemComponent } from './components/crisp-item/crisp-item.component';
+import { OwnerItemComponent } from './components/owner-item/owner-item.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { FlavourItemComponent } from './components/flavour-item/flavour-item.com
     OwnerComponent,
     HeaderComponent,
     FooterComponent,
-    FlavourItemComponent
+    FlavourItemComponent,
+    BrandItemComponent,
+    CrispItemComponent,
+    OwnerItemComponent
   ],
   imports: [
     BrowserModule,

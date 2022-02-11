@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Observable} from 'rxjs';
-import {Flavour} from '../../model/Flavour';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Flavour } from '../../model/Flavour';
 
 @Component({
   selector: 'app-flavour',
