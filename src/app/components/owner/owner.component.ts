@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { Owner } from '../../model/Owner';
+import { OwnerService } from '../../services/owner.service';
 
 @Component({
   selector: 'app-owner',
@@ -10,19 +9,13 @@ import { Owner } from '../../model/Owner';
 })
 export class OwnerComponent implements OnInit {
 
-  private apiUrl = 'http://localhost:3000/owners';
-
   owners: Owner[] = [];
 
-  constructor(private http:HttpClient) { 
+  constructor(private ownerService: OwnerService) { 
   }
 
   ngOnInit(): void {
-    this.getOwners().subscribe((owners) => (this.owners = owners));
-  }
-
-  getOwners(): Observable<Owner[]> {
-    return this.http.get<Owner[]>(this.apiUrl);
+    this.ownerService.getOwners().subscribe((owners) => (this.owners = owners));
   }
 
 }
