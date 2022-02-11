@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { Brand } from '../../model/Brand';
+import { BrandService } from '../../services/brand.service';
+
 
 @Component({
   selector: 'app-brand',
@@ -14,15 +14,11 @@ export class BrandComponent implements OnInit {
 
   brands: Brand[] = [];
 
-  constructor(private http:HttpClient) { 
+  constructor(private brandService: BrandService) { 
   }
 
   ngOnInit(): void {
-    this.getBrands().subscribe((brands) => (this.brands = brands));
-  }
-
-  getBrands(): Observable<Brand[]> {
-    return this.http.get<Brand[]>(this.apiUrl);
+    this.brandService.getBrands().subscribe((brands) => (this.brands = brands));
   }
 
 }
