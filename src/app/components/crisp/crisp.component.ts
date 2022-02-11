@@ -11,9 +11,18 @@ import {Crisp} from '../../model/Crisp';
 })
 export class CrispComponent implements OnInit {
 
-  constructor() { }
+  private apiUrl = 'http://localhost:3000/crisps';
 
-  ngOnInit(): void {
+  crisps: Crisp[] = [];
+
+  constructor(private http:HttpClient) { 
   }
 
+  ngOnInit(): void {
+    this.getCrisps().subscribe((crisps) => (this.crisps = crisps));
+  }
+
+  getCrisps(): Observable<Crisp[]> {
+    return this.http.get<Crisp[]>(this.apiUrl);
+  }
 }
