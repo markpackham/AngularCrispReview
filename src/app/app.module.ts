@@ -10,6 +10,7 @@ import { CrispComponent } from './components/crisp/crisp.component';
 import { OwnerComponent } from './components/owner/owner.component';
 import { HeaderComponent } from './components/layouts/header/header.component';
 import { FooterComponent } from './components/layouts/footer/footer.component';
+import { FlavourItemComponent } from './components/flavour-item/flavour-item.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FooterComponent } from './components/layouts/footer/footer.component';
     CrispComponent,
     OwnerComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    FlavourItemComponent
   ],
   imports: [
     BrowserModule,
