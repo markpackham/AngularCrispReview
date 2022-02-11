@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Crisp} from '../../model/Crisp';
+
 
 @Component({
   selector: 'app-crisp',

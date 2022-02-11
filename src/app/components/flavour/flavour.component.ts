@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Flavour} from '../../model/Flavour';
 
 @Component({
   selector: 'app-flavour',
