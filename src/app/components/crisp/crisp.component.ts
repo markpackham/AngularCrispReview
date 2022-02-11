@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { Crisp } from '../../model/Crisp';
-
+import { CrispService } from '../../services/crisp.service';
 
 @Component({
   selector: 'app-crisp',
@@ -11,18 +9,13 @@ import { Crisp } from '../../model/Crisp';
 })
 export class CrispComponent implements OnInit {
 
-  private apiUrl = 'http://localhost:3000/crisps';
-
   crisps: Crisp[] = [];
 
-  constructor(private http:HttpClient) { 
+  constructor(private crispService: CrispService) { 
   }
 
   ngOnInit(): void {
-    this.getCrisps().subscribe((crisps) => (this.crisps = crisps));
+    this.crispService.getCrisps().subscribe((crisps) => (this.crisps = crisps));
   }
 
-  getCrisps(): Observable<Crisp[]> {
-    return this.http.get<Crisp[]>(this.apiUrl);
-  }
 }

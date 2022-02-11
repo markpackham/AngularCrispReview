@@ -9,8 +9,6 @@ import { BrandService } from '../../services/brand.service';
 })
 export class BrandComponent implements OnInit {
 
-  private apiUrl = 'http://localhost:3000/brands';
-
   brands: Brand[] = [];
 
   constructor(private brandService: BrandService) { 
