@@ -1,27 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { Flavour } from '../../model/Flavour';
+import { FlavourService } from '../../services/flavour.service';
 
 @Component({
   selector: 'app-flavour',
   templateUrl: './flavour.component.html',
   styleUrls: ['./flavour.component.css']
 })
+
 export class FlavourComponent implements OnInit {
-  private apiUrl = 'http://localhost:3000/flavours';
 
   flavours: Flavour[] = [];
 
-  constructor(private http:HttpClient) { 
+  constructor(private flavourService: FlavourService) { 
   }
 
   ngOnInit(): void {
-    this.getFlavours().subscribe((flavours) => (this.flavours = flavours));
-  }
-
-  getFlavours(): Observable<Flavour[]> {
-    return this.http.get<Flavour[]>(this.apiUrl);
+    this.flavourService.getFlavours().subscribe((flavours) => (this.flavours = flavours));
   }
 
 }
