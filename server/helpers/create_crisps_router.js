@@ -5,7 +5,7 @@ const createCrispsRouter = function (collection) {
   const router = express.Router();
 
   // INDEX
-  router.get("/crisps", (req, res) => {
+  router.get("/crisps", async (req, res) => {
     collection
       .find()
       .toArray()
@@ -18,7 +18,7 @@ const createCrispsRouter = function (collection) {
   });
 
   // SHOW
-  router.get("/crisps/:id", (req, res) => {
+  router.get("/crisps/:id", async (req, res) => {
     const id = req.params.id;
     collection
       .findOne({ _id: ObjectID(id) })
@@ -31,7 +31,7 @@ const createCrispsRouter = function (collection) {
   });
 
   // CREATE
-  router.post("/crisps", (req, res) => {
+  router.post("/crisps", async (req, res) => {
     const newCrisp = req.body;
     if (
       newCrisp.crisp_name.length < 3 ||
@@ -56,7 +56,7 @@ const createCrispsRouter = function (collection) {
   });
 
   // DESTROY
-  router.delete("/crisps/delete/:id", (req, res) => {
+  router.delete("/crisps/delete/:id", async (req, res) => {
     const id = req.params.id;
     collection
       .deleteOne({ _id: ObjectID(id) })
@@ -71,7 +71,7 @@ const createCrispsRouter = function (collection) {
   });
 
   // UPDATE (PUT)
-  router.put("/crisps/update/:id", (req, res) => {
+  router.put("/crisps/update/:id", async (req, res) => {
     const id = req.params.id;
     const updatedData = req.body;
     collection

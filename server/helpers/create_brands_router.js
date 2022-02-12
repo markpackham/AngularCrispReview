@@ -5,7 +5,7 @@ const createBrandsRouter = function (collection) {
   const router = express.Router();
 
   // INDEX
-  router.get("/brands", (req, res) => {
+  router.get("/brands", async (req, res) => {
     collection
       .find()
       .toArray()
@@ -18,7 +18,7 @@ const createBrandsRouter = function (collection) {
   });
 
   // SHOW
-  router.get("/brands/:id", (req, res) => {
+  router.get("/brands/:id", async (req, res) => {
     const id = req.params.id;
     collection
       .findOne({ _id: ObjectID(id) })
@@ -31,7 +31,7 @@ const createBrandsRouter = function (collection) {
   });
 
   // CREATE
-  router.post("/brands", (req, res) => {
+  router.post("/brands", async (req, res) => {
     const newBrand = req.body;
     if (newBrand.brand.length < 3 || newBrand.brand_owner.length < 3) {
       res.status(422);
@@ -51,7 +51,7 @@ const createBrandsRouter = function (collection) {
   });
 
   // DESTROY
-  router.delete("/brands/delete/:id", (req, res) => {
+  router.delete("/brands/delete/:id", async (req, res) => {
     const id = req.params.id;
     collection
       .deleteOne({ _id: ObjectID(id) })
@@ -66,7 +66,7 @@ const createBrandsRouter = function (collection) {
   });
 
   // UPDATE (PUT)
-  router.put("/brands/update/:id", (req, res) => {
+  router.put("/brands/update/:id", async (req, res) => {
     const id = req.params.id;
     const updatedData = req.body;
     collection

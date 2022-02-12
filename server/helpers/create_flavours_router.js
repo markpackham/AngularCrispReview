@@ -5,7 +5,7 @@ const createFlavoursRouter = function (collection) {
   const router = express.Router();
 
   // INDEX
-  router.get("/flavours", (req, res) => {
+  router.get("/flavours", async (req, res) => {
     collection
       .find()
       .toArray()
@@ -19,7 +19,7 @@ const createFlavoursRouter = function (collection) {
 
   // SHOW
   // example http://localhost:3000/flavours/61fc0c47e2f0ce561a75a22e
-  router.get("/flavours/:id", (req, res) => {
+  router.get("/flavours/:id", async (req, res) => {
     const id = req.params.id;
     collection
       .findOne({ _id: ObjectID(id) })
@@ -32,7 +32,7 @@ const createFlavoursRouter = function (collection) {
   });
 
   // CREATE
-  router.post("/flavours", (req, res) => {
+  router.post("/flavours", async (req, res) => {
     const newFlavour = req.body;
     if (newFlavour.flavour.length < 3) {
       res.status(422);
@@ -53,7 +53,7 @@ const createFlavoursRouter = function (collection) {
 
   // DESTROY
   // eg http://localhost:3000/flavours/delete/61fce10040ec2af53a9cd2d7
-  router.delete("/flavours/delete/:id", (req, res) => {
+  router.delete("/flavours/delete/:id", async (req, res) => {
     const id = req.params.id;
     collection
       .deleteOne({ _id: ObjectID(id) })
@@ -69,7 +69,7 @@ const createFlavoursRouter = function (collection) {
 
   // UPDATE (PUT)
   // http://localhost:3000/flavours/update/61fd20f5d74ea401912cf911
-  router.put("/flavours/update/:id", (req, res) => {
+  router.put("/flavours/update/:id", async (req, res) => {
     const id = req.params.id;
     const updatedData = req.body;
     collection

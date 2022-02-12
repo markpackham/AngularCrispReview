@@ -5,7 +5,7 @@ const createOwnersRouter = function (collection) {
   const router = express.Router();
 
   // INDEX
-  router.get("/owners", (req, res) => {
+  router.get("/owners", async (req, res) => {
     collection
       .find()
       .toArray()
@@ -18,7 +18,7 @@ const createOwnersRouter = function (collection) {
   });
 
   // SHOW
-  router.get("/owners/:id", (req, res) => {
+  router.get("/owners/:id", async (req, res) => {
     const id = req.params.id;
     collection
       .findOne({ _id: ObjectID(id) })
@@ -38,7 +38,7 @@ const createOwnersRouter = function (collection) {
   //     "owner_phone": "800 274 777",
   //     "owner_website": "https://www.walkers.co.uk/"
   //    }
-  router.post("/owners", (req, res) => {
+  router.post("/owners", async (req, res) => {
     const newOwner = req.body;
     if (newOwner.owner.length < 5 || newOwner.owner_address.length < 6) {
       res.status(422);
@@ -58,7 +58,7 @@ const createOwnersRouter = function (collection) {
   });
 
   // DESTROY
-  router.delete("/owners/delete/:id", (req, res) => {
+  router.delete("/owners/delete/:id", async (req, res) => {
     const id = req.params.id;
     collection
       .deleteOne({ _id: ObjectID(id) })
@@ -73,7 +73,7 @@ const createOwnersRouter = function (collection) {
   });
 
   // UPDATE (PUT)
-  router.put("/owners/update/:id", (req, res) => {
+  router.put("/owners/update/:id", async (req, res) => {
     const id = req.params.id;
     const updatedData = req.body;
     collection
