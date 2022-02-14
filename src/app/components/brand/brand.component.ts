@@ -18,4 +18,8 @@ export class BrandComponent implements OnInit {
     this.brandService.getBrands().subscribe((brands) => (this.brands = brands));
   }
 
+  addBrand(brand: Brand) {
+    this.brandService.addBrand(brand).subscribe((brand) => this.brands.push(brand));
+  }
+
 }

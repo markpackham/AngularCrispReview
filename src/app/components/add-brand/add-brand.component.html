@@ -1,0 +1,11 @@
+<form (ngSubmit)="onSubmit()">
+  <div class="form-control">
+    <label for="text">Brand</label>
+    <input type="text" name="brand" id="brand" placeholder="Add Brand" />
+  </div>
+  <div class="form-control">
+    <label for="day">Brand Owner</label>
+    <input type="text" name="brand_owner" id="brand_owner" placeholder="Add Brand Owner" [(ngModel)]="brand_owner" />
+  </div>
+  <input type="submit" value="Create Brand" class="btn btn-primary" />
+</form>
