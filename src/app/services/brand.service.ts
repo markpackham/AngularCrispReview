@@ -3,6 +3,12 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Brand } from '../model/Brand';
 
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json',
+  }),
+};
+
 @Injectable({
   providedIn: 'root'
 })
@@ -16,4 +22,19 @@ export class BrandService {
     return this.http.get<Brand[]>(this.apiUrl);
   }
 
+  deleteBrand(brand: Brand): Observable<Brand> {
+    const url = `${this.apiUrl}/${brand.id}`;
+    return this.http.delete<Brand>(url);
+  }
+
+  updateBrandReminder(brand: Brand): Observable<Brand> {
+    const url = `${this.apiUrl}/${brand.id}`;
+    return this.http.put<Brand>(url, brand, httpOptions);
+  }
+
+  addBrand(brand: Brand): Observable<Brand> {
+    return this.http.post<Brand>(this.apiUrl, brand, httpOptions);
+  }
+
 }
+

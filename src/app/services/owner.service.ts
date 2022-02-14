@@ -3,6 +3,12 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Owner } from '../model/Owner';
 
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json',
+  }),
+};
+
 @Injectable({
   providedIn: 'root'
 })
@@ -14,5 +20,19 @@ export class OwnerService {
 
   getOwners(): Observable<Owner[]> {
     return this.http.get<Owner[]>(this.apiUrl);
+  }
+
+  deleteOwner(owner: Owner): Observable<Owner> {
+    const url = `${this.apiUrl}/${owner.id}`;
+    return this.http.delete<Owner>(url);
+  }
+
+  updateOwnerReminder(owner: Owner): Observable<Owner> {
+    const url = `${this.apiUrl}/${owner.id}`;
+    return this.http.put<Owner>(url, owner, httpOptions);
+  }
+
+  addOwner(owner: Owner): Observable<Owner> {
+    return this.http.post<Owner>(this.apiUrl, owner, httpOptions);
   }
 }
