@@ -33,14 +33,14 @@ const createOwnersRouter = function (collection) {
   // CREATE
   // What Json file looks like
   //   {
-  //     "owner": "Walkers Snacks Ltd",
+  //     "owner_name": "Walkers Snacks Ltd",
   //     "owner_address": "450 South Oak Way, Green Park, Reading RG2 6UW",
   //     "owner_phone": "800 274 777",
   //     "owner_website": "https://www.walkers.co.uk/"
   //    }
   router.post("/owners", async (req, res) => {
     const newOwner = req.body;
-    if (newOwner.owner.length < 5 || newOwner.owner_address.length < 6) {
+    if (newOwner.owner_name.length < 5 || newOwner.owner_address.length < 6) {
       res.status(422);
       res.json({ status: 422, error: "422 Unprocessable Entity" });
     } else {

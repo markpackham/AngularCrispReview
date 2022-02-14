@@ -35,8 +35,8 @@ const createCrispsRouter = function (collection) {
     const newCrisp = req.body;
     if (
       newCrisp.crisp_name.length < 3 ||
-      newCrisp.brand.length < 3 ||
-      newCrisp.flavour.length < 3 ||
+      newCrisp.brand_name.length < 3 ||
+      newCrisp.flavour_name.length < 3 ||
       newCrisp.weight.length < 1
     ) {
       res.status(422);

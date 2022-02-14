@@ -1,4 +1,4 @@
 export interface Flavour {
     id?: number;
-    flavour: string;
+    flavour_name: string;
 }

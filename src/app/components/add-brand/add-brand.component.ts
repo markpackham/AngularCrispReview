@@ -11,7 +11,7 @@ import {NgForm} from '@angular/forms';
 })
 export class AddBrandComponent implements OnInit {
   @Output() onAddBrand: EventEmitter<Brand> = new EventEmitter();
-  brand!: string;
+  brand_name!: string;
   brand_owner!: string;
 
   constructor() { }
@@ -22,13 +22,13 @@ export class AddBrandComponent implements OnInit {
   onSubmit() {
 
     const newBrand: Brand = {
-      brand: this.brand,
+      brand_name : this.brand_name,
       brand_owner: this.brand_owner
     };
 
     this.onAddBrand.emit(newBrand);
 
-    this.brand = '';
+    this.brand_name = '';
     this.brand_owner = '';
   }
 
