@@ -1,13 +1,9 @@
-<form [formGroup]="brandForm" (ngSubmit)="onSubmit()">
-  <div class="form-control">
-    <label for="text">Brand Name</label>
-    <input type="text" name="brand_name" id="brand_name" placeholder="Add Brand" required
+<div class="container">
+  <form [formGroup]="brandForm" (ngSubmit)="onSubmit()">
+    <input class="form-control" type="text" name="brand_name" id="brand_name" placeholder="Add Brand" required
       formControlName="brand_name" />
-  </div>
-  <div class="form-control">
-    <label for="day">Brand Owner</label>
-    <input type="text" name="brand_owner" id="brand_owner" placeholder="Add Brand Owner" required
-      formControlName="brand_owner" />
-  </div>
-  <input type="submit" value="Create Brand" class="btn btn-primary" />
-</form>
+    <input class="form-control mt-1" type="text" name="brand_owner" id="brand_owner" placeholder="Add Brand Owner"
+      required formControlName="brand_owner" />
+    <button type="submit" class="btn btn-primary mt-1">Add Brand</button>
+  </form>
+</div>
