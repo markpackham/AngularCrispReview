@@ -16,6 +16,9 @@ import { BrandItemComponent } from './components/brand-item/brand-item.component
 import { CrispItemComponent } from './components/crisp-item/crisp-item.component';
 import { OwnerItemComponent } from './components/owner-item/owner-item.component';
 import { AddBrandComponent } from './components/add-brand/add-brand.component';
+import { AddCrispComponent } from './components/add-crisp/add-crisp.component';
+import { AddOwnerComponent } from './components/add-owner/add-owner.component';
+import { AddFlavourComponent } from './components/add-flavour/add-flavour.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { AddBrandComponent } from './components/add-brand/add-brand.component';
     BrandItemComponent,
     CrispItemComponent,
     OwnerItemComponent,
-    AddBrandComponent
+    AddBrandComponent,
+    AddCrispComponent,
+    AddOwnerComponent,
+    AddFlavourComponent,
   ],
   imports: [
     BrowserModule,
