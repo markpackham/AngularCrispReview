@@ -19,7 +19,7 @@ export class AddFlavourComponent implements OnInit {
   }
 
   flavourForm = new FormGroup({
-    'flavour_name':new FormControl('',Validators.required),
+    'flavour_name':new FormControl('',[Validators.required, Validators.minLength(3)]),
   });
 
   onSubmit() {

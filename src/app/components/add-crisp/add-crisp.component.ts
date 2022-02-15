@@ -1,5 +1,4 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Subscription } from 'rxjs';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import { Crisp } from '../../model/Crisp';
 import { CrispService } from '../../services/crisp.service';
@@ -20,10 +19,10 @@ export class AddCrispComponent implements OnInit {
   }
 
   crispForm = new FormGroup({
-    'crisp_name':new FormControl('',Validators.required),
+    'crisp_name':new FormControl('',[Validators.required, Validators.minLength(3)]),
     'crisp_image':new FormControl(''),
-    'flavour_name':new FormControl('',Validators.required),
-    'brand_name':new FormControl('',Validators.required),
+    'flavour_name':new FormControl('',[Validators.required, Validators.minLength(3)]),
+    'brand_name':new FormControl('',[Validators.required, Validators.minLength(3)]),
     'weight':new FormControl('',Validators.required),
     'review':new FormControl(''),
     'review_score':new FormControl(''),

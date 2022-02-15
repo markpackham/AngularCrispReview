@@ -19,8 +19,8 @@ export class AddOwnerComponent implements OnInit {
   }
 
   ownerForm = new FormGroup({
-    'owner_name':new FormControl('',Validators.required),
-    'owner_address':new FormControl('',Validators.required),
+    'owner_name':new FormControl('',[Validators.required, Validators.minLength(5)]),
+    'owner_address':new FormControl('',[Validators.required, Validators.minLength(6)]),
     'owner_phone':new FormControl(''),
     'owner_website':new FormControl(''),
   });

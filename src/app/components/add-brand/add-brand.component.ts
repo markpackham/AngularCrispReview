@@ -1,5 +1,4 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Subscription } from 'rxjs';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import { Brand } from '../../model/Brand';
 import { BrandService } from '../../services/brand.service';
@@ -20,8 +19,8 @@ export class AddBrandComponent implements OnInit {
   }
 
   brandForm = new FormGroup({
-    'brand_name':new FormControl('',Validators.required),
-    'brand_owner':new FormControl('',Validators.required),
+    'brand_name':new FormControl('',[Validators.required, Validators.minLength(3)]),
+    'brand_owner':new FormControl('',[Validators.required, Validators.minLength(3)]),
   });
 
   onSubmit() {
