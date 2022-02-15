@@ -1,11 +1,12 @@
-<form (ngSubmit)="onSubmit()">
+<form [formGroup]="brandForm" (ngSubmit)="onSubmit()">
   <div class="form-control">
     <label for="text">Brand Name</label>
-    <input type="text" name="brand_name" id="brand_name" placeholder="Add Brand" />
+    <input type="text" name="brand_name" id="brand_name" placeholder="Add Brand" formControlName="brand_name" />
   </div>
   <div class="form-control">
     <label for="day">Brand Owner</label>
-    <input type="text" name="brand_owner" id="brand_owner" placeholder="Add Brand Owner" [(ngModel)]="brand_owner" />
+    <input type="text" name="brand_owner" id="brand_owner" placeholder="Add Brand Owner"
+      formControlName="brand_owner" />
   </div>
   <input type="submit" value="Create Brand" class="btn btn-primary" />
 </form>
