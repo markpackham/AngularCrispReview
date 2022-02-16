@@ -23,6 +23,7 @@ a {
 
 ul {
   list-style: none;
+  margin: 4px 0;
 }
 
 img {
@@ -30,7 +31,7 @@ img {
 }
 
 .container {
-  padding: 5px;
+  padding: 4px;
 }
 
 @media(max-width: 60rem) {}

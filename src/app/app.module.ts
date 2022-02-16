@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +20,14 @@ import { AddBrandComponent } from './components/add-brand/add-brand.component';
 import { AddCrispComponent } from './components/add-crisp/add-crisp.component';
 import { AddOwnerComponent } from './components/add-owner/add-owner.component';
 import { AddFlavourComponent } from './components/add-flavour/add-flavour.component';
+import { AboutComponent } from './components/about/about.component';
+import { NotFoundComponent } from './components/helpers/not-found/not-found.component';
+
+const appRoutes: Routes = [
+  // { path: '', component: HomeComponent },
+  { path: 'about', component: AboutComponent },
+  { path: '**', component: NotFoundComponent },
+];
 
 @NgModule({
   declarations: [
@@ -37,6 +46,8 @@ import { AddFlavourComponent } from './components/add-flavour/add-flavour.compon
     AddCrispComponent,
     AddOwnerComponent,
     AddFlavourComponent,
+    AboutComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,6 +55,7 @@ import { AddFlavourComponent } from './components/add-flavour/add-flavour.compon
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    RouterModule.forRoot(appRoutes, { enableTracing: true }),
   ],
   providers: [],
   bootstrap: [AppComponent]
