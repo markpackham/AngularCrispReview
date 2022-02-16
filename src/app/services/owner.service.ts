@@ -23,12 +23,12 @@ export class OwnerService {
   }
 
   deleteOwner(owner: Owner): Observable<Owner> {
-    const url = `${this.apiUrl}/${owner.id}`;
+    const url = `${this.apiUrl}/${owner._id}`;
     return this.http.delete<Owner>(url);
   }
 
   updateOwnerReminder(owner: Owner): Observable<Owner> {
-    const url = `${this.apiUrl}/${owner.id}`;
+    const url = `${this.apiUrl}/${owner._id}`;
     return this.http.put<Owner>(url, owner, httpOptions);
   }
 

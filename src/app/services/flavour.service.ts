@@ -23,12 +23,12 @@ export class FlavourService {
   }
 
   deleteFlavour(flavour: Flavour): Observable<Flavour> {
-    const url = `${this.apiUrl}/${flavour.id}`;
+    const url = `${this.apiUrl}/${flavour._id}`;
     return this.http.delete<Flavour>(url);
   }
 
   updateFlavourReminder(flavour: Flavour): Observable<Flavour> {
-    const url = `${this.apiUrl}/${flavour.id}`;
+    const url = `${this.apiUrl}/${flavour._id}`;
     return this.http.put<Flavour>(url, flavour, httpOptions);
   }
 

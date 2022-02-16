@@ -23,12 +23,12 @@ export class CrispService {
   }
 
   deleteCrisp(crisp: Crisp): Observable<Crisp> {
-    const url = `${this.apiUrl}/${crisp.id}`;
+    const url = `${this.apiUrl}/${crisp._id}`;
     return this.http.delete<Crisp>(url);
   }
 
   updateCrispReminder(crisp: Crisp): Observable<Crisp> {
-    const url = `${this.apiUrl}/${crisp.id}`;
+    const url = `${this.apiUrl}/${crisp._id}`;
     return this.http.put<Crisp>(url, crisp, httpOptions);
   }
 

@@ -1,5 +1,5 @@
 export interface Owner {
-    id?: number;
+    _id?: number;
     owner_name: string;
     owner_address: string;
     owner_phone?: string;

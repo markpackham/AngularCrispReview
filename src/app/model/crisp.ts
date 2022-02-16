@@ -1,5 +1,5 @@
 export interface Crisp {
-    id?: number;
+    _id?: number;
     crisp_name : string;
     crisp_image?: string;
     flavour_name : string;
