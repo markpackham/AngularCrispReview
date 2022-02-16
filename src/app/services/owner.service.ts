@@ -22,9 +22,9 @@ export class OwnerService {
     return this.http.get<Owner[]>(this.apiUrl);
   }
 
-  deleteOwner(owner: Owner): Observable<Owner> {
-    const url = `${this.apiUrl}/${owner._id}`;
-    return this.http.delete<Owner>(url);
+  deleteOwner(_id: any): Observable<any> {
+    let ids = _id;
+    return this.http.delete(`${this.apiUrl}/delete/${ids}`);
   }
 
   updateOwnerReminder(owner: Owner): Observable<Owner> {

@@ -22,9 +22,9 @@ export class CrispService {
     return this.http.get<Crisp[]>(this.apiUrl);
   }
 
-  deleteCrisp(crisp: Crisp): Observable<Crisp> {
-    const url = `${this.apiUrl}/${crisp._id}`;
-    return this.http.delete<Crisp>(url);
+  deleteCrisp(_id: any): Observable<any> {
+    let ids = _id;
+    return this.http.delete(`${this.apiUrl}/delete/${ids}`);
   }
 
   updateCrispReminder(crisp: Crisp): Observable<Crisp> {
