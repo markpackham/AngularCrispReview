@@ -22,13 +22,13 @@ export class BrandService {
     return this.http.get<Brand[]>(this.apiUrl);
   }
 
-  deleteBrand(id: any): Observable<any> {
-    let ids = id;
+  deleteBrand(_id: any): Observable<any> {
+    let ids = _id;
     return this.http.delete(`${this.apiUrl}/${ids}`);
   }
 
   updateBrandReminder(brand: Brand): Observable<Brand> {
-    const url = `${this.apiUrl}/${brand.id}`;
+    const url = `${this.apiUrl}/${brand._id}`;
     return this.http.put<Brand>(url, brand, httpOptions);
   }
 

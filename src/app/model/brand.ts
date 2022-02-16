@@ -1,5 +1,5 @@
 export interface Brand {
-    id?: number;
+    _id?: number;
     brand_name: string;
     brand_owner: string;
 }

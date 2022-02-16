@@ -1,5 +1,14 @@
-<p>
-  {{brand.brand_name}}
-  {{brand.brand_owner}}
-  <button class="btn btn-danger" (click)="onDelete(brand.id)">Delete</button>
-</p>
+<div>
+  <ul>
+    <li>
+      Brand Name: {{brand.brand_name}}
+    </li>
+    <li>
+      Brand Owner: {{brand.brand_owner}}
+    </li>
+    <li>
+      Brand Id: {{brand._id}}
+    </li>
+  </ul>
+  <button class="btn btn-danger" (click)="onDelete(brand._id)">Delete</button>
+</div>
