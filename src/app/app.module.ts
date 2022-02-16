@@ -22,10 +22,15 @@ import { AddOwnerComponent } from './components/add-owner/add-owner.component';
 import { AddFlavourComponent } from './components/add-flavour/add-flavour.component';
 import { AboutComponent } from './components/about/about.component';
 import { NotFoundComponent } from './components/helpers/not-found/not-found.component';
+import { HomeComponent } from './components/home/home.component';
 
 const appRoutes: Routes = [
-  // { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
+  { path: 'brands', component: BrandComponent },
+  { path: 'crisps', component: CrispComponent },
+  { path: 'flavours', component: FlavourComponent },
+  { path: 'owners', component: OwnerComponent },
   { path: '**', component: NotFoundComponent },
 ];
 
@@ -48,6 +53,7 @@ const appRoutes: Routes = [
     AddFlavourComponent,
     AboutComponent,
     NotFoundComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
