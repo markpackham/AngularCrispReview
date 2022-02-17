@@ -25,13 +25,13 @@ import { OwnerComponent } from './components/owner/owner.component';
 import { OwnerItemComponent } from './components/owner-item/owner-item.component';
 
 const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'brands', component: BrandComponent },
-  { path: 'crisps', component: CrispComponent },
-  { path: 'flavours', component: FlavourComponent },
-  { path: 'owners', component: OwnerComponent },
-  { path: '**', component: NotFoundComponent },
+  // { path: '', component: HomeComponent },
+  // { path: 'about', component: AboutComponent },
+  // { path: 'brands', component: BrandComponent },
+  // { path: 'crisps', component: CrispComponent },
+  // { path: 'flavours', component: FlavourComponent },
+  // { path: 'owners', component: OwnerComponent },
+  // { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({
