@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 
 import { AboutComponent } from './components/about/about.component';
 import { AddBrandComponent } from './components/add-brand/add-brand.component';
@@ -23,16 +22,6 @@ import { HomeComponent } from './components/home/home.component';
 import { NotFoundComponent } from './components/helpers/not-found/not-found.component';
 import { OwnerComponent } from './components/owner/owner.component';
 import { OwnerItemComponent } from './components/owner-item/owner-item.component';
-
-const appRoutes: Routes = [
-  // { path: '', component: HomeComponent },
-  // { path: 'about', component: AboutComponent },
-  // { path: 'brands', component: BrandComponent },
-  // { path: 'crisps', component: CrispComponent },
-  // { path: 'flavours', component: FlavourComponent },
-  // { path: 'owners', component: OwnerComponent },
-  // { path: '**', component: NotFoundComponent },
-];
 
 @NgModule({
   declarations: [
@@ -61,7 +50,6 @@ const appRoutes: Routes = [
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(appRoutes, { enableTracing: true }),
   ],
   providers: [],
   bootstrap: [AppComponent]
