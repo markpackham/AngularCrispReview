@@ -19,4 +19,8 @@ export class FlavourComponent implements OnInit {
     this.flavourService.getFlavours().subscribe((flavours) => (this.flavours = flavours));
   }
 
+  addFlavour(flavour: Flavour) {
+    this.flavourService.addFlavour(flavour).subscribe((flavour) => this.flavours.push(flavour));
+  }
+
 }

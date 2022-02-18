@@ -1,3 +1,4 @@
 <h2>Crisps total {{crisps.length}}</h2>
+<app-add-crisp (onAddCrisp)="addCrisp($event)"></app-add-crisp>
 <app-crisp-item *ngFor="let crisp of crisps" [crisp]="crisp">
 </app-crisp-item>

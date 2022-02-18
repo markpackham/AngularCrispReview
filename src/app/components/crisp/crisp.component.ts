@@ -18,4 +18,8 @@ export class CrispComponent implements OnInit {
     this.crispService.getCrisps().subscribe((crisps) => (this.crisps = crisps));
   }
 
+  addCrisp(crisp: Crisp) {
+    this.crispService.addCrisp(crisp).subscribe((crisp) => this.crisps.push(crisp));
+  }
+
 }

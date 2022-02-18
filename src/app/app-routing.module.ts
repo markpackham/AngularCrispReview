@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
-import { AboutComponent } from './components/about/about.component';
+import { HomeComponent } from './content/home/home.component';
+import { AboutComponent } from './content/about/about.component';
 import { BrandComponent } from './components/brand/brand.component';
 import { CrispComponent } from './components/crisp/crisp.component';
 import { FlavourComponent } from './components/flavour/flavour.component';
 import { OwnerComponent } from './components/owner/owner.component';
-import { NotFoundComponent } from './components/helpers/not-found/not-found.component';
+import { NotFoundComponent } from './helpers/not-found/not-found.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },

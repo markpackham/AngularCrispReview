@@ -18,4 +18,8 @@ export class OwnerComponent implements OnInit {
     this.ownerService.getOwners().subscribe((owners) => (this.owners = owners));
   }
 
+  addOwner(owner: Owner) {
+    this.ownerService.addOwner(owner).subscribe((owner) => this.owners.push(owner));
+  }
+
 }
