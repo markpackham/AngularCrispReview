@@ -1,1 +1,19 @@
-<p>add-crisp works!</p>
+<div class="container">
+  <form [formGroup]="crispForm" (ngSubmit)="onSubmit()">
+    <input class="form-control" type="text" name="crisp_name" id="crisp_name" placeholder="Add Crisp Name" required
+      formControlName="crisp_name" />
+    <input class="form-control" type="text" name="crisp_image" id="crisp_image" placeholder="Add Crisp Image Url"
+      formControlName="crisp_image" />
+    <input class="form-control" type="text" name="flavour_name" id="flavour_name" placeholder="Add Flavour Name"
+      required formControlName="flavour_name" />
+    <input class="form-control" type="text" name="brand_name" id="brand_name" placeholder="Add Brand Name" required
+      formControlName="brand_name" />
+    <input class="form-control" type="number" name="weight" id="weight" placeholder="Add Weight in grams" required
+      formControlName="brand_name" />
+    <input class="form-control" type="text" name="review" id="review" placeholder="Add Short Review"
+      formControlName="review_score" />
+    <input class="form-control" type="number" name="review_score" id="review_score"
+      placeholder="Add Review Score Out Of 5" formControlName="review_score" />
+    <button type="submit" class="btn btn-primary mt-1">Add Crisp</button>
+  </form>
+</div>
