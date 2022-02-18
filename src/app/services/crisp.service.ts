@@ -27,7 +27,7 @@ export class CrispService {
     return this.http.delete(`${this.apiUrl}/delete/${ids}`);
   }
 
-  updateCrispReminder(crisp: Crisp): Observable<Crisp> {
+  updateCrisp(crisp: Crisp): Observable<Crisp> {
     const url = `${this.apiUrl}/${crisp._id}`;
     return this.http.put<Crisp>(url, crisp, httpOptions);
   }

@@ -22,4 +22,7 @@ export class CrispItemComponent implements OnInit {
     });
   }
 
+  onUpdate(id: any) {
+  }
+
 }

@@ -27,7 +27,7 @@ export class BrandService {
     return this.http.delete(`${this.apiUrl}/delete/${ids}`);
   }
 
-  updateBrandReminder(brand: Brand): Observable<Brand> {
+  updateBrand(brand: Brand): Observable<Brand> {
     const url = `${this.apiUrl}/${brand._id}`;
     return this.http.put<Brand>(url, brand, httpOptions);
   }

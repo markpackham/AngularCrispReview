@@ -1,7 +1,7 @@
 <div class="container">
   <ul>
     <li>
-      {{owner.owner_name}}
+      <h4>{{owner.owner_name}}</h4>
     </li>
     <li>
       Owner Address: {{owner.owner_address}}
@@ -13,5 +13,6 @@
       Owner Website: <a target="_blank" href="{{owner.owner_website}}">{{owner.owner_website}}</a>
     </li>
   </ul>
+  <button class="btn btn-secondary" (click)="onUpdate(owner._id)">Update</button>
   <button class="btn btn-danger" (click)="onDelete(owner._id)">Delete</button>
 </div>

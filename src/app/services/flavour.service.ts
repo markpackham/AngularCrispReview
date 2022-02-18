@@ -26,7 +26,7 @@ export class FlavourService {
     let ids = _id;
     return this.http.delete(`${this.apiUrl}/delete/${ids}`);
   }
-  updateFlavourReminder(flavour: Flavour): Observable<Flavour> {
+  updateFlavour(flavour: Flavour): Observable<Flavour> {
     const url = `${this.apiUrl}/${flavour._id}`;
     return this.http.put<Flavour>(url, flavour, httpOptions);
   }

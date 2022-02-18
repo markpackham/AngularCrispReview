@@ -22,4 +22,7 @@ export class FlavourItemComponent implements OnInit {
     });
   }
 
+  onUpdate(id: any) {
+  }
+
 }

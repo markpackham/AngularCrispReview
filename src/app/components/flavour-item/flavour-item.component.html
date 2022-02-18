@@ -1,8 +1,9 @@
 <div class="container">
   <ul>
     <li>
-      {{flavour.flavour_name}}
+      <h4>{{flavour.flavour_name}}</h4>
     </li>
   </ul>
+  <button class="btn btn-secondary" (click)="onUpdate(flavour._id)">Update</button>
   <button class="btn btn-danger" (click)="onDelete(flavour._id)">Delete</button>
 </div>

@@ -22,4 +22,7 @@ export class OwnerItemComponent implements OnInit {
     });
   }
 
+  onUpdate(id: any) {
+  }
+  
 }

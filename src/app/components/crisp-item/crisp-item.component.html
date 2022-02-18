@@ -1,7 +1,7 @@
 <div class="container">
   <ul>
     <li>
-      {{crisp.crisp_name}}
+      <h4>{{crisp.crisp_name}}</h4>
     </li>
     <li>
       <img class="crisp_image" src="{{crisp.crisp_image}}" alt="Crisp Image">
@@ -22,5 +22,6 @@
       Review Score {{crisp.review_score}}/5
     </li>
   </ul>
+  <button class="btn btn-secondary" (click)="onUpdate(crisp._id)">Update</button>
   <button class="btn btn-danger" (click)="onDelete(crisp._id)">Delete</button>
 </div>

@@ -27,7 +27,7 @@ export class OwnerService {
     return this.http.delete(`${this.apiUrl}/delete/${ids}`);
   }
 
-  updateOwnerReminder(owner: Owner): Observable<Owner> {
+  updateOwner(owner: Owner): Observable<Owner> {
     const url = `${this.apiUrl}/${owner._id}`;
     return this.http.put<Owner>(url, owner, httpOptions);
   }

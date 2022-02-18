@@ -22,4 +22,7 @@ export class BrandItemComponent implements OnInit {
     });
   }
 
+  onUpdate(id: any) {
+  }
+
 }
