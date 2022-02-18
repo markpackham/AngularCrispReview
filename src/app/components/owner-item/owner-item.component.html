@@ -1,6 +1,17 @@
-<p>
-  {{owner.owner_name}}
-  {{owner.owner_address}}
-  {{owner.owner_phone}}
-  {{owner.owner_website}}
-</p>
+<div class="container">
+  <ul>
+    <li>
+      {{owner.owner_name}}
+    </li>
+    <li>
+      Owner Address: {{owner.owner_address}}
+    </li>
+    <li>
+      Owner Phone: {{owner.owner_phone}}
+    </li>
+    <li>
+      Owner Website: <a target="_blank" href="{{owner.owner_website}}">{{owner.owner_website}}</a>
+    </li>
+  </ul>
+  <button class="btn btn-danger" (click)="onDelete(owner._id)">Delete</button>
+</div>
