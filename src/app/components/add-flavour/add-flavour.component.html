@@ -1,1 +1,7 @@
-<p>add-flavour works!</p>
+<div class="container">
+  <form [formGroup]="flavourForm" (ngSubmit)="onSubmit()">
+    <input class="form-control" type="text" name="flavour_name" id="flavour_name" placeholder="Add Flavour Name"
+      required formControlName="flavour_name" />
+    <button type="submit" class="btn btn-primary mt-1">Add Flavour</button>
+  </form>
+</div>
