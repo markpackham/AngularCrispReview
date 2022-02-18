@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Crisp } from '../../model/Crisp';
+import { CrispService } from '../../services/crisp.service';
 
 @Component({
   selector: 'app-crisp-item',
@@ -8,10 +9,17 @@ import { Crisp } from '../../model/Crisp';
 })
 export class CrispItemComponent implements OnInit {
   @Input() crisp: Crisp;
+  @Output() onDeleteBrand: EventEmitter<Crisp> = new EventEmitter();
 
-  constructor() { }
+  constructor(private service: CrispService) { }
 
   ngOnInit(): void {
+  }
+
+  onDelete(id: any) {
+    this.service.deleteCrisp(id).subscribe((res)=>{
+      console.log(res,'deleteCrisp');
+    });
   }
 
 }

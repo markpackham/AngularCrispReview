@@ -7,3 +7,29 @@
   {{crisp.review}}
   {{crisp.review_score}}
 </p>
+<div class="container">
+  <ul>
+    <li>
+      Crisp Name: {{crisp.crisp_name}}
+    </li>
+    <li>
+      <img class="crisp_image" src="{{crisp.crisp_image}}" alt="Crisp Image">
+    </li>
+    <li>
+      Flavour Name: {{crisp.flavour_name}}
+    </li>
+    <li>
+      Brand Name: {{crisp.brand_name}}
+    </li>
+    <li>
+      Weight: {{crisp.weight}}g
+    </li>
+    <li>
+      Review {{crisp.review}}
+    </li>
+    <li>
+      Review Score {{crisp.review_score}}/5
+    </li>
+  </ul>
+  <button class="btn btn-danger" (click)="onDelete(crisp._id)">Delete</button>
+</div>
