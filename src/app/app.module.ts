@@ -22,6 +22,7 @@ import { HomeComponent } from './content/home/home.component';
 import { NotFoundComponent } from './helpers/not-found/not-found.component';
 import { OwnerComponent } from './components/owner/owner.component';
 import { OwnerItemComponent } from './components/owner-item/owner-item.component';
+import { ContactComponent } from './content/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { OwnerItemComponent } from './components/owner-item/owner-item.component
     NotFoundComponent,
     OwnerComponent,
     OwnerItemComponent,
+    ContactComponent,
   ],
   imports: [
     AppRoutingModule,
