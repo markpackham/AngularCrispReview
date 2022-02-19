@@ -23,6 +23,10 @@ import { NotFoundComponent } from './helpers/not-found/not-found.component';
 import { OwnerComponent } from './components/owner/owner.component';
 import { OwnerItemComponent } from './components/owner-item/owner-item.component';
 import { ContactComponent } from './content/contact/contact.component';
+import { EditBrandComponent } from './components/edit-brand/edit-brand.component';
+import { EditCrispComponent } from './components/edit-crisp/edit-crisp.component';
+import { EditFlavourComponent } from './components/edit-flavour/edit-flavour.component';
+import { EditOwnerComponent } from './components/edit-owner/edit-owner.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +49,10 @@ import { ContactComponent } from './content/contact/contact.component';
     OwnerComponent,
     OwnerItemComponent,
     ContactComponent,
+    EditBrandComponent,
+    EditCrispComponent,
+    EditFlavourComponent,
+    EditOwnerComponent,
   ],
   imports: [
     AppRoutingModule,
