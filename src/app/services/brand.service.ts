@@ -27,9 +27,14 @@ export class BrandService {
     return this.http.delete(`${this.apiUrl}/delete/${ids}`);
   }
 
-  updateBrand(brand: Brand): Observable<Brand> {
-    const url = `${this.apiUrl}/${brand._id}`;
-    return this.http.put<Brand>(url, brand, httpOptions);
+  // updateBrand(brand: Brand): Observable<Brand> {
+  //   const url = `${this.apiUrl}/${brand._id}`;
+  //   return this.http.put<Brand>(url, brand, httpOptions);
+  // }
+
+  updateBrand(data: any, _id: any): Observable<any> {
+    let ids = _id;
+    return this.http.put(`${this.apiUrl}/${ids}`,data);
   }
 
   addBrand(brand: Brand): Observable<Brand> {

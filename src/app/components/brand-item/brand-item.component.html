@@ -7,6 +7,6 @@
       Brand Owner: {{brand.brand_owner}}
     </li>
   </ul>
-  <button class="btn btn-secondary" (click)="onUpdate(brand._id)">Update</button>
+  <a class="btn btn-success" [routerLink]="['/brand',brand._id]" (click)="onUpdate(brand._id)">Update</a>
   <button class="btn btn-danger" (click)="onDelete(brand._id)">Delete</button>
 </div>
