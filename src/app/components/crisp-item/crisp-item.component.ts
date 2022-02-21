@@ -10,6 +10,7 @@ import { CrispService } from '../../services/crisp.service';
 export class CrispItemComponent implements OnInit {
   @Input() crisp: Crisp;
   @Output() onDeleteBrand: EventEmitter<Crisp> = new EventEmitter();
+  deleteMsg: any;
 
   constructor(private service: CrispService) { }
 
@@ -20,6 +21,7 @@ export class CrispItemComponent implements OnInit {
     this.service.deleteCrisp(id).subscribe((res)=>{
       location.reload();
       console.log(res,'deleteCrisp');
+      this.deleteMsg = "Deletion done!";
     });
   }
 

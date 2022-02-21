@@ -10,6 +10,7 @@ import { OwnerService } from '../../services/owner.service';
 export class OwnerItemComponent implements OnInit {
   @Input() owner: Owner;
   @Output() onDeleteBrand: EventEmitter<Owner> = new EventEmitter();
+  deleteMsg: any;
 
   constructor(private service: OwnerService) { }
 
@@ -20,6 +21,7 @@ export class OwnerItemComponent implements OnInit {
     this.service.deleteOwner(id).subscribe((res)=>{
       location.reload();
       console.log(res,'deleteOwner');
+      this.deleteMsg = "Deletion done!";
     });
   }
 

@@ -10,6 +10,7 @@ import { FlavourService } from '../../services/flavour.service';
 export class FlavourItemComponent implements OnInit {
   @Input() flavour: Flavour;
   @Output() onDeleteBrand: EventEmitter<Flavour> = new EventEmitter();
+  deleteMsg: any;
 
   constructor(private service: FlavourService) { }
 
@@ -20,6 +21,7 @@ export class FlavourItemComponent implements OnInit {
     this.service.deleteFlavour(id).subscribe((res)=>{
       location.reload();
       console.log(res,'deleteFlavour');
+      this.deleteMsg = "Deletion done!";
     });
   }
 

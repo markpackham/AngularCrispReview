@@ -1,4 +1,10 @@
 <div class="container">
+  <!-- Delete message -->
+  <div *ngIf="deleteMsg" class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>{{deleteMsg}}</strong>
+  </div>
+
+
   <ul>
     <li>
       <h4>{{crisp.crisp_name}}</h4>

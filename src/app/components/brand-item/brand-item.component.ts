@@ -11,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class BrandItemComponent implements OnInit {
   @Input() brand: Brand;
   @Output() onDeleteBrand: EventEmitter<Brand> = new EventEmitter();
+  deleteMsg: any;
 
   constructor(private service: BrandService, private router: ActivatedRoute) { }
 
@@ -21,6 +22,7 @@ export class BrandItemComponent implements OnInit {
     this.service.deleteBrand(id).subscribe((res)=>{
       location.reload();
       console.log(res,'deleteBrand');
+      this.deleteMsg = "Deletion done!";
     });
   }
 
