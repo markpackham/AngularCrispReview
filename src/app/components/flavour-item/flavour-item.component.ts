@@ -18,6 +18,7 @@ export class FlavourItemComponent implements OnInit {
 
   onDelete(id: any) {
     this.service.deleteFlavour(id).subscribe((res)=>{
+      location.reload();
       console.log(res,'deleteFlavour');
     });
   }

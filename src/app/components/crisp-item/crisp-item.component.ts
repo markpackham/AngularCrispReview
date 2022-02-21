@@ -18,6 +18,7 @@ export class CrispItemComponent implements OnInit {
 
   onDelete(id: any) {
     this.service.deleteCrisp(id).subscribe((res)=>{
+      location.reload();
       console.log(res,'deleteCrisp');
     });
   }

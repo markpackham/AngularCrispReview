@@ -28,6 +28,7 @@ export class AddBrandComponent implements OnInit {
   onSubmit() {
     if(this.brandForm.valid){
       this.service.addBrand(this.brandForm.value).subscribe((res)=>{
+          location.reload();
           this.brandForm.reset();
           this.successMsg = "Creation successful!";
       });

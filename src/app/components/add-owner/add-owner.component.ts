@@ -30,6 +30,7 @@ export class AddOwnerComponent implements OnInit {
   onSubmit() {
     if(this.ownerForm.valid){
       this.service.addOwner(this.ownerForm.value).subscribe((res)=>{
+          location.reload();
           this.ownerForm.reset();
           this.successMsg = "Creation successful!";
       });

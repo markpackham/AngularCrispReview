@@ -18,6 +18,7 @@ export class OwnerItemComponent implements OnInit {
 
   onDelete(id: any) {
     this.service.deleteOwner(id).subscribe((res)=>{
+      location.reload();
       console.log(res,'deleteOwner');
     });
   }

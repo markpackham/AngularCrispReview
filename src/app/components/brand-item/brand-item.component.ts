@@ -19,6 +19,7 @@ export class BrandItemComponent implements OnInit {
 
   onDelete(id: any) {
     this.service.deleteBrand(id).subscribe((res)=>{
+      location.reload();
       console.log(res,'deleteBrand');
     });
   }

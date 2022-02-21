@@ -33,6 +33,7 @@ export class AddCrispComponent implements OnInit {
   onSubmit() {
     if(this.crispForm.valid){
       this.service.addCrisp(this.crispForm.value).subscribe((res)=>{
+          location.reload();
           this.crispForm.reset();
           this.successMsg = "Creation successful!";
       });
