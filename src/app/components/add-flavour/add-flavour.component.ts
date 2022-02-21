@@ -12,6 +12,7 @@ export class AddFlavourComponent implements OnInit {
   @Output() onAddFlavour: EventEmitter<Flavour> = new EventEmitter();
   flavour_name!: string;
   flavour_owner!: string;
+  errorMsg:any;
 
   constructor(private service: FlavourService) { }
 
@@ -27,6 +28,9 @@ export class AddFlavourComponent implements OnInit {
       this.service.addFlavour(this.flavourForm.value).subscribe((res)=>{
           this.flavourForm.reset();
       });
+    }
+    else{
+      this.errorMsg = 'All fields required!';
     }
   }
 

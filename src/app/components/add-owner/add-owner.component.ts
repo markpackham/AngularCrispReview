@@ -12,6 +12,7 @@ export class AddOwnerComponent implements OnInit {
   @Output() onAddOwner: EventEmitter<Owner> = new EventEmitter();
   owner_name!: string;
   owner_owner!: string;
+  errorMsg:any;
 
   constructor(private service: OwnerService) { }
 
@@ -30,6 +31,9 @@ export class AddOwnerComponent implements OnInit {
       this.service.addOwner(this.ownerForm.value).subscribe((res)=>{
           this.ownerForm.reset();
       });
+    }
+    else{
+      this.errorMsg = 'All fields except Phone and Website required!';
     }
   }
 

@@ -12,6 +12,7 @@ export class AddBrandComponent implements OnInit {
   @Output() onAddBrand: EventEmitter<Brand> = new EventEmitter();
   brand_name!: string;
   brand_owner!: string;
+  errorMsg:any;
 
   constructor(private service: BrandService) { }
 
@@ -28,6 +29,9 @@ export class AddBrandComponent implements OnInit {
       this.service.addBrand(this.brandForm.value).subscribe((res)=>{
           this.brandForm.reset();
       });
+    }
+    else{
+      this.errorMsg = 'All fields required!';
     }
   }
 

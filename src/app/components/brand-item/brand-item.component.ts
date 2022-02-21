@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Brand } from '../../model/Brand';
 import { BrandService } from '../../services/brand.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-brand-item',
@@ -11,7 +12,7 @@ export class BrandItemComponent implements OnInit {
   @Input() brand: Brand;
   @Output() onDeleteBrand: EventEmitter<Brand> = new EventEmitter();
 
-  constructor(private service: BrandService) { }
+  constructor(private service: BrandService, private router: ActivatedRoute) { }
 
   ngOnInit(): void {
   }

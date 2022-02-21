@@ -1,4 +1,10 @@
 <div class="container">
+
+  <!-- Error message -->
+  <div *ngIf="errorMsg" class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>{{errorMsg}}</strong>
+  </div>
+
   <form [formGroup]="brandForm" (ngSubmit)="onSubmit()">
     <input class="form-control" type="text" name="brand_name" id="brand_name" placeholder="Add Brand Name" required
       formControlName="brand_name" />

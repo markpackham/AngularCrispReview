@@ -12,6 +12,7 @@ export class AddCrispComponent implements OnInit {
   @Output() onAddCrisp: EventEmitter<Crisp> = new EventEmitter();
   crisp_name!: string;
   crisp_owner!: string;
+  errorMsg:any;
 
   constructor(private service: CrispService) { }
 
@@ -33,6 +34,9 @@ export class AddCrispComponent implements OnInit {
       this.service.addCrisp(this.crispForm.value).subscribe((res)=>{
           this.crispForm.reset();
       });
+    }
+    else{
+      this.errorMsg = 'All fields except Image, Review and Review Score required!';
     }
   }
 

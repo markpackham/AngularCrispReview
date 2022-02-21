@@ -1,4 +1,9 @@
 <div class="container">
+  <!-- Error message -->
+  <div *ngIf="errorMsg" class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>{{errorMsg}}</strong>
+  </div>
+
   <form [formGroup]="ownerForm" (ngSubmit)="onSubmit()">
     <input class="form-control" type="text" name="owner_name" id="owner_name" placeholder="Add Owner Name" required
       formControlName="owner_name" />

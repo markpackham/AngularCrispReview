@@ -1,4 +1,9 @@
 <div class="container">
+  <!-- Error message -->
+  <div *ngIf="errorMsg" class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>{{errorMsg}}</strong>
+  </div>
+
   <form [formGroup]="crispForm" (ngSubmit)="onSubmit()">
     <input class="form-control" type="text" name="crisp_name" id="crisp_name" placeholder="Add Crisp Name" required
       formControlName="crisp_name" />
