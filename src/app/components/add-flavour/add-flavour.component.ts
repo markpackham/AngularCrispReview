@@ -27,7 +27,7 @@ export class AddFlavourComponent implements OnInit {
   onSubmit() {
     if(this.flavourForm.valid){
       this.service.addFlavour(this.flavourForm.value).subscribe((res)=>{
-        location.reload();
+          location.reload();
           this.flavourForm.reset();
           this.successMsg = "Creation successful!";
       });
