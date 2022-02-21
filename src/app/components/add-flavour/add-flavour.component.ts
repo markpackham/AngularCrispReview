@@ -13,6 +13,7 @@ export class AddFlavourComponent implements OnInit {
   flavour_name!: string;
   flavour_owner!: string;
   errorMsg:any;
+  successMsg:any;
 
   constructor(private service: FlavourService) { }
 
@@ -27,6 +28,7 @@ export class AddFlavourComponent implements OnInit {
     if(this.flavourForm.valid){
       this.service.addFlavour(this.flavourForm.value).subscribe((res)=>{
           this.flavourForm.reset();
+          this.successMsg = "Creation successful!";
       });
     }
     else{

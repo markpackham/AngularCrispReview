@@ -13,6 +13,7 @@ export class AddCrispComponent implements OnInit {
   crisp_name!: string;
   crisp_owner!: string;
   errorMsg:any;
+  successMsg:any;
 
   constructor(private service: CrispService) { }
 
@@ -33,6 +34,7 @@ export class AddCrispComponent implements OnInit {
     if(this.crispForm.valid){
       this.service.addCrisp(this.crispForm.value).subscribe((res)=>{
           this.crispForm.reset();
+          this.successMsg = "Creation successful!";
       });
     }
     else{

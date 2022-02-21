@@ -13,6 +13,7 @@ export class AddOwnerComponent implements OnInit {
   owner_name!: string;
   owner_owner!: string;
   errorMsg:any;
+  successMsg:any;
 
   constructor(private service: OwnerService) { }
 
@@ -30,6 +31,7 @@ export class AddOwnerComponent implements OnInit {
     if(this.ownerForm.valid){
       this.service.addOwner(this.ownerForm.value).subscribe((res)=>{
           this.ownerForm.reset();
+          this.successMsg = "Creation successful!";
       });
     }
     else{

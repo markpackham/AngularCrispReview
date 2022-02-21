@@ -13,6 +13,7 @@ export class AddBrandComponent implements OnInit {
   brand_name!: string;
   brand_owner!: string;
   errorMsg:any;
+  successMsg:any;
 
   constructor(private service: BrandService) { }
 
@@ -28,6 +29,7 @@ export class AddBrandComponent implements OnInit {
     if(this.brandForm.valid){
       this.service.addBrand(this.brandForm.value).subscribe((res)=>{
           this.brandForm.reset();
+          this.successMsg = "Creation successful!";
       });
     }
     else{

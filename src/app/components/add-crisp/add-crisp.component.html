@@ -3,6 +3,10 @@
   <div *ngIf="errorMsg" class="alert alert-warning alert-dismissible fade show" role="alert">
     <strong>{{errorMsg}}</strong>
   </div>
+  <!-- Success message -->
+  <div *ngIf="successMsg" class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>{{successMsg}}</strong>
+  </div>
 
   <form [formGroup]="crispForm" (ngSubmit)="onSubmit()">
     <input class="form-control" type="text" name="crisp_name" id="crisp_name" placeholder="Add Crisp Name" required

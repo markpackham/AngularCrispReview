@@ -3,6 +3,10 @@
   <div *ngIf="errorMsg" class="alert alert-warning alert-dismissible fade show" role="alert">
     <strong>{{errorMsg}}</strong>
   </div>
+  <!-- Success message -->
+  <div *ngIf="successMsg" class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>{{successMsg}}</strong>
+  </div>
 
   <form [formGroup]="ownerForm" (ngSubmit)="onSubmit()">
     <input class="form-control" type="text" name="owner_name" id="owner_name" placeholder="Add Owner Name" required

@@ -4,6 +4,10 @@
   <div *ngIf="errorMsg" class="alert alert-warning alert-dismissible fade show" role="alert">
     <strong>{{errorMsg}}</strong>
   </div>
+  <!-- Success message -->
+  <div *ngIf="successMsg" class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>{{successMsg}}</strong>
+  </div>
 
   <form [formGroup]="brandForm" (ngSubmit)="onSubmit()">
     <input class="form-control" type="text" name="brand_name" id="brand_name" placeholder="Add Brand Name" required
