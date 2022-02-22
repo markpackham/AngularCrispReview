@@ -6,10 +6,7 @@ import { NgModule } from '@angular/core';
 import { AboutComponent } from './content/about/about.component';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { BrandAddComponent } from './components/brands/brand-add/brand-add.component';
 import { BrandComponent } from './components/brands/brand/brand.component';
-import { BrandEditComponent } from './components/brands/brand-edit/brand-edit.component';
-import { BrandItemComponent } from './components/brands/brand-item/brand-item.component';
 import { ContactComponent } from './content/contact/contact.component';
 import { CrispAddComponent } from './components/crisps/crisp-add/crisp-add.component';
 import { CrispComponent } from './components/crisps/crisp/crisp.component';
@@ -32,10 +29,7 @@ import { OwnerItemComponent } from './components/owners/owner-item/owner-item.co
   declarations: [
     AboutComponent,
     AppComponent,
-    BrandAddComponent,
     BrandComponent,
-    BrandEditComponent,
-    BrandItemComponent,
     ContactComponent,
     CrispAddComponent,
     CrispComponent,

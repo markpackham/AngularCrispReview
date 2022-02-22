@@ -7,7 +7,6 @@ import { CrispComponent } from './components/crisps/crisp/crisp.component';
 import { FlavourComponent } from './components/flavours/flavour/flavour.component';
 import { OwnerComponent } from './components/owners/owner/owner.component';
 import { NotFoundComponent } from './helpers/not-found/not-found.component';
-import { BrandEditComponent } from './components/brands/brand-edit/brand-edit.component';
 import { CrispEditComponent } from './components/crisps/crisp-edit/crisp-edit.component';
 import { FlavourEditComponent } from './components/flavours/flavour-edit/flavour-edit.component';
 import { OwnerEditComponent } from './components/owners/owner-edit/owner-edit.component';
@@ -16,7 +15,6 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'brands', component: BrandComponent },
-  { path: 'brands/edit/:id', component: BrandEditComponent },
   { path: 'crisps', component: CrispComponent },
   { path: 'flavours', component: FlavourComponent },
   { path: 'owners', component: OwnerComponent },
