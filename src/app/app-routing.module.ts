@@ -9,7 +9,7 @@ import { OwnerComponent } from './components/owner/owner.component';
 import { NotFoundComponent } from './helpers/not-found/not-found.component';
 import { BrandEditComponent } from './components/brand-edit/brand-edit.component';
 import { CrispEditComponent } from './components/crisp-edit/crisp-edit';
-import { EditFlavourComponent } from './components/edit-flavour/edit-flavour.component';
+import { FlavourEditComponent } from './components/flavour-edit/flavour-edit.component';
 import { OwnerEditComponent } from './components/owner-edit/owner-edit.component';
 
 const routes: Routes = [
