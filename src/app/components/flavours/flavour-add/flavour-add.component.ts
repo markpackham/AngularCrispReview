@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import { Flavour } from '../../model/Flavour';
-import { FlavourService } from '../../services/flavour.service';
+import { Flavour } from '../../../model/Flavour';
+import { FlavourService } from '../../../services/flavour.service';
 
 @Component({
   selector: 'app-flavour-add',

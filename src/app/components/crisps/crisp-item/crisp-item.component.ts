@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Crisp } from '../../model/Crisp';
-import { CrispService } from '../../services/crisp.service';
+import { Crisp } from '../../../model/Crisp';
+import { CrispService } from '../../../services/crisp.service';
 
 @Component({
   selector: 'app-crisp-item',

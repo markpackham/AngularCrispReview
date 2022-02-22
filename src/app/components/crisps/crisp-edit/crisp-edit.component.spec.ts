@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CrispEditComponent } from './crisp-edit';
+import { CrispEditComponent } from './crisp-edit.component';
 
 describe('CrispEditComponent', () => {
   let component: CrispEditComponent;

@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import { Crisp } from '../../model/Crisp';
-import { CrispService } from '../../services/crisp.service';
+import { Crisp } from '../../../model/Crisp';
+import { CrispService } from '../../../services/crisp.service';
 
 @Component({
   selector: 'app-crisp-add',

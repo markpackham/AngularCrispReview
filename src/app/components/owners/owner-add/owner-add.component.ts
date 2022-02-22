@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import { Owner } from '../../model/Owner';
-import { OwnerService } from '../../services/owner.service';
+import { Owner } from '../../../model/Owner';
+import { OwnerService } from '../../../services/owner.service';
 
 @Component({
   selector: 'app-owner-add',

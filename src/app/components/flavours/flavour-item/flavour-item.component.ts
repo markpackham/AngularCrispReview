@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Flavour } from '../../model/Flavour';
-import { FlavourService } from '../../services/flavour.service';
+import { Flavour } from '../../../model/Flavour';
+import { FlavourService } from '../../../services/flavour.service';
 
 @Component({
   selector: 'app-flavour-item',

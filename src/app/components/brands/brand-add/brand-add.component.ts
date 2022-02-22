@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Brand } from '../../model/Brand';
-import { BrandService } from '../../services/brand.service';
+import { Brand } from '../../../model/Brand';
+import { BrandService } from '../../../services/brand.service';
 
 @Component({
   selector: 'app-brand-add',

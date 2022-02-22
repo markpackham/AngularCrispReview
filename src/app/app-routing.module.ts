@@ -2,15 +2,15 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './content/home/home.component';
 import { AboutComponent } from './content/about/about.component';
-import { BrandComponent } from './components/brand/brand.component';
-import { CrispComponent } from './components/crisp/crisp.component';
-import { FlavourComponent } from './components/flavour/flavour.component';
-import { OwnerComponent } from './components/owner/owner.component';
+import { BrandComponent } from './components/brands/brand/brand.component';
+import { CrispComponent } from './components/crisps/crisp/crisp.component';
+import { FlavourComponent } from './components/flavours/flavour/flavour.component';
+import { OwnerComponent } from './components/owners/owner/owner.component';
 import { NotFoundComponent } from './helpers/not-found/not-found.component';
-import { BrandEditComponent } from './components/brand-edit/brand-edit.component';
-import { CrispEditComponent } from './components/crisp-edit/crisp-edit';
-import { FlavourEditComponent } from './components/flavour-edit/flavour-edit.component';
-import { OwnerEditComponent } from './components/owner-edit/owner-edit.component';
+import { BrandEditComponent } from './components/brands/brand-edit/brand-edit.component';
+import { CrispEditComponent } from './components/crisps/crisp-edit/crisp-edit.component';
+import { FlavourEditComponent } from './components/flavours/flavour-edit/flavour-edit.component';
+import { OwnerEditComponent } from './components/owners/owner-edit/owner-edit.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
