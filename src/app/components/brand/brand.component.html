@@ -2,5 +2,5 @@
   <app-brand-add (onBrandAdd)="addBrand($event)"></app-brand-add>
   <app-brand-item *ngFor="let brand of brands" [brand]="brand">
   </app-brand-item>
-  <app-edit-brand *ngFor="let brand of brands" [brand]="brand">
-  </app-edit-brand>
+  <app-brand-edit *ngFor="let brand of brands" [brand]="brand">
+  </app-brand-edit>
