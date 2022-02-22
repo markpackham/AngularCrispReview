@@ -8,7 +8,7 @@ import { FlavourComponent } from './components/flavour/flavour.component';
 import { OwnerComponent } from './components/owner/owner.component';
 import { NotFoundComponent } from './helpers/not-found/not-found.component';
 import { EditBrandComponent } from './components/edit-brand/edit-brand.component';
-import { EditCrispComponent } from './components/edit-crisp/edit-crisp.component';
+import { CrispEditComponent } from './components/crisp-edit/crisp-edit';
 import { EditFlavourComponent } from './components/edit-flavour/edit-flavour.component';
 import { EditOwnerComponent } from './components/edit-owner/edit-owner.component';
 
