@@ -1,4 +1,4 @@
 <h2>Owners total {{owners.length}}</h2>
-<app-add-owner (onAddOwner)="addOwner($event)"></app-add-owner>
+<app-owner-add (onOwnerAdd)="addOwner($event)"></app-owner-add>
 <app-owner-item *ngFor="let owner of owners" [owner]="owner">
 </app-owner-item>

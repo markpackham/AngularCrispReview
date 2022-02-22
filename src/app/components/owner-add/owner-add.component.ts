@@ -4,12 +4,12 @@ import { Owner } from '../../model/Owner';
 import { OwnerService } from '../../services/owner.service';
 
 @Component({
-  selector: 'app-add-owner',
-  templateUrl: './add-owner.component.html',
-  styleUrls: ['./add-owner.component.css']
+  selector: 'app-owner-add',
+  templateUrl: './owner-add.component.html',
+  styleUrls: ['./owner-add.component.css']
 })
-export class AddOwnerComponent implements OnInit {
-  @Output() onAddOwner: EventEmitter<Owner> = new EventEmitter();
+export class OwnerAddComponent implements OnInit {
+  @Output() onOwnerAdd: EventEmitter<Owner> = new EventEmitter();
   owner_name!: string;
   owner_owner!: string;
   errorMsg:any;
