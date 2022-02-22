@@ -6,7 +6,7 @@ import { NgModule } from '@angular/core';
 import { AboutComponent } from './content/about/about.component';
 import { BrandAddComponent } from './components/brand-add/brand-add.component';
 import { CrispAddComponent } from './components/crisp-add/crisp-add.component';
-import { AddFlavourComponent } from './components/add-flavour/add-flavour.component';
+import { FlavourAddComponent } from './components/flavour-add/flavour-add.component';
 import { AddOwnerComponent } from './components/add-owner/add-owner.component';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -33,7 +33,7 @@ import { OwnerEditComponent } from './components/owner-edit/owner-edit.component
     AboutComponent,
     BrandAddComponent,
     CrispAddComponent,
-    AddFlavourComponent,
+    FlavourAddComponent,
     AddOwnerComponent,
     AppComponent,
     BrandComponent,

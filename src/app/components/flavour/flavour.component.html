@@ -1,4 +1,4 @@
 <h2>Flavours total {{flavours.length}}</h2>
-<app-add-flavour (onAddFlavour)="addFlavour($event)"></app-add-flavour>
+<app-flavour-add (onFlavourAdd)="addFlavour($event)"></app-flavour-add>
 <app-flavour-item *ngFor="let flavour of flavours" [flavour]="flavour">
 </app-flavour-item>

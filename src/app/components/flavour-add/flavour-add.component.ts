@@ -4,12 +4,12 @@ import { Flavour } from '../../model/Flavour';
 import { FlavourService } from '../../services/flavour.service';
 
 @Component({
-  selector: 'app-add-flavour',
-  templateUrl: './add-flavour.component.html',
-  styleUrls: ['./add-flavour.component.css']
+  selector: 'app-flavour-add',
+  templateUrl: './flavour-add.component.html',
+  styleUrls: ['./flavour-add.component.css']
 })
-export class AddFlavourComponent implements OnInit {
-  @Output() onAddFlavour: EventEmitter<Flavour> = new EventEmitter();
+export class FlavourAddComponent implements OnInit {
+  @Output() onFlavourAdd: EventEmitter<Flavour> = new EventEmitter();
   flavour_name!: string;
   flavour_owner!: string;
   errorMsg:any;
