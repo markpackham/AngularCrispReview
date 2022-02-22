@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddCrispComponent } from './add-crisp.component';
+import { CrispAddComponent } from './crisp-add.component';
 
-describe('AddCrispComponent', () => {
-  let component: AddCrispComponent;
-  let fixture: ComponentFixture<AddCrispComponent>;
+describe('CrispAddComponent', () => {
+  let component: CrispAddComponent;
+  let fixture: ComponentFixture<CrispAddComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AddCrispComponent ]
+      declarations: [ CrispAddComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AddCrispComponent);
+    fixture = TestBed.createComponent(CrispAddComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

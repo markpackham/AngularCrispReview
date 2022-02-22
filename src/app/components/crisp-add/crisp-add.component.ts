@@ -4,12 +4,12 @@ import { Crisp } from '../../model/Crisp';
 import { CrispService } from '../../services/crisp.service';
 
 @Component({
-  selector: 'app-add-crisp',
-  templateUrl: './add-crisp.component.html',
-  styleUrls: ['./add-crisp.component.css']
+  selector: 'app-crisp-add',
+  templateUrl: './crisp-add.component.html',
+  styleUrls: ['./crisp-add.component.css']
 })
-export class AddCrispComponent implements OnInit {
-  @Output() onAddCrisp: EventEmitter<Crisp> = new EventEmitter();
+export class CrispAddComponent implements OnInit {
+  @Output() onCrispAdd: EventEmitter<Crisp> = new EventEmitter();
   crisp_name!: string;
   crisp_owner!: string;
   errorMsg:any;

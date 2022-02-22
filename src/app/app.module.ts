@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 
 import { AboutComponent } from './content/about/about.component';
 import { AddBrandComponent } from './components/add-brand/add-brand.component';
-import { AddCrispComponent } from './components/add-crisp/add-crisp.component';
+import { CrispAddComponent } from './components/crisp-add/crisp-add.component';
 import { AddFlavourComponent } from './components/add-flavour/add-flavour.component';
 import { AddOwnerComponent } from './components/add-owner/add-owner.component';
 import { AppComponent } from './app.component';
@@ -32,7 +32,7 @@ import { EditOwnerComponent } from './components/edit-owner/edit-owner.component
   declarations: [
     AboutComponent,
     AddBrandComponent,
-    AddCrispComponent,
+    CrispAddComponent,
     AddFlavourComponent,
     AddOwnerComponent,
     AppComponent,
