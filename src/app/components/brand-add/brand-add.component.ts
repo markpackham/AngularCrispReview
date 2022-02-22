@@ -4,12 +4,12 @@ import { Brand } from '../../model/Brand';
 import { BrandService } from '../../services/brand.service';
 
 @Component({
-  selector: 'app-add-brand',
-  templateUrl: './add-brand.component.html',
-  styleUrls: ['./add-brand.component.css']
+  selector: 'app-brand-add',
+  templateUrl: './brand-add.component.html',
+  styleUrls: ['./brand-add.component.css']
 })
-export class AddBrandComponent implements OnInit {
-  @Output() onAddBrand: EventEmitter<Brand> = new EventEmitter();
+export class BrandAddComponent implements OnInit {
+  @Output() onBrandAdd: EventEmitter<Brand> = new EventEmitter();
   brand_name!: string;
   brand_owner!: string;
   errorMsg:any;

@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 
 import { AboutComponent } from './content/about/about.component';
-import { AddBrandComponent } from './components/add-brand/add-brand.component';
+import { BrandAddComponent } from './components/brand-add/brand-add.component';
 import { CrispAddComponent } from './components/crisp-add/crisp-add.component';
 import { AddFlavourComponent } from './components/add-flavour/add-flavour.component';
 import { AddOwnerComponent } from './components/add-owner/add-owner.component';
@@ -31,7 +31,7 @@ import { OwnerEditComponent } from './components/owner-edit/owner-edit.component
 @NgModule({
   declarations: [
     AboutComponent,
-    AddBrandComponent,
+    BrandAddComponent,
     CrispAddComponent,
     AddFlavourComponent,
     AddOwnerComponent,
