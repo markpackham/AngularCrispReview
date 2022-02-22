@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './content/home/home.component';
 import { AboutComponent } from './content/about/about.component';
 import { BrandComponent } from './components/brands/brand/brand.component';
+import { BrandCreateComponent } from './components/brands/brand-create/brand-create.component';
+import { BrandReadComponent } from './components/brands/brand-read/brand-read.component';
 import { CrispComponent } from './components/crisps/crisp/crisp.component';
 import { FlavourComponent } from './components/flavours/flavour/flavour.component';
 import { OwnerComponent } from './components/owners/owner/owner.component';
@@ -15,6 +17,8 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'brands', component: BrandComponent },
+  { path: 'brands/brands-create', component: BrandCreateComponent },
+  { path: 'brands/brands-read', component: BrandReadComponent },
   { path: 'crisps', component: CrispComponent },
   { path: 'flavours', component: FlavourComponent },
   { path: 'owners', component: OwnerComponent },

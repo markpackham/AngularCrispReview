@@ -24,6 +24,8 @@ import { OwnerAddComponent } from './components/owners/owner-add/owner-add.compo
 import { OwnerComponent } from './components/owners/owner/owner.component';
 import { OwnerEditComponent } from './components/owners/owner-edit/owner-edit.component';
 import { OwnerItemComponent } from './components/owners/owner-item/owner-item.component';
+import { BrandCreateComponent } from './components/brands/brand-create/brand-create.component';
+import { BrandReadComponent } from './components/brands/brand-read/brand-read.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,8 @@ import { OwnerItemComponent } from './components/owners/owner-item/owner-item.co
     OwnerComponent,
     OwnerEditComponent,
     OwnerItemComponent,
+    BrandCreateComponent,
+    BrandReadComponent,
   ],
   imports: [
     AppRoutingModule,
