@@ -26,7 +26,7 @@ import { ContactComponent } from './content/contact/contact.component';
 import { EditBrandComponent } from './components/edit-brand/edit-brand.component';
 import { CrispEditComponent } from './components/crisp-edit/crisp-edit';
 import { EditFlavourComponent } from './components/edit-flavour/edit-flavour.component';
-import { EditOwnerComponent } from './components/edit-owner/edit-owner.component';
+import { OwnerEditComponent } from './components/owner-edit/owner-edit.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +52,7 @@ import { EditOwnerComponent } from './components/edit-owner/edit-owner.component
     EditBrandComponent,
     CrispEditComponent,
     EditFlavourComponent,
-    EditOwnerComponent,
+    OwnerEditComponent,
   ],
   imports: [
     AppRoutingModule,

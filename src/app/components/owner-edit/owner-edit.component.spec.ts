@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EditOwnerComponent } from './edit-owner.component';
+import { OwnerEditComponent } from './owner-edit.component';
 
-describe('EditOwnerComponent', () => {
-  let component: EditOwnerComponent;
-  let fixture: ComponentFixture<EditOwnerComponent>;
+describe('OwnerEditComponent', () => {
+  let component: OwnerEditComponent;
+  let fixture: ComponentFixture<OwnerEditComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EditOwnerComponent ]
+      declarations: [ OwnerEditComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EditOwnerComponent);
+    fixture = TestBed.createComponent(OwnerEditComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
