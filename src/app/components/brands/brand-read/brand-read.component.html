@@ -1,1 +1,16 @@
-<p>brand-read works!</p>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Brand Name</th>
+      <th scope="col">Brand Owner</th>
+      <th scope="col">Brand Database ID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let brand of brands">
+      <th scope="row">{{ brand.brand_name }}</th>
+      <td>{{ brand.brand_owner }}</td>
+      <td>{{ brand._id }}</td>
+    </tr>
+  </tbody>
+</table>
