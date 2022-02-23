@@ -23,6 +23,9 @@ export class BrandReadComponent implements OnInit {
     this.service.deleteBrand(id).subscribe((res)=>{
       console.log(res,'deleteCrisp');
       this.deleteMsg = "Deletion done!";
+
+      // After deletion get all non deleted brands again
+      this.service.getBrands().subscribe((brands) => (this.brands = brands));
     });
   }
 
