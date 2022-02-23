@@ -1,1 +1,7 @@
-<p>brand-create works!</p>
+<form [formGroup]="brandForm">
+  <input class="form-control" type="text" name="brand_name" id="brand_name" placeholder="Add Brand Name" required
+    formControlName="brand_name" />
+  <input class="form-control" type="text" name="brand_owner" id="brand_owner" placeholder="Add Brand Owner" required
+    formControlName="brand_owner" />
+  <button type="submit" class="btn btn-primary mt-1">Create Brand</button>
+</form>

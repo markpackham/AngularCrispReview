@@ -9,9 +9,9 @@ import { BrandService } from '../../../services/brand.service';
 })
 export class BrandReadComponent implements OnInit {
 
-  constructor(private service: BrandService) { }
-
   brands: Brand[] = [];
+
+  constructor(private service: BrandService) { }
 
   ngOnInit(): void {
     this.service.getBrands().subscribe((brands) => (this.brands = brands));
