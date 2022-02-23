@@ -1,3 +1,7 @@
+<div *ngIf="deleteMsg" class="alert alert-danger alert-dismissible fade show" role="alert">
+  <strong>{{deleteMsg}}</strong>
+</div>
+
 <table class="table table-bordered">
   <thead>
     <tr>
@@ -12,7 +16,7 @@
       <th scope="row">{{ brand.brand_name }}</th>
       <td>{{ brand.brand_owner }}</td>
       <td>{{ brand._id }}</td>
-      <td><button class="btn btn-sm btn-danger">Delete</button></td>
+      <td><button class="btn btn-sm btn-danger" (click)="onDelete(brand._id)">Delete</button></td>
     </tr>
   </tbody>
 </table>
