@@ -11,11 +11,14 @@ import { BrandService } from '../../../services/brand.service';
 export class BrandCreateComponent implements OnInit {
 
   brands: Brand[] = [];
-
+ 
   brandForm = new FormGroup({
     'brand_name':new FormControl('',[Validators.required, Validators.minLength(3)]),
     'brand_owner':new FormControl('',[Validators.required, Validators.minLength(3)]),
   });
+
+  errorMsg:any;
+  successMsg:any;
 
   constructor(private service: BrandService) { }
 
@@ -24,6 +27,18 @@ export class BrandCreateComponent implements OnInit {
 
   addBrand(brand: Brand) {
     this.service.addBrand(brand).subscribe((brand) => this.brands.push(brand));
+  }
+
+  brandSubmit() {
+    if(this.brandForm.valid){
+      this.service.addBrand(this.brandForm.value).subscribe((res)=>{
+          this.brandForm.reset();
+          this.successMsg = "Creation successful!";
+      });
+    }
+    else{
+      this.errorMsg = 'All fields required!';
+    }
   }
 
 }
