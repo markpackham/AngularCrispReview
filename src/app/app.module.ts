@@ -3,6 +3,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 
+
+
 import { AboutComponent } from './content/about/about.component';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -26,6 +28,10 @@ import { OwnerEditComponent } from './components/owners/owner-edit/owner-edit.co
 import { OwnerItemComponent } from './components/owners/owner-item/owner-item.component';
 import { BrandCreateComponent } from './components/brands/brand-create/brand-create.component';
 import { BrandReadComponent } from './components/brands/brand-read/brand-read.component';
+import { CrispService } from './services/crisp.service';
+import { BrandService } from './services/brand.service';
+import { FlavourService } from './services/flavour.service';
+import { OwnerService } from './services/owner.service';
 
 @NgModule({
   declarations: [
@@ -59,7 +65,7 @@ import { BrandReadComponent } from './components/brands/brand-read/brand-read.co
     HttpClientModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [BrandService, CrispService, FlavourService, OwnerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
