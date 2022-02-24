@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Crisp } from '../../../model/Crisp';
+import { CrispService } from '../../../services/crisp.service';
 
 @Component({
   selector: 'app-crisp-read',
@@ -7,9 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CrispReadComponent implements OnInit {
 
-  constructor() { }
+  crisps: Crisp[] = [];
+  deleteMsg!: string;
+  @Output() onDeleteCrisp: EventEmitter<Crisp> = new EventEmitter();
+
+  constructor(private service: CrispService) { }
 
   ngOnInit(): void {
+    this.getAllCrisps();
+  }
+
+  onDelete(id: any) {
+    this.service.deleteCrisp(id).subscribe((res)=>{
+      console.log(res,'deleteCrisp');
+      this.deleteMsg = "Deletion done!";
+
+      this.getAllCrisps();
+    });
+  }
+
+  getAllCrisps(){
+    this.service.getCrisps().subscribe((crisps) => (this.crisps = crisps));
   }
 
 }

@@ -65,7 +65,7 @@ export class OwnerCreateComponent implements OnInit {
       });
     }
     else{
-      this.errorMsg = 'All fields required!';
+      this.errorMsg = 'Owner name and address must be at least 5 characters!';
     }
   }
 
