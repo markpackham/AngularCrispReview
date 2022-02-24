@@ -1,1 +1,36 @@
-<p>crisp-read works!</p>
+<h2>Crisps total {{crisps.length}}</h2>
+
+<div *ngIf="deleteMsg" class="alert alert-danger alert-dismissible fade show" role="alert">
+  <strong>{{deleteMsg}}</strong>
+</div>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Crisp Name</th>
+      <th scope="col">Image</th>
+      <th scope="col">Flavour</th>
+      <th scope="col">Brand</th>
+      <th scope="col">Weight In Grams</th>
+      <th scope="col">Review</th>
+      <th scope="col">Review Score</th>
+      <th scope="col">Edits</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let crisp of crisps">
+      <th scope="row">{{ crisp.crisp_name }}</th>
+      <td><img class="crisp-img" src="{{ crisp.crisp_image }}" alt="Crisp Image"></td>
+      <td>{{ crisp.flavour_name }}</td>
+      <td>{{ crisp.brand_name }}</td>
+      <td>{{ crisp.weight }}g</td>
+      <td>{{ crisp.review }}</td>
+      <td>{{ crisp.review_score }}/5</td>
+      <td>
+        <button class="btn btn-sm btn-danger" (click)="onDelete(crisp._id)">Delete</button>
+        &nbsp;
+        <a class="btn btn-sm btn-secondary" [routerLink]="['/crisps/crisp-create',crisp._id]">Update</a>
+      </td>
+    </tr>
+  </tbody>
+</table>

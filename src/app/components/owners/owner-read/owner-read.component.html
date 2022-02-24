@@ -17,9 +17,9 @@
   <tbody>
     <tr *ngFor="let owner of owners">
       <th scope="row">{{ owner.owner_name }}</th>
-      <th>{{ owner.owner_address }}</th>
-      <th>{{ owner.owner_phone }}</th>
-      <th><a target="_blank" href="{{ owner.owner_website }}">{{ owner.owner_website }}</a></th>
+      <td>{{ owner.owner_address }}</td>
+      <td>{{ owner.owner_phone }}</td>
+      <td><a target="_blank" href="{{ owner.owner_website }}">{{ owner.owner_website }}</a></td>
       <td>
         <button class="btn btn-sm btn-danger" (click)="onDelete(owner._id)">Delete</button>
         &nbsp;
