@@ -35,7 +35,13 @@ export class CrispCreateComponent implements OnInit {
     if(this.getParamId){
       this.service.getCrisp(this.getParamId).subscribe((res)=>{
         this.crispForm.patchValue({
-          "crisp_name":res.crisp_name
+          "crisp_name":res.crisp_name,
+          "crisp_image":res.crisp_image,
+          "flavour_name":res.flavour_name,
+          "brand_name":res.brand_name,
+          "weight":res.weight,
+          "review":res.review,
+          "review_score":res.review_score,
         })
     });
     }
