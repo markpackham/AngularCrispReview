@@ -18,6 +18,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'brands', component: BrandComponent },
   { path: 'brands/brands-create', component: BrandCreateComponent },
+  { path: 'brands/brands-create/:id', component: BrandCreateComponent },
   { path: 'brands/brands-read', component: BrandReadComponent },
   { path: 'crisps', component: CrispComponent },
   { path: 'flavours', component: FlavourComponent },

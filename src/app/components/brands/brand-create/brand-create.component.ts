@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import { Brand } from '../../../model/Brand';
@@ -17,12 +18,15 @@ export class BrandCreateComponent implements OnInit {
     'brand_owner':new FormControl('',[Validators.required, Validators.minLength(3)]),
   });
 
-  errorMsg:any;
-  successMsg:any;
+  errorMsg!: string;
+  successMsg!: string;
+  getParamId: any;
 
-  constructor(private service: BrandService) { }
+  constructor(private service: BrandService, private router: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.getParamId = this.router.snapshot.paramMap.get('id');
+    console.log(this.getParamId);
   }
 
   addBrand(brand: Brand) {
