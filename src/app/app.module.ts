@@ -10,22 +10,13 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrandComponent } from './components/brands/brand/brand.component';
 import { ContactComponent } from './content/contact/contact.component';
-import { CrispAddComponent } from './components/crisps/crisp-add/crisp-add.component';
 import { CrispComponent } from './components/crisps/crisp/crisp.component';
-import { CrispEditComponent } from './components/crisps/crisp-edit/crisp-edit.component';
-import { CrispItemComponent } from './components/crisps/crisp-item/crisp-item.component';
-import { FlavourAddComponent } from './components/flavours/flavour-add/flavour-add.component';
 import { FlavourComponent } from './components/flavours/flavour/flavour.component';
-import { FlavourEditComponent } from './components/flavours/flavour-edit/flavour-edit.component';
-import { FlavourItemComponent } from './components/flavours/flavour-item/flavour-item.component';
 import { FooterComponent } from './layouts/footer/footer.component';
 import { HeaderComponent } from './layouts/header/header.component';
 import { HomeComponent } from './content/home/home.component';
 import { NotFoundComponent } from './helpers/not-found/not-found.component';
-import { OwnerAddComponent } from './components/owners/owner-add/owner-add.component';
 import { OwnerComponent } from './components/owners/owner/owner.component';
-import { OwnerEditComponent } from './components/owners/owner-edit/owner-edit.component';
-import { OwnerItemComponent } from './components/owners/owner-item/owner-item.component';
 import { BrandCreateComponent } from './components/brands/brand-create/brand-create.component';
 import { BrandReadComponent } from './components/brands/brand-read/brand-read.component';
 import { CrispService } from './services/crisp.service';
@@ -45,22 +36,13 @@ import { OwnerCreateComponent } from './components/owners/owner-create/owner-cre
     AppComponent,
     BrandComponent,
     ContactComponent,
-    CrispAddComponent,
     CrispComponent,
-    CrispEditComponent,
-    CrispItemComponent,
-    FlavourAddComponent,
     FlavourComponent,
-    FlavourEditComponent,
-    FlavourItemComponent,
     FooterComponent,
     HeaderComponent,
     HomeComponent,
     NotFoundComponent,
-    OwnerAddComponent,
     OwnerComponent,
-    OwnerEditComponent,
-    OwnerItemComponent,
     BrandCreateComponent,
     BrandReadComponent,
     CrispReadComponent,
