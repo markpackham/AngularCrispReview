@@ -41,7 +41,5 @@ export class BrandService {
     return this.http.put(`${this.apiUrl}/update/${id}`,data);
   }
 
-
-
 }
 
