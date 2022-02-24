@@ -16,7 +16,7 @@ export class BrandReadComponent implements OnInit {
   constructor(private service: BrandService) { }
 
   ngOnInit(): void {
-    this.service.getBrands().subscribe((brands) => (this.brands = brands));
+    this.getAllBrands();
   }
 
   onDelete(id: any) {
@@ -25,8 +25,12 @@ export class BrandReadComponent implements OnInit {
       this.deleteMsg = "Deletion done!";
 
       // After deletion get all non deleted brands again
-      this.service.getBrands().subscribe((brands) => (this.brands = brands));
+      this.getAllBrands();
     });
+  }
+
+  getAllBrands(){
+    this.service.getBrands().subscribe((brands) => (this.brands = brands));
   }
 
 }
