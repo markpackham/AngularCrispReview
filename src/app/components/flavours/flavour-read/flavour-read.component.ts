@@ -24,7 +24,6 @@ export class FlavourReadComponent implements OnInit {
       console.log(res,'deleteCrisp');
       this.deleteMsg = "Deletion done!";
 
-      // After deletion get all non deleted flavours again
       this.getAllFlavours();
     });
   }

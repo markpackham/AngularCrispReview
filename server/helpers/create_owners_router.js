@@ -40,7 +40,7 @@ const createOwnersRouter = function (collection) {
   //    }
   router.post("/owners", async (req, res) => {
     const newOwner = req.body;
-    if (newOwner.owner_name.length < 5 || newOwner.owner_address.length < 6) {
+    if (newOwner.owner_name.length < 5 || newOwner.owner_address.length < 5) {
       res.status(422);
       res.json({ status: 422, error: "422 Unprocessable Entity" });
     } else {

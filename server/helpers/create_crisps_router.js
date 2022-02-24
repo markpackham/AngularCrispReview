@@ -33,12 +33,7 @@ const createCrispsRouter = function (collection) {
   // CREATE
   router.post("/crisps", async (req, res) => {
     const newCrisp = req.body;
-    if (
-      newCrisp.crisp_name.length < 3 ||
-      newCrisp.brand_name.length < 3 ||
-      newCrisp.flavour_name.length < 3 ||
-      newCrisp.weight.length < 1
-    ) {
+    if (newCrisp.crisp_name.length < 3 || newCrisp.weight.length < 1) {
       res.status(422);
       res.json({ status: 422, error: "422 Unprocessable Entity" });
     } else {
