@@ -1,4 +1,4 @@
-<h2>Owners total {{owners.length}}</h2>
-<app-owner-add (onOwnerAdd)="addOwner($event)"></app-owner-add>
-<app-owner-item *ngFor="let owner of owners" [owner]="owner">
-</app-owner-item>
+<h1>Owners</h1>
+<a routerLink="/owners/owner-create" class="btn btn-primary">Create</a>
+&nbsp;
+<a routerLink="/owners/owner-read" class="btn btn-secondary">Read</a>

@@ -1,4 +1,4 @@
-<h2>Crisps total {{crisps.length}}</h2>
-<app-crisp-add (onCrispAdd)="addCrisp($event)"></app-crisp-add>
-<app-crisp-item *ngFor="let crisp of crisps" [crisp]="crisp">
-</app-crisp-item>
+<h1>Crisps</h1>
+<a routerLink="/crisps/crisp-create" class="btn btn-primary">Create</a>
+&nbsp;
+<a routerLink="/crisps/crisp-read" class="btn btn-secondary">Read</a>

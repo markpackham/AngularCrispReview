@@ -1,4 +1,4 @@
-<h2>Flavours total {{flavours.length}}</h2>
-<app-flavour-add (onFlavourAdd)="addFlavour($event)"></app-flavour-add>
-<app-flavour-item *ngFor="let flavour of flavours" [flavour]="flavour">
-</app-flavour-item>
+<h1>Flavours</h1>
+<a routerLink="/flavours/flavour-create" class="btn btn-primary">Create</a>
+&nbsp;
+<a routerLink="/flavours/flavour-read" class="btn btn-secondary">Read</a>
