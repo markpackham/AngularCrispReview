@@ -1,1 +1,24 @@
-<p>flavour-read works!</p>
+<h2>Flavours total {{flavours.length}}</h2>
+
+<div *ngIf="deleteMsg" class="alert alert-danger alert-dismissible fade show" role="alert">
+  <strong>{{deleteMsg}}</strong>
+</div>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Flavour Name</th>
+      <th scope="col">Edits</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let flavour of flavours">
+      <th scope="row">{{ flavour.flavour_name }}</th>
+      <td>
+        <button class="btn btn-sm btn-danger" (click)="onDelete(flavour._id)">Delete</button>
+        &nbsp;
+        <a class="btn btn-sm btn-secondary" [routerLink]="['/flavours/flavour-create',flavour._id]">Update</a>
+      </td>
+    </tr>
+  </tbody>
+</table>

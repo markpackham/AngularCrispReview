@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Flavour } from '../../../model/Flavour';
+import { FlavourService } from '../../../services/flavour.service';
 
 @Component({
   selector: 'app-flavour-read',
@@ -7,9 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FlavourReadComponent implements OnInit {
 
-  constructor() { }
+  flavours: Flavour[] = [];
+  deleteMsg!: string;
+  @Output() onDeleteFlavour: EventEmitter<Flavour> = new EventEmitter();
+
+  constructor(private service: FlavourService) { }
 
   ngOnInit(): void {
+    this.getAllFlavours();
+  }
+
+  onDelete(id: any) {
+    this.service.deleteFlavour(id).subscribe((res)=>{
+      console.log(res,'deleteCrisp');
+      this.deleteMsg = "Deletion done!";
+
+      // After deletion get all non deleted flavours again
+      this.getAllFlavours();
+    });
+  }
+
+  getAllFlavours(){
+    this.service.getFlavours().subscribe((flavours) => (this.flavours = flavours));
   }
 
 }
