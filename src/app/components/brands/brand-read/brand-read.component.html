@@ -1,3 +1,5 @@
+<h2>Brands total {{brands.length}}</h2>
+
 <div *ngIf="deleteMsg" class="alert alert-danger alert-dismissible fade show" role="alert">
   <strong>{{deleteMsg}}</strong>
 </div>
@@ -16,7 +18,11 @@
       <th scope="row">{{ brand.brand_name }}</th>
       <td>{{ brand.brand_owner }}</td>
       <td>{{ brand._id }}</td>
-      <td><button class="btn btn-sm btn-danger" (click)="onDelete(brand._id)">Delete</button></td>
+      <td>
+        <button class="btn btn-sm btn-danger" (click)="onDelete(brand._id)">Delete</button>
+        &nbsp;
+        <a class="btn btn-sm btn-secondary" routerLink="brands-create">Update</a>
+      </td>
     </tr>
   </tbody>
 </table>

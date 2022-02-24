@@ -18,8 +18,8 @@ export class BrandService {
 
   constructor(private http: HttpClient) {}
 
-  getBrands(): Observable<Brand[]> {
-    return this.http.get<Brand[]>(this.apiUrl);
+  addBrand(brand: Brand): Observable<Brand> {
+    return this.http.post<Brand>(this.apiUrl, brand, httpOptions);
   }
 
   deleteBrand(_id: any): Observable<any> {
@@ -27,19 +27,16 @@ export class BrandService {
     return this.http.delete(`${this.apiUrl}/delete/${ids}`);
   }
 
-  // updateBrand(brand: Brand): Observable<Brand> {
-  //   const url = `${this.apiUrl}/${brand._id}`;
-  //   return this.http.put<Brand>(url, brand, httpOptions);
-  // }
+  getBrands(): Observable<Brand[]> {
+    return this.http.get<Brand[]>(this.apiUrl);
+  }
 
   updateBrand(data: any, _id: any): Observable<any> {
     let ids = _id;
     return this.http.put(`${this.apiUrl}/${ids}`,data);
   }
 
-  addBrand(brand: Brand): Observable<Brand> {
-    return this.http.post<Brand>(this.apiUrl, brand, httpOptions);
-  }
+
 
 }
 
