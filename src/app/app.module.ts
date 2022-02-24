@@ -32,6 +32,12 @@ import { CrispService } from './services/crisp.service';
 import { BrandService } from './services/brand.service';
 import { FlavourService } from './services/flavour.service';
 import { OwnerService } from './services/owner.service';
+import { CrispReadComponent } from './components/crisps/crisp-read/crisp-read.component';
+import { CrispCreateComponent } from './components/crisps/crisp-create/crisp-create.component';
+import { FlavourCreateComponent } from './components/flavours/flavour-create/flavour-create.component';
+import { FlavourReadComponent } from './components/flavours/flavour-read/flavour-read.component';
+import { OwnerReadComponent } from './components/owners/owner-read/owner-read.component';
+import { OwnerCreateComponent } from './components/owners/owner-create/owner-create.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +63,12 @@ import { OwnerService } from './services/owner.service';
     OwnerItemComponent,
     BrandCreateComponent,
     BrandReadComponent,
+    CrispReadComponent,
+    CrispCreateComponent,
+    FlavourCreateComponent,
+    FlavourReadComponent,
+    OwnerReadComponent,
+    OwnerCreateComponent,
   ],
   imports: [
     AppRoutingModule,
