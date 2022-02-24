@@ -18,20 +18,27 @@ export class FlavourService {
 
   constructor(private http: HttpClient) {}
 
-  getFlavours(): Observable<Flavour[]> {
-    return this.http.get<Flavour[]>(this.apiUrl);
+  addFlavour(flavour: Flavour): Observable<Flavour> {
+    return this.http.post<Flavour>(this.apiUrl, flavour, httpOptions);
   }
 
   deleteFlavour(_id: any): Observable<any> {
     let ids = _id;
     return this.http.delete(`${this.apiUrl}/delete/${ids}`);
   }
-  updateFlavour(flavour: Flavour): Observable<Flavour> {
-    const url = `${this.apiUrl}/${flavour._id}`;
-    return this.http.put<Flavour>(url, flavour, httpOptions);
+
+  getFlavour(_id: any): Observable<Flavour> {
+    let id = _id;
+    return this.http.get<Flavour>(`${this.apiUrl}/${id}`);
   }
 
-  addFlavour(flavour: Flavour): Observable<Flavour> {
-    return this.http.post<Flavour>(this.apiUrl, flavour, httpOptions);
+  getFlavours(): Observable<Flavour[]> {
+    return this.http.get<Flavour[]>(this.apiUrl);
   }
+
+  updateFlavour(data: any, _id: any): Observable<any> {
+    let id = _id;
+    return this.http.put(`${this.apiUrl}/update/${id}`,data);
+  }
+
 }

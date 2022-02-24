@@ -18,8 +18,8 @@ export class CrispService {
 
   constructor(private http: HttpClient) {}
 
-  getCrisps(): Observable<Crisp[]> {
-    return this.http.get<Crisp[]>(this.apiUrl);
+  addCrisp(crisp: Crisp): Observable<Crisp> {
+    return this.http.post<Crisp>(this.apiUrl, crisp, httpOptions);
   }
 
   deleteCrisp(_id: any): Observable<any> {
@@ -27,12 +27,19 @@ export class CrispService {
     return this.http.delete(`${this.apiUrl}/delete/${ids}`);
   }
 
-  updateCrisp(crisp: Crisp): Observable<Crisp> {
-    const url = `${this.apiUrl}/${crisp._id}`;
-    return this.http.put<Crisp>(url, crisp, httpOptions);
+  getCrisp(_id: any): Observable<Crisp> {
+    let id = _id;
+    return this.http.get<Crisp>(`${this.apiUrl}/${id}`);
   }
 
-  addCrisp(crisp: Crisp): Observable<Crisp> {
-    return this.http.post<Crisp>(this.apiUrl, crisp, httpOptions);
+  getCrisps(): Observable<Crisp[]> {
+    return this.http.get<Crisp[]>(this.apiUrl);
   }
+
+  updateCrisp(data: any, _id: any): Observable<any> {
+    let id = _id;
+    return this.http.put(`${this.apiUrl}/update/${id}`,data);
+  }
+
 }
+

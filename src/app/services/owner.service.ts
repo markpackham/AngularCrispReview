@@ -18,8 +18,8 @@ export class OwnerService {
 
   constructor(private http: HttpClient) {}
 
-  getOwners(): Observable<Owner[]> {
-    return this.http.get<Owner[]>(this.apiUrl);
+  addOwner(owner: Owner): Observable<Owner> {
+    return this.http.post<Owner>(this.apiUrl, owner, httpOptions);
   }
 
   deleteOwner(_id: any): Observable<any> {
@@ -27,12 +27,18 @@ export class OwnerService {
     return this.http.delete(`${this.apiUrl}/delete/${ids}`);
   }
 
-  updateOwner(owner: Owner): Observable<Owner> {
-    const url = `${this.apiUrl}/${owner._id}`;
-    return this.http.put<Owner>(url, owner, httpOptions);
+  getOwner(_id: any): Observable<Owner> {
+    let id = _id;
+    return this.http.get<Owner>(`${this.apiUrl}/${id}`);
   }
 
-  addOwner(owner: Owner): Observable<Owner> {
-    return this.http.post<Owner>(this.apiUrl, owner, httpOptions);
+  getOwners(): Observable<Owner[]> {
+    return this.http.get<Owner[]>(this.apiUrl);
   }
+
+  updateOwner(data: any, _id: any): Observable<any> {
+    let id = _id;
+    return this.http.put(`${this.apiUrl}/update/${id}`,data);
+  }
+
 }
