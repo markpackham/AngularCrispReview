@@ -26,7 +26,9 @@ export class BrandCreateComponent implements OnInit {
 
   ngOnInit(): void {
     this.getParamId = this.router.snapshot.paramMap.get('id');
-    console.log(this.getParamId);
+    this.service.getBrand(this.getParamId).subscribe((res)=>{
+        console.log(res);
+    });
   }
 
   addBrand(brand: Brand) {
@@ -38,6 +40,17 @@ export class BrandCreateComponent implements OnInit {
       this.service.addBrand(this.brandForm.value).subscribe((res)=>{
           this.brandForm.reset();
           this.successMsg = "Creation successful!";
+      });
+    }
+    else{
+      this.errorMsg = 'All fields required!';
+    }
+  }
+
+  brandUpdate(){
+    if(this.brandForm.valid){
+      this.service.updateBrand(this.brandForm.value, this.getParamId).subscribe((res)=>{
+          this.successMsg = "Update successful!";
       });
     }
     else{

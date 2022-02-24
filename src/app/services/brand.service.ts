@@ -27,6 +27,11 @@ export class BrandService {
     return this.http.delete(`${this.apiUrl}/delete/${ids}`);
   }
 
+  getBrand(_id: any): Observable<Brand> {
+    let ids = _id;
+    return this.http.get<Brand>(`${this.apiUrl}/${ids}`);
+  }
+
   getBrands(): Observable<Brand[]> {
     return this.http.get<Brand[]>(this.apiUrl);
   }
