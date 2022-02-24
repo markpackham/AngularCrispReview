@@ -28,8 +28,8 @@ export class BrandService {
   }
 
   getBrand(_id: any): Observable<Brand> {
-    let ids = _id;
-    return this.http.get<Brand>(`${this.apiUrl}/${ids}`);
+    let id = _id;
+    return this.http.get<Brand>(`${this.apiUrl}/${id}`);
   }
 
   getBrands(): Observable<Brand[]> {
@@ -37,8 +37,8 @@ export class BrandService {
   }
 
   updateBrand(data: any, _id: any): Observable<any> {
-    let ids = _id;
-    return this.http.put(`${this.apiUrl}/${ids}`,data);
+    let id = _id;
+    return this.http.put(`${this.apiUrl}/update/${id}`,data);
   }
 
 

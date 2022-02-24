@@ -27,7 +27,10 @@ export class BrandCreateComponent implements OnInit {
   ngOnInit(): void {
     this.getParamId = this.router.snapshot.paramMap.get('id');
     this.service.getBrand(this.getParamId).subscribe((res)=>{
-        console.log(res);
+        this.brandForm.patchValue({
+          "brand_name":res.brand_name,
+          "brand_owner":res.brand_owner
+        })
     });
   }
 
