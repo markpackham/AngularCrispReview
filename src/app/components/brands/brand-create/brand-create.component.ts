@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import { Brand } from '../../../model/Brand';
 import { BrandService } from '../../../services/brand.service';
+import { Owner } from '../../../model/Owner';
+import { OwnerService } from '../../../services/owner.service';
 
 @Component({
   selector: 'app-brand-create',
@@ -12,6 +14,7 @@ import { BrandService } from '../../../services/brand.service';
 export class BrandCreateComponent implements OnInit {
 
   brands: Brand[] = [];
+  owners: Owner[] = [];
  
   brandForm = new FormGroup({
     'brand_name':new FormControl('',[Validators.required, Validators.minLength(3)]),
@@ -22,10 +25,12 @@ export class BrandCreateComponent implements OnInit {
   successMsg!: string;
   getParamId: any;
 
-  constructor(private service: BrandService, private router: ActivatedRoute) { }
+  constructor(private service: BrandService, private serviceOwner: OwnerService, private router: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.getParamId = this.router.snapshot.paramMap.get('id');
+
+    this.getAllOwners();
 
     if(this.getParamId){
       this.service.getBrand(this.getParamId).subscribe((res)=>{
@@ -62,6 +67,10 @@ export class BrandCreateComponent implements OnInit {
     else{
       this.errorMsg = 'All fields required!';
     }
+  }
+
+  getAllOwners(){
+    this.serviceOwner.getOwners().subscribe((owners) => (this.owners = owners));
   }
 
 }

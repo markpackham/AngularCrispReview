@@ -10,8 +10,12 @@
   <form [formGroup]="brandForm">
     <input class="form-control" type="text" name="brand_name" id="brand_name" placeholder="Add Brand Name" required
       formControlName="brand_name" />
-    <input class="form-control" type="text" name="brand_owner" id="brand_owner" placeholder="Add Brand Owner" required
-      formControlName="brand_owner" />
+
+    <label class="m-2" for="brand_owner">Brand Owner</label>
+
+    <select class="form-select" name="brand_owner" id="brand_owner" formControlName="brand_owner">
+      <option *ngFor="let owner of owners" value="{{owner.owner_name}}">{{owner.owner_name}}</option>
+    </select>
 
     <!-- Create and Update buttons shown dependant on an id existing -->
     <button type="submit" class="btn btn-primary mt-1" *ngIf="!getParamId" (click)="brandSubmit()">Create</button>
