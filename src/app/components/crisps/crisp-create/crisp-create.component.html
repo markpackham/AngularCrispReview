@@ -14,11 +14,17 @@
     <input class="form-control" type="text" name="crisp_image" id="crisp_image" placeholder="Add Image"
       formControlName="crisp_image" />
 
-    <input class="form-control" type="text" name="flavour_name" id="flavour_name" placeholder="Add Flavour" required
-      formControlName="flavour_name" />
+    <label class="m-2" for="flavour_name">Flavour Name</label>
 
-    <input class="form-control" type="text" name="brand_name" id="brand_name" placeholder="Add Brand" required
-      formControlName="brand_name" />
+    <select class="form-select" name="flavour_name" id="flavour_name" formControlName="flavour_name">
+      <option *ngFor="let flavour of flavours" value="{{flavour.flavour_name}}">{{flavour.flavour_name}}</option>
+    </select>
+
+    <label class="m-2" for="brand_name">Brand Name</label>
+
+    <select class="form-select" name="brand_name" id="brand_name" formControlName="brand_name">
+      <option *ngFor="let brand of brands" value="{{brand.brand_name}}">{{brand.brand_name}}</option>
+    </select>
 
     <input class="form-control" type="number" name="weight" id="weight" placeholder="Add Weight In Grams" required
       formControlName="weight" />

@@ -38,6 +38,10 @@ export class CrispCreateComponent implements OnInit {
   ngOnInit(): void {
     this.getParamId = this.router.snapshot.paramMap.get('id');
 
+    this.getAllBrands();
+
+    this.getAllFlavours();
+
     if(this.getParamId){
       this.service.getCrisp(this.getParamId).subscribe((res)=>{
         this.crispForm.patchValue({
