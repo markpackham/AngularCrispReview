@@ -15,7 +15,7 @@ export class OwnerCreateComponent implements OnInit {
   owners: Owner[] = [];
  
   ownerForm = new FormGroup({
-    'owner_name':new FormControl('',[Validators.required, Validators.minLength(5)]),
+    'owner_name':new FormControl('',[Validators.required, Validators.minLength(5)], this.customValidator.validateOwnerNameNotTaken.bind(this.customValidator)),
     'owner_address':new FormControl('',[Validators.required, Validators.minLength(5)]),
     'owner_phone':new FormControl(''),
     'owner_website':new FormControl(''),
@@ -59,7 +59,7 @@ export class OwnerCreateComponent implements OnInit {
   }
 
   ownerUpdate(){
-    if(this.ownerForm.valid){
+    if(this.ownerForm.value.owner_name.length > 4 && this.ownerForm.value.owner_address.length > 4){
       this.service.updateOwner(this.ownerForm.value, this.getParamId).subscribe((res)=>{
         console.log(res);
           this.successMsg = "Update successful!";
