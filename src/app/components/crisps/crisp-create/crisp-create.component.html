@@ -1,52 +1,53 @@
-  <!-- Error message -->
-  <div *ngIf="errorMsg" class="alert alert-warning alert-dismissible fade show" role="alert">
-    <strong>{{errorMsg}}</strong>
-    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-  </div>
-  <!-- Success message -->
-  <div *ngIf="successMsg" class="alert alert-success alert-dismissible fade show" role="alert">
-    <strong>{{successMsg}}</strong>
-    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-  </div>
+<h2>Create Crisp</h2>
+<!-- Error message -->
+<div *ngIf="errorMsg" class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>{{errorMsg}}</strong>
+  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+</div>
+<!-- Success message -->
+<div *ngIf="successMsg" class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>{{successMsg}}</strong>
+  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+</div>
 
-  <form [formGroup]="crispForm">
-    <input class="form-control" type="text" name="crisp_name" id="crisp_name" placeholder="Add Crisp Name" required
-      formControlName="crisp_name" />
+<form [formGroup]="crispForm">
+  <input class="form-control" type="text" name="crisp_name" id="crisp_name" placeholder="Add Crisp Name" required
+    formControlName="crisp_name" />
 
-    <input class="form-control" type="text" name="crisp_image" id="crisp_image" placeholder="Add Image"
-      formControlName="crisp_image" />
+  <input class="form-control" type="text" name="crisp_image" id="crisp_image" placeholder="Add Image"
+    formControlName="crisp_image" />
 
-    <label class="m-2" for="flavour_name">Flavour Name</label>
+  <label class="m-2" for="flavour_name">Flavour Name</label>
 
-    <select class="form-select" name="flavour_name" id="flavour_name" formControlName="flavour_name">
-      <option *ngFor="let flavour of flavours" value="{{flavour.flavour_name}}">{{flavour.flavour_name}}</option>
-    </select>
+  <select class="form-select" name="flavour_name" id="flavour_name" formControlName="flavour_name">
+    <option *ngFor="let flavour of flavours" value="{{flavour.flavour_name}}">{{flavour.flavour_name}}</option>
+  </select>
 
-    <label class="m-2" for="brand_name">Brand Name</label>
+  <label class="m-2" for="brand_name">Brand Name</label>
 
-    <select class="form-select" name="brand_name" id="brand_name" formControlName="brand_name">
-      <option *ngFor="let brand of brands" value="{{brand.brand_name}}">{{brand.brand_name}}</option>
-    </select>
+  <select class="form-select" name="brand_name" id="brand_name" formControlName="brand_name">
+    <option *ngFor="let brand of brands" value="{{brand.brand_name}}">{{brand.brand_name}}</option>
+  </select>
 
-    <input class="form-control" type="number" min="1" name="weight" id="weight" placeholder="Add Weight In Grams"
-      required formControlName="weight" />
+  <input class="form-control" type="number" min="1" name="weight" id="weight" placeholder="Add Weight In Grams" required
+    formControlName="weight" />
 
-    <input class="form-control" type="text" name="review" id="review" placeholder="Add Review" required
-      formControlName="review" />
+  <input class="form-control" type="text" name="review" id="review" placeholder="Add Review" required
+    formControlName="review" />
 
-    <label class="m-2" for="review_score">Review Score Out Of 5</label>
+  <label class="m-2" for="review_score">Review Score Out Of 5</label>
 
-    <select class="form-select" name="review_score" id="review_score" formControlName="review_score">
-      <option selected value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-    </select>
+  <select class="form-select" name="review_score" id="review_score" formControlName="review_score">
+    <option selected value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select>
 
-    <!-- Create and Update buttons shown dependant on an id existing -->
-    <button type="submit" class="btn btn-primary mt-1" *ngIf="!getParamId" (click)="crispSubmit()">Create</button>
+  <!-- Create and Update buttons shown dependant on an id existing -->
+  <button type="submit" class="btn btn-primary mt-1" *ngIf="!getParamId" (click)="crispSubmit()">Create</button>
 
-    <button type="submit" class="btn btn-secondary mt-1" *ngIf="getParamId" (click)="crispUpdate()">Update</button>
+  <button type="submit" class="btn btn-secondary mt-1" *ngIf="getParamId" (click)="crispUpdate()">Update</button>
 
-  </form>
+</form>

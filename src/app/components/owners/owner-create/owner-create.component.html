@@ -1,27 +1,28 @@
-  <!-- Error message -->
-  <div *ngIf="errorMsg" class="alert alert-warning alert-dismissible fade show" role="alert">
-    <strong>{{errorMsg}}</strong>
-    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-  </div>
-  <!-- Success message -->
-  <div *ngIf="successMsg" class="alert alert-success alert-dismissible fade show" role="alert">
-    <strong>{{successMsg}}</strong>
-    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-  </div>
+<h2>Create Owner</h2>
+<!-- Error message -->
+<div *ngIf="errorMsg" class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>{{errorMsg}}</strong>
+  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+</div>
+<!-- Success message -->
+<div *ngIf="successMsg" class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>{{successMsg}}</strong>
+  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+</div>
 
-  <form [formGroup]="ownerForm">
-    <input class="form-control" type="text" name="owner_name" id="owner_name" placeholder="Add Owner Name" required
-      formControlName="owner_name" />
-    <input class="form-control" type="text" name="owner_address" id="owner_address" placeholder="Add Address" required
-      formControlName="owner_address" />
-    <input class="form-control" type="text" name="owner_phone" id="owner_phone" placeholder="Add Phone"
-      formControlName="owner_phone" />
-    <input class="form-control" type="text" name="owner_website" id="owner_website" placeholder="Add Website"
-      formControlName="owner_website" />
+<form [formGroup]="ownerForm">
+  <input class="form-control" type="text" name="owner_name" id="owner_name" placeholder="Add Owner Name" required
+    formControlName="owner_name" />
+  <input class="form-control" type="text" name="owner_address" id="owner_address" placeholder="Add Address" required
+    formControlName="owner_address" />
+  <input class="form-control" type="text" name="owner_phone" id="owner_phone" placeholder="Add Phone"
+    formControlName="owner_phone" />
+  <input class="form-control" type="text" name="owner_website" id="owner_website" placeholder="Add Website"
+    formControlName="owner_website" />
 
-    <!-- Create and Update buttons shown dependant on an id existing -->
-    <button type="submit" class="btn btn-primary mt-1" *ngIf="!getParamId" (click)="ownerSubmit()">Create</button>
+  <!-- Create and Update buttons shown dependant on an id existing -->
+  <button type="submit" class="btn btn-primary mt-1" *ngIf="!getParamId" (click)="ownerSubmit()">Create</button>
 
-    <button type="submit" class="btn btn-secondary mt-1" *ngIf="getParamId" (click)="ownerUpdate()">Update</button>
+  <button type="submit" class="btn btn-secondary mt-1" *ngIf="getParamId" (click)="ownerUpdate()">Update</button>
 
-  </form>
+</form>
