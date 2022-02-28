@@ -23,8 +23,8 @@ export class CrispCreateComponent implements OnInit {
   crispForm = new FormGroup({
     'crisp_name':new FormControl('',[Validators.required, Validators.minLength(3)], this.customValidator.validateCrispNameNotTaken.bind(this.customValidator)),
     'crisp_image':new FormControl(''),
-    'flavour_name':new FormControl('',[Validators.required, Validators.minLength(3)]),
-    'brand_name':new FormControl('',[Validators.required, Validators.minLength(3)]),
+    'flavour_name':new FormControl('',[Validators.required]),
+    'brand_name':new FormControl('',[Validators.required]),
     'weight':new FormControl('',[Validators.required, Validators.min(1), Validators.minLength(1)]),
     'review':new FormControl('',[Validators.required]),
     'review_score':new FormControl('',[Validators.required,Validators.min(1), Validators.max(5)]),
@@ -75,7 +75,7 @@ export class CrispCreateComponent implements OnInit {
   }
 
   crispUpdate(){
-    if(this.crispForm.valid){
+    if(this.crispForm.value.crisp_name.length > 2 && this.crispForm.value.weight.length > 0 && this.crispForm.value.review_score.length > 0){
       this.service.updateCrisp(this.crispForm.value, this.getParamId).subscribe((res)=>{
         console.log(res);
           this.successMsg = "Update successful!";
