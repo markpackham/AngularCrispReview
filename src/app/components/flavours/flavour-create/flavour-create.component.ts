@@ -12,8 +12,6 @@ import { CustomValidationService } from '../../../services/custom-validation.ser
 })
 export class FlavourCreateComponent implements OnInit {
 
-  constructor(private customValidator: CustomValidationService, private router: ActivatedRoute, private service: FlavourService) { }
-
   flavours: Flavour[] = [];
  
   flavourForm = new FormGroup({
@@ -23,6 +21,8 @@ export class FlavourCreateComponent implements OnInit {
   errorMsg!: string;
   successMsg!: string;
   getParamId: any;
+
+  constructor(private customValidator: CustomValidationService, private router: ActivatedRoute, private service: FlavourService) { }
 
   ngOnInit(): void {
     this.getParamId = this.router.snapshot.paramMap.get('id');
