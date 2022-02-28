@@ -11,6 +11,25 @@ export class CustomValidationService {
 
   constructor(private http: HttpClient) { }
 
+
+  validateBrandNameNotTaken(control: AbstractControl) {
+    return this.checkBrandNameNotTaken(control.value).pipe(
+      map(res => {
+        return res ? null : { brand_nameTaken: true };
+      })
+    );
+  }
+
+  checkBrandNameNotTaken(brand_name: string): Observable<boolean> {
+    return this.http.get("http://localhost:3000/brands").pipe(
+      map((brandList: any) => 
+      brandList.filter((brand: { brand_name: string; }) => brand.brand_name === brand_name)
+      ),
+      map(brands => !brands.length)
+    );
+  }
+
+
   validateFlavourNameNotTaken(control: AbstractControl) {
     return this.checkFlavourNameNotTaken(control.value).pipe(
       map(res => {
