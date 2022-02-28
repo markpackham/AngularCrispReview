@@ -1,0 +1,9 @@
+nav {
+  margin: 0.625rem 0px;
+  background: var(--color-background);
+}
+
+nav ul {
+  background: var(--color-light-background);
+  padding: 0.25rem;
+}

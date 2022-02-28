@@ -14,7 +14,8 @@
       <th scope="col">Weight In Grams</th>
       <th scope="col">Review</th>
       <th scope="col">Review Score</th>
-      <th scope="col">Edits</th>
+      <th scope="col">Delete</th>
+      <th scope="col">Update</th>
     </tr>
   </thead>
   <tbody>
@@ -28,7 +29,8 @@
       <td>{{ crisp.review_score }}/5</td>
       <td>
         <button class="btn btn-sm btn-danger" (click)="onDelete(crisp._id)">Delete</button>
-        &nbsp;
+      </td>
+      <td>
         <a class="btn btn-sm btn-secondary" [routerLink]="['/crisps/crisp-create',crisp._id]">Update</a>
       </td>
     </tr>
