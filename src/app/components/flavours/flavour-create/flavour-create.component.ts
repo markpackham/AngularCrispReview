@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import { Flavour } from '../../../model/Flavour';
 import { FlavourService } from '../../../services/flavour.service';
+import { CustomValidationService } from '../../../services/custom-validation.service';
 
 @Component({
   selector: 'app-flavour-create',
@@ -11,17 +12,18 @@ import { FlavourService } from '../../../services/flavour.service';
 })
 export class FlavourCreateComponent implements OnInit {
 
+  constructor(private service: FlavourService, private router: ActivatedRoute, private customValidator: CustomValidationService
+    ) { }
+
   flavours: Flavour[] = [];
  
   flavourForm = new FormGroup({
-    'flavour_name':new FormControl('',[Validators.required, Validators.minLength(3)])
+    'flavour_name':new FormControl('',[Validators.required, Validators.minLength(3)],this.customValidator.validateFlavourNameNotTaken.bind(this.customValidator))
   });
 
   errorMsg!: string;
   successMsg!: string;
   getParamId: any;
-
-  constructor(private service: FlavourService, private router: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.getParamId = this.router.snapshot.paramMap.get('id');
@@ -47,7 +49,7 @@ export class FlavourCreateComponent implements OnInit {
       });
     }
     else{
-      this.errorMsg = 'All fields required!';
+      this.errorMsg = 'All fields required and flavour name must be unique!';
     }
   }
 
@@ -59,7 +61,7 @@ export class FlavourCreateComponent implements OnInit {
       });
     }
     else{
-      this.errorMsg = 'All fields required!';
+      this.errorMsg = 'All fields required or no change in flavour name!';
     }
   }
 
