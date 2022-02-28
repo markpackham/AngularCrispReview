@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FormGroup, AbstractControl } from "@angular/forms";
+import { AbstractControl } from "@angular/forms";
 import { HttpClient } from "@angular/common/http";
 import { map } from "rxjs/operators";
 import { Observable } from "rxjs";
@@ -19,13 +19,29 @@ export class CustomValidationService {
     );
   }
 
-
   checkFlavourNameNotTaken(flavour_name: string): Observable<boolean> {
     return this.http.get("http://localhost:3000/flavours").pipe(
       map((flavourList: any) => 
       flavourList.filter((flavour: { flavour_name: string; }) => flavour.flavour_name === flavour_name)
       ),
       map(flavours => !flavours.length)
+    );
+  }
+
+  validateBrandNameNotTaken(control: AbstractControl) {
+    return this.checkBrandNameNotTaken(control.value).pipe(
+      map(res => {
+        return res ? null : { brand_nameTaken: true };
+      })
+    );
+  }
+
+  checkBrandNameNotTaken(brand_name: string): Observable<boolean> {
+    return this.http.get("http://localhost:3000/brands").pipe(
+      map((brandList: any) => 
+      brandList.filter((brand: { brand_name: string; }) => brand.brand_name === brand_name)
+      ),
+      map(brands => !brands.length)
     );
   }
 

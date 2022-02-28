@@ -12,13 +12,12 @@ import { CustomValidationService } from '../../../services/custom-validation.ser
 })
 export class FlavourCreateComponent implements OnInit {
 
-  constructor(private service: FlavourService, private router: ActivatedRoute, private customValidator: CustomValidationService
-    ) { }
+  constructor(private customValidator: CustomValidationService, private router: ActivatedRoute, private service: FlavourService) { }
 
   flavours: Flavour[] = [];
  
   flavourForm = new FormGroup({
-    'flavour_name':new FormControl('',[Validators.required, Validators.minLength(3)],this.customValidator.validateFlavourNameNotTaken.bind(this.customValidator))
+    'flavour_name':new FormControl('',[Validators.required, Validators.minLength(3)], this.customValidator.validateFlavourNameNotTaken.bind(this.customValidator))
   });
 
   errorMsg!: string;
