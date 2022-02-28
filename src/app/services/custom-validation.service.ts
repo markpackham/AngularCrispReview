@@ -9,6 +9,11 @@ import { Observable } from "rxjs";
 })
 export class CustomValidationService {
 
+  private apiUrlBrands = 'http://localhost:3000/brands';
+  private apiUrlCrisps = 'http://localhost:3000/crisps';
+  private apiUrlFlavours = 'http://localhost:3000/flavours';
+  private apiUrlOwners = 'http://localhost:3000/owners';
+
   constructor(private http: HttpClient) { }
 
   // Respond as to whether or not the brand name is taken 
@@ -22,7 +27,7 @@ export class CustomValidationService {
 
   // See if brand name already taken in database
   checkBrandNameNotTaken(brand_name: string): Observable<boolean> {
-    return this.http.get("http://localhost:3000/brands").pipe(
+    return this.http.get(this.apiUrlBrands).pipe(
       map((brandList: any) => 
       brandList.filter((brand: { brand_name: string; }) => brand.brand_name === brand_name)
       ),
@@ -40,7 +45,7 @@ export class CustomValidationService {
   }
 
   checkCrispNameNotTaken(crisp_name: string): Observable<boolean> {
-    return this.http.get("http://localhost:3000/crisps").pipe(
+    return this.http.get(this.apiUrlCrisps).pipe(
       map((crispList: any) => 
       crispList.filter((crisp: { crisp_name: string; }) => crisp.crisp_name === crisp_name)
       ),
@@ -58,7 +63,7 @@ export class CustomValidationService {
   }
 
   checkFlavourNameNotTaken(flavour_name: string): Observable<boolean> {
-    return this.http.get("http://localhost:3000/flavours").pipe(
+    return this.http.get(this.apiUrlFlavours).pipe(
       map((flavourList: any) => 
       flavourList.filter((flavour: { flavour_name: string; }) => flavour.flavour_name === flavour_name)
       ),
@@ -76,7 +81,7 @@ export class CustomValidationService {
   }
 
   checkOwnerNameNotTaken(owner_name: string): Observable<boolean> {
-    return this.http.get("http://localhost:3000/owners").pipe(
+    return this.http.get(this.apiUrlOwners).pipe(
       map((ownerList: any) => 
       ownerList.filter((owner: { owner_name: string; }) => owner.owner_name === owner_name)
       ),
