@@ -66,4 +66,22 @@ export class CustomValidationService {
     );
   }
 
+
+  validateOwnerNameNotTaken(control: AbstractControl) {
+    return this.checkOwnerNameNotTaken(control.value).pipe(
+      map(res => {
+        return res ? null : { owner_nameTaken: true };
+      })
+    );
+  }
+
+  checkOwnerNameNotTaken(owner_name: string): Observable<boolean> {
+    return this.http.get("http://localhost:3000/owners").pipe(
+      map((ownerList: any) => 
+      ownerList.filter((owner: { owner_name: string; }) => owner.owner_name === owner_name)
+      ),
+      map(owners => !owners.length)
+    );
+  }
+
 }

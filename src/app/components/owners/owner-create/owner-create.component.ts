@@ -1,6 +1,7 @@
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import { CustomValidationService } from '../../../services/custom-validation.service';
 import { Owner } from '../../../model/Owner';
 import { OwnerService } from '../../../services/owner.service';
 
@@ -24,7 +25,7 @@ export class OwnerCreateComponent implements OnInit {
   successMsg!: string;
   getParamId: any;
 
-  constructor(private service: OwnerService, private router: ActivatedRoute) { }
+  constructor(private customValidator: CustomValidationService, private service: OwnerService, private router: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.getParamId = this.router.snapshot.paramMap.get('id');

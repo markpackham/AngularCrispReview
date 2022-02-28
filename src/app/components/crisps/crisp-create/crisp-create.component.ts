@@ -7,6 +7,7 @@ import { Flavour } from '../../../model/Flavour';
 import { BrandService } from '../../../services/brand.service';
 import { CrispService } from '../../../services/crisp.service';
 import { FlavourService } from '../../../services/flavour.service';
+import { CustomValidationService } from '../../../services/custom-validation.service';
 
 @Component({
   selector: 'app-crisp-create',
@@ -33,7 +34,7 @@ export class CrispCreateComponent implements OnInit {
   successMsg!: string;
   getParamId: any;
 
-  constructor(private service: CrispService, private serviceBrand: BrandService, private serviceFlavour: FlavourService, private router: ActivatedRoute) { }
+  constructor(private customValidator: CustomValidationService, private service: CrispService, private serviceBrand: BrandService, private serviceFlavour: FlavourService, private router: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.getParamId = this.router.snapshot.paramMap.get('id');
