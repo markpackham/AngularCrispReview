@@ -26,8 +26,8 @@
       <option *ngFor="let brand of brands" value="{{brand.brand_name}}">{{brand.brand_name}}</option>
     </select>
 
-    <input class="form-control" type="number" name="weight" id="weight" placeholder="Add Weight In Grams" required
-      formControlName="weight" />
+    <input class="form-control" type="number" min="1" name="weight" id="weight" placeholder="Add Weight In Grams"
+      required formControlName="weight" />
 
     <input class="form-control" type="text" name="review" id="review" placeholder="Add Review" required
       formControlName="review" />

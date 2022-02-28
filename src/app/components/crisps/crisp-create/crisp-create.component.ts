@@ -24,9 +24,9 @@ export class CrispCreateComponent implements OnInit {
     'crisp_image':new FormControl(''),
     'flavour_name':new FormControl('',[Validators.required, Validators.minLength(3)]),
     'brand_name':new FormControl('',[Validators.required, Validators.minLength(3)]),
-    'weight':new FormControl('',[Validators.required, Validators.minLength(1)]),
-    'review':new FormControl(''),
-    'review_score':new FormControl(''),
+    'weight':new FormControl('',[Validators.required, Validators.min(1), Validators.minLength(1)]),
+    'review':new FormControl('',[Validators.required]),
+    'review_score':new FormControl('',[Validators.required,Validators.min(1), Validators.max(5)]),
   });
 
   errorMsg!: string;
@@ -69,7 +69,7 @@ export class CrispCreateComponent implements OnInit {
       });
     }
     else{
-      this.errorMsg = 'Only the image, review and review score can be empty!';
+      this.errorMsg = 'Only the image can be empty!';
     }
   }
 
