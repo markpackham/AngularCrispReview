@@ -75,7 +75,7 @@ export class CrispCreateComponent implements OnInit {
   }
 
   crispUpdate(){
-    if(this.crispForm.value.crisp_name.length > 2 && this.crispForm.value.weight.length > 0 && this.crispForm.value.review_score.length > 0){
+    if(this.crispForm.value.crisp_name.length > 2 && this.crispForm.value.weight > 0 && this.crispForm.value.review_score > 0){
       this.service.updateCrisp(this.crispForm.value, this.getParamId).subscribe((res)=>{
         console.log(res);
           this.successMsg = "Update successful!";
