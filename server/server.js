@@ -4,6 +4,9 @@ const app = express();
 const cors = require("cors");
 app.use(cors());
 
+const helmet = require("helmet");
+app.use(helmet());
+
 const bodyParser = require("body-parser");
 const MongoClient = require("mongodb").MongoClient;
 
