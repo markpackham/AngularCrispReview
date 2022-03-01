@@ -40,6 +40,10 @@ a {
   font-weight: bold;
 }
 
+p {
+  margin: 0.3125rem;
+}
+
 ul {
   border-radius: 5px;
   list-style: none;
