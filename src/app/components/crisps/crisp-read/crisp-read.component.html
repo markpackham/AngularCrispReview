@@ -12,28 +12,6 @@
   <thead>
     <tr>
       <th scope="col">Crisp Name</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let crisp of crisps">
-      <div *ngIf="crisp.crisp_name.includes(searchTerm)">
-        <th scope="row">{{ crisp.crisp_name }}</th>
-        <td>
-          <button class="btn btn-sm btn-danger" (click)="onDelete(crisp._id)">Delete</button>
-        </td>
-        <td>
-          <a class="btn btn-sm btn-warning" [routerLink]="['/crisps/crisp-create',crisp._id]">Update</a>
-        </td>
-      </div>
-    </tr>
-  </tbody>
-</table>
-
-<h4>All Crisps</h4>
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th scope="col">Crisp Name</th>
       <th scope="col">Image</th>
       <th scope="col">Flavour</th>
       <th scope="col">Brand</th>
@@ -46,17 +24,18 @@
   </thead>
   <tbody>
     <tr *ngFor="let crisp of crisps">
-      <th scope="row">{{ crisp.crisp_name }}</th>
-      <td><img class="crisp-img" src="{{ crisp.crisp_image }}" alt="Crisp Image"></td>
-      <td>{{ crisp.flavour_name }}</td>
-      <td>{{ crisp.brand_name }}</td>
-      <td>{{ crisp.weight }}g</td>
-      <td>{{ crisp.review }}</td>
-      <td>{{ crisp.review_score }}/5</td>
-      <td>
+      <th scope="row" *ngIf="crisp.crisp_name.includes(searchTerm) || searchTerm==null">{{ crisp.crisp_name }}</th>
+      <td *ngIf="crisp.crisp_name.includes(searchTerm) || searchTerm==null"><img class="crisp-img"
+          src="{{ crisp.crisp_image }}" alt="Crisp Image"></td>
+      <td *ngIf="crisp.crisp_name.includes(searchTerm) || searchTerm==null">{{ crisp.flavour_name }}</td>
+      <td *ngIf="crisp.crisp_name.includes(searchTerm) || searchTerm==null">{{ crisp.brand_name }}</td>
+      <td *ngIf="crisp.crisp_name.includes(searchTerm) || searchTerm==null">{{ crisp.weight }}g</td>
+      <td *ngIf="crisp.crisp_name.includes(searchTerm) || searchTerm==null">{{ crisp.review }}</td>
+      <td *ngIf="crisp.crisp_name.includes(searchTerm) || searchTerm==null">{{ crisp.review_score }}/5</td>
+      <td *ngIf="crisp.crisp_name.includes(searchTerm) || searchTerm==null">
         <button class="btn btn-sm btn-danger" (click)="onDelete(crisp._id)">Delete</button>
       </td>
-      <td>
+      <td *ngIf="crisp.crisp_name.includes(searchTerm) || searchTerm==null">
         <a class="btn btn-sm btn-warning" [routerLink]="['/crisps/crisp-create',crisp._id]">Update</a>
       </td>
     </tr>

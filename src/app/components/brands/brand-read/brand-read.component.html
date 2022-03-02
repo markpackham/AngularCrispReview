@@ -12,28 +12,6 @@
   <thead>
     <tr>
       <th scope="col">Brand Name</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let brand of brands">
-      <div *ngIf="brand.brand_name.includes(searchTerm)">
-        <th scope="row">{{ brand.brand_name }}</th>
-        <td>
-          <button class="btn btn-sm btn-danger" (click)="onDelete(brand._id)">Delete</button>
-        </td>
-        <td>
-          <a class="btn btn-sm btn-warning" [routerLink]="['/brands/brand-create',brand._id]">Update</a>
-        </td>
-      </div>
-    </tr>
-  </tbody>
-</table>
-
-<h4>All Brands</h4>
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th scope="col">Brand Name</th>
       <th scope="col">Brand Owner</th>
       <th scope="col">Delete</th>
       <th scope="col">Update</th>
@@ -41,12 +19,12 @@
   </thead>
   <tbody>
     <tr *ngFor="let brand of brands">
-      <th scope="row">{{ brand.brand_name }}</th>
-      <td>{{ brand.brand_owner }}</td>
-      <td>
+      <th scope="row" *ngIf="brand.brand_name.includes(searchTerm) || searchTerm==null">{{ brand.brand_name }}</th>
+      <td *ngIf="brand.brand_name.includes(searchTerm) || searchTerm==null">{{ brand.brand_owner }}</td>
+      <td *ngIf="brand.brand_name.includes(searchTerm) || searchTerm==null">
         <button class="btn btn-sm btn-danger" (click)="onDelete(brand._id)">Delete</button>
       </td>
-      <td>
+      <td *ngIf="brand.brand_name.includes(searchTerm) || searchTerm==null">
         <a class="btn btn-sm btn-warning" [routerLink]="['/brands/brand-create',brand._id]">Update</a>
       </td>
     </tr>
