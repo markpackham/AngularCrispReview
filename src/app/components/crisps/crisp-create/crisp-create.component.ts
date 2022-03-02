@@ -19,6 +19,7 @@ export class CrispCreateComponent implements OnInit {
   brands: Brand[] = [];
   crisps: Crisp[] = [];
   flavours: Flavour[] = [];
+  order: string = 'flavour_name';
  
   crispForm = new FormGroup({
     'crisp_name':new FormControl('',[Validators.required, Validators.minLength(3)], this.customValidator.validateCrispNameNotTaken.bind(this.customValidator)),
@@ -42,7 +43,7 @@ export class CrispCreateComponent implements OnInit {
     this.getAllBrands();
 
     this.getAllFlavours();
-
+    
     if(this.getParamId){
       this.service.getCrisp(this.getParamId).subscribe((res)=>{
         this.crispForm.patchValue({

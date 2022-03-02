@@ -20,7 +20,8 @@
   <label class="m-2" for="flavour_name">Flavour Name</label>
 
   <select class="form-select" name="flavour_name" id="flavour_name" formControlName="flavour_name">
-    <option *ngFor="let flavour of flavours" value="{{flavour.flavour_name}}">{{flavour.flavour_name}}</option>
+    <option *ngFor="let flavour of flavours | orderBy: order" value="{{flavour.flavour_name}}">{{flavour.flavour_name}}
+    </option>
   </select>
 
   <label class="m-2" for="brand_name">Brand Name</label>

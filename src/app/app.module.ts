@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { OrderModule } from 'ngx-order-pipe';
 import { NgModule } from '@angular/core';
 
 
@@ -56,6 +57,7 @@ import { OwnerCreateComponent } from './components/owners/owner-create/owner-cre
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    OrderModule,
     ReactiveFormsModule,
   ],
   providers: [BrandService, CrispService, FlavourService, OwnerService],

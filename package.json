@@ -26,6 +26,7 @@
     "helmet": "^5.0.2",
     "mongo": "^0.1.0",
     "mongodb": "^4.3.1",
+    "ngx-order-pipe": "^2.2.0",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
