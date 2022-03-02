@@ -20,6 +20,10 @@ export class OwnerReadComponent implements OnInit {
     this.getAllOwners();
   }
 
+  clearSearch(){
+    this.searchTerm = "";
+  }
+
   onDelete(id: any) {
     this.service.deleteOwner(id).subscribe((res)=>{
       console.log(res,'deleteCrisp');

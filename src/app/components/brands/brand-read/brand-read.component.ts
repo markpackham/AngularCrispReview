@@ -20,6 +20,10 @@ export class BrandReadComponent implements OnInit {
     this.getAllBrands();
   }
 
+  clearSearch(){
+    this.searchTerm = "";
+  }
+
   onDelete(id: any) {
     this.service.deleteBrand(id).subscribe((res)=>{
       console.log(res,'deleteCrisp');

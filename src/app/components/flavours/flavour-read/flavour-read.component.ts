@@ -20,6 +20,10 @@ export class FlavourReadComponent implements OnInit {
     this.getAllFlavours();
   }
 
+  clearSearch(){
+    this.searchTerm = "";
+  }
+
   onDelete(id: any) {
     this.service.deleteFlavour(id).subscribe((res)=>{
       console.log(res,'deleteCrisp');

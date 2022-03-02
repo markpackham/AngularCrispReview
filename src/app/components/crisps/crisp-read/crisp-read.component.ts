@@ -20,6 +20,10 @@ export class CrispReadComponent implements OnInit {
     this.getAllCrisps();
   }
 
+  clearSearch(){
+    this.searchTerm = "";
+  }
+
   onDelete(id: any) {
     this.service.deleteCrisp(id).subscribe((res)=>{
       console.log(res,'deleteCrisp');

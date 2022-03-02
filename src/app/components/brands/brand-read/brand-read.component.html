@@ -8,6 +8,8 @@
 
 <h4>Search For Brand</h4>
 <input class="form-control" type="text" name="searchTerm" placeholder="Enter brand name" [(ngModel)]="searchTerm">
+<button type="button" class="btn btn-sm btn-danger" (click)="clearSearch()">Clear Search</button>
+
 <table class="table table-bordered">
   <thead>
     <tr>
