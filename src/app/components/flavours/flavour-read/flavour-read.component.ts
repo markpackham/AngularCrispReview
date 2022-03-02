@@ -11,6 +11,7 @@ export class FlavourReadComponent implements OnInit {
 
   flavours: Flavour[] = [];
   deleteMsg!: string;
+  searchTerm!: string;
   @Output() onDeleteFlavour: EventEmitter<Flavour> = new EventEmitter();
 
   constructor(private service: FlavourService) { }

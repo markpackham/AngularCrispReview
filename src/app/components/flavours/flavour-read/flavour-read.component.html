@@ -6,6 +6,30 @@
   <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
 </div>
 
+<h4>Search For Flavour</h4>
+<input class="form-control" type="text" name="searchTerm" placeholder="Enter flavour name" [(ngModel)]="searchTerm">
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Flavour Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let flavour of flavours">
+      <div *ngIf="flavour.flavour_name.includes(searchTerm)">
+        <th scope="row">{{ flavour.flavour_name }}</th>
+        <td>
+          <button class="btn btn-sm btn-danger" (click)="onDelete(flavour._id)">Delete</button>
+        </td>
+        <td>
+          <a class="btn btn-sm btn-secondary" [routerLink]="['/flavours/flavour-create',flavour._id]">Update</a>
+        </td>
+      </div>
+    </tr>
+  </tbody>
+</table>
+
+<h4>All Flavours</h4>
 <table class="table table-bordered">
   <thead>
     <tr>
