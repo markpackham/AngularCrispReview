@@ -10,6 +10,7 @@ import { BrandService } from '../../../services/brand.service';
 export class BrandReadComponent implements OnInit {
 
   brands: Brand[] = [];
+  searchTerm!: string;
   deleteMsg!: string;
   @Output() onDeleteBrand: EventEmitter<Brand> = new EventEmitter();
 

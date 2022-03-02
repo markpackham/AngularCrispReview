@@ -11,6 +11,7 @@ export class OwnerReadComponent implements OnInit {
 
   owners: Owner[] = [];
   deleteMsg!: string;
+  searchTerm!: string;
   @Output() onDeleteOwner: EventEmitter<Owner> = new EventEmitter();
 
   constructor(private service: OwnerService) { }

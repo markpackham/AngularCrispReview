@@ -6,6 +6,30 @@
   <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
 </div>
 
+<h4>Search For Owner</h4>
+<input class="form-control" type="text" name="searchTerm" placeholder="Enter owner name" [(ngModel)]="searchTerm">
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Owner Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let owner of owners">
+      <div *ngIf="owner.owner_name.includes(searchTerm)">
+        <th scope="row">{{ owner.owner_name }}</th>
+        <td>
+          <button class="btn btn-sm btn-danger" (click)="onDelete(owner._id)">Delete</button>
+        </td>
+        <td>
+          <a class="btn btn-sm btn-warning" [routerLink]="['/owners/owner-create',owner._id]">Update</a>
+        </td>
+      </div>
+    </tr>
+  </tbody>
+</table>
+
+<h4>All Owners</h4>
 <table class="table table-bordered">
   <thead>
     <tr>

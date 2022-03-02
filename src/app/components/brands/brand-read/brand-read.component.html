@@ -6,6 +6,30 @@
   <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
 </div>
 
+<h4>Search For Brand</h4>
+<input class="form-control" type="text" name="searchTerm" placeholder="Enter brand name" [(ngModel)]="searchTerm">
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Brand Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let brand of brands">
+      <div *ngIf="brand.brand_name.includes(searchTerm)">
+        <th scope="row">{{ brand.brand_name }}</th>
+        <td>
+          <button class="btn btn-sm btn-danger" (click)="onDelete(brand._id)">Delete</button>
+        </td>
+        <td>
+          <a class="btn btn-sm btn-warning" [routerLink]="['/brands/brand-create',brand._id]">Update</a>
+        </td>
+      </div>
+    </tr>
+  </tbody>
+</table>
+
+<h4>All Brands</h4>
 <table class="table table-bordered">
   <thead>
     <tr>
