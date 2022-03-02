@@ -12,28 +12,6 @@
   <thead>
     <tr>
       <th scope="col">Owner Name</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let owner of owners">
-      <div *ngIf="owner.owner_name.includes(searchTerm)">
-        <th scope="row">{{ owner.owner_name }}</th>
-        <td>
-          <button class="btn btn-sm btn-danger" (click)="onDelete(owner._id)">Delete</button>
-        </td>
-        <td>
-          <a class="btn btn-sm btn-warning" [routerLink]="['/owners/owner-create',owner._id]">Update</a>
-        </td>
-      </div>
-    </tr>
-  </tbody>
-</table>
-
-<h4>All Owners</h4>
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th scope="col">Owner Name</th>
       <th scope="col">Address</th>
       <th scope="col">Phone</th>
       <th scope="col">Website</th>
@@ -43,14 +21,15 @@
   </thead>
   <tbody>
     <tr *ngFor="let owner of owners">
-      <th scope="row">{{ owner.owner_name }}</th>
-      <td>{{ owner.owner_address }}</td>
-      <td>{{ owner.owner_phone }}</td>
-      <td><a target="_blank" href="{{ owner.owner_website }}">{{ owner.owner_website }}</a></td>
-      <td>
+      <th scope="row" *ngIf="owner.owner_name.includes(searchTerm) || searchTerm==null">{{ owner.owner_name }}</th>
+      <td *ngIf="owner.owner_name.includes(searchTerm) || searchTerm==null">{{ owner.owner_address }}</td>
+      <td *ngIf="owner.owner_name.includes(searchTerm) || searchTerm==null">{{ owner.owner_phone }}</td>
+      <td *ngIf="owner.owner_name.includes(searchTerm) || searchTerm==null"><a target="_blank"
+          href="{{ owner.owner_website }}">{{ owner.owner_website }}</a></td>
+      <td *ngIf="owner.owner_name.includes(searchTerm) || searchTerm==null">
         <button class="btn btn-sm btn-danger" (click)="onDelete(owner._id)">Delete</button>
       </td>
-      <td>
+      <td *ngIf="owner.owner_name.includes(searchTerm) || searchTerm==null">
         <a class="btn btn-sm btn-warning" [routerLink]="['/owners/owner-create',owner._id]">Update</a>
       </td>
     </tr>

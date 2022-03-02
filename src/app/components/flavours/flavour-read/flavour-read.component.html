@@ -12,39 +12,18 @@
   <thead>
     <tr>
       <th scope="col">Flavour Name</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let flavour of flavours">
-      <div *ngIf="flavour.flavour_name.includes(searchTerm)">
-        <th scope="row">{{ flavour.flavour_name }}</th>
-        <td>
-          <button class="btn btn-sm btn-danger" (click)="onDelete(flavour._id)">Delete</button>
-        </td>
-        <td>
-          <a class="btn btn-sm btn-warning" [routerLink]="['/flavours/flavour-create',flavour._id]">Update</a>
-        </td>
-      </div>
-    </tr>
-  </tbody>
-</table>
-
-<h4>All Flavours</h4>
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th scope="col">Flavour Name</th>
       <th scope="col">Delete</th>
       <th scope="col">Update</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let flavour of flavours">
-      <th scope="row">{{ flavour.flavour_name }}</th>
-      <td>
+      <th scope="row" *ngIf="flavour.flavour_name.includes(searchTerm) || searchTerm==null">{{ flavour.flavour_name }}
+      </th>
+      <td *ngIf="flavour.flavour_name.includes(searchTerm) || searchTerm==null">
         <button class="btn btn-sm btn-danger" (click)="onDelete(flavour._id)">Delete</button>
       </td>
-      <td>
+      <td *ngIf="flavour.flavour_name.includes(searchTerm) || searchTerm==null">
         <a class="btn btn-sm btn-warning" [routerLink]="['/flavours/flavour-create',flavour._id]">Update</a>
       </td>
     </tr>
