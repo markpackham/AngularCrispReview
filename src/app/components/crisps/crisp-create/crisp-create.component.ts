@@ -19,7 +19,8 @@ export class CrispCreateComponent implements OnInit {
   brands: Brand[] = [];
   crisps: Crisp[] = [];
   flavours: Flavour[] = [];
-  order: string = 'flavour_name';
+  orderBrands: string = 'brand_name';
+  orderFlavours: string = 'flavour_name';
  
   crispForm = new FormGroup({
     'crisp_name':new FormControl('',[Validators.required, Validators.minLength(3)], this.customValidator.validateCrispNameNotTaken.bind(this.customValidator)),
