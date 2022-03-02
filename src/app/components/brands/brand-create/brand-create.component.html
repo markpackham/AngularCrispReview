@@ -17,7 +17,8 @@
   <label class="m-2" for="brand_owner">Brand Owner</label>
 
   <select class="form-select" name="brand_owner" id="brand_owner" formControlName="brand_owner">
-    <option *ngFor="let owner of owners" value="{{owner.owner_name}}">{{owner.owner_name}}</option>
+    <option *ngFor="let owner of owners | orderBy: orderOwners" value="{{owner.owner_name}}">{{owner.owner_name}}
+    </option>
   </select>
 
   <!-- Create and Update buttons shown dependant on an id existing -->

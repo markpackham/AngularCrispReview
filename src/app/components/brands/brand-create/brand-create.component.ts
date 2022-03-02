@@ -25,6 +25,7 @@ export class BrandCreateComponent implements OnInit {
   errorMsg!: string;
   successMsg!: string;
   getParamId: any;
+  orderOwners: string = 'owner_name';
 
   constructor(private customValidator: CustomValidationService, private service: BrandService, private serviceOwner: OwnerService, private router: ActivatedRoute) { }
 
