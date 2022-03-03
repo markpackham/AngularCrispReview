@@ -5,7 +5,8 @@
 &nbsp;
 <a routerLink="/crisps/crisp-read" class="btn btn-secondary">Read</a>
 <h4>Crisps from best to worst</h4>
-<table class="table table-bordered">
+<button class="btn btn-primary" (click)="showWorstCrisps()">{{crispsMessage}}</button>
+<table class=" table table-bordered">
   <thead>
     <tr>
       <th scope="col">Crisp Name</th>
@@ -19,7 +20,7 @@
   </thead>
   <tbody>
     <!-- the first "true" reverses the order https://www.npmjs.com/package/ngx-order-pipe -->
-    <tr *ngFor="let crisp of crisps | orderBy: orderReviewScore : true">
+    <tr *ngFor="let crisp of crisps | orderBy: orderReviewScore : crispsWorst">
       <th scope="row">{{ crisp.crisp_name }}</th>
       <td><img class="crisp-img" src="{{ crisp.crisp_image }}" alt="Crisp Image"></td>
       <td>{{ crisp.flavour_name }}</td>
