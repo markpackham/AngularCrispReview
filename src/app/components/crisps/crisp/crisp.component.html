@@ -4,3 +4,29 @@
 <a routerLink="/crisps/crisp-create" class="btn btn-primary">Create</a>
 &nbsp;
 <a routerLink="/crisps/crisp-read" class="btn btn-secondary">Read</a>
+<h4>Crisps from best to worst</h4>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Crisp Name</th>
+      <th scope="col">Image</th>
+      <th scope="col">Flavour</th>
+      <th scope="col">Brand</th>
+      <th scope="col">Weight In Grams</th>
+      <th scope="col">Review</th>
+      <th scope="col">Review Score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- the first "true" reverses the order https://www.npmjs.com/package/ngx-order-pipe -->
+    <tr *ngFor="let crisp of crisps | orderBy: orderReviewScore : true">
+      <th scope="row">{{ crisp.crisp_name }}</th>
+      <td><img class="crisp-img" src="{{ crisp.crisp_image }}" alt="Crisp Image"></td>
+      <td>{{ crisp.flavour_name }}</td>
+      <td>{{ crisp.brand_name }}</td>
+      <td>{{ crisp.weight }}g</td>
+      <td>{{ crisp.review }}</td>
+      <td>{{ crisp.review_score }}/5</td>
+    </tr>
+  </tbody>
+</table>

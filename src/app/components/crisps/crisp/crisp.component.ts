@@ -10,18 +10,17 @@ import { CrispService } from '../../../services/crisp.service';
 export class CrispComponent implements OnInit {
 
   crisps: Crisp[] = [];
+  orderReviewScore: string = 'review_score';
 
-  constructor(private crispService: CrispService) { 
+  constructor(private service: CrispService) { 
   }
 
   ngOnInit(): void {
-    this.crispService.getCrisps().subscribe((crisps) => (this.crisps = crisps));
+    this.service.getCrisps().subscribe((crisps) => (this.crisps = crisps));
   }
 
-  addCrisp(crisp: Crisp) {
-    this.crispService.addCrisp(crisp).subscribe((crisp) => this.crisps.push(crisp));
+  getAllCrisps(){
+    this.service.getCrisps().subscribe((crisps) => (this.crisps = crisps));
   }
-
-  
 
 }
