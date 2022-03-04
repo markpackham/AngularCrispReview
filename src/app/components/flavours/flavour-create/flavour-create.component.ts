@@ -1,9 +1,9 @@
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CustomValidationService } from '../../../services/custom-validation.service';
 import { Flavour } from '../../../model/Flavour';
-import { FlavourService } from '../../../services/flavour.service';
+import { CrudService } from '../../../services/crud.service';
 
 @Component({
   selector: 'app-flavour-create',
@@ -22,13 +22,15 @@ export class FlavourCreateComponent implements OnInit {
   successMsg!: string;
   getParamId: any;
 
-  constructor(private customValidator: CustomValidationService, private router: ActivatedRoute, private service: FlavourService) { }
+  private apiItemPath = 'flavours';
+
+  constructor(private customValidator: CustomValidationService, private router: ActivatedRoute, private service: CrudService) { }
 
   ngOnInit(): void {
     this.getParamId = this.router.snapshot.paramMap.get('id');
 
     if(this.getParamId){
-      this.service.getFlavour(this.getParamId).subscribe((res)=>{
+      this.service.getItem(this.apiItemPath, this.getParamId).subscribe((res)=>{
         this.flavourForm.patchValue({
           "flavour_name":res.flavour_name
         })
@@ -37,12 +39,12 @@ export class FlavourCreateComponent implements OnInit {
   }
 
   addFlavour(flavour: Flavour) {
-    this.service.addFlavour(flavour).subscribe((flavour) => this.flavours.push(flavour));
+    this.service.addItem(this.apiItemPath, flavour).subscribe((flavour) => this.flavours.push(flavour));
   }
 
   flavourSubmit() {
     if(this.flavourForm.valid){
-      this.service.addFlavour(this.flavourForm.value).subscribe((res)=>{
+      this.service.addItem(this.apiItemPath, this.flavourForm.value).subscribe((res)=>{
           this.flavourForm.reset();
           this.successMsg = "Creation successful!";
       });
@@ -54,7 +56,7 @@ export class FlavourCreateComponent implements OnInit {
 
   flavourUpdate(){
     if(this.flavourForm.valid){
-      this.service.updateFlavour(this.flavourForm.value, this.getParamId).subscribe((res)=>{
+      this.service.updateItem(this.apiItemPath, this.flavourForm.value, this.getParamId).subscribe((res)=>{
         console.log(res);
           this.successMsg = "Update successful!";
       });
