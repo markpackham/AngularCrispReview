@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrandComponent } from './components/brands/brand/brand.component';
 import { ContactComponent } from './content/contact/contact.component';
 import { CrispComponent } from './components/crisps/crisp/crisp.component';
+import { CrudService } from './services/crud.service';
 import { FlavourComponent } from './components/flavours/flavour/flavour.component';
 import { FooterComponent } from './layouts/footer/footer.component';
 import { HeaderComponent } from './layouts/header/header.component';
@@ -19,10 +20,6 @@ import { NotFoundComponent } from './helpers/not-found/not-found.component';
 import { OwnerComponent } from './components/owners/owner/owner.component';
 import { BrandCreateComponent } from './components/brands/brand-create/brand-create.component';
 import { BrandReadComponent } from './components/brands/brand-read/brand-read.component';
-import { CrispService } from './services/crisp.service';
-import { BrandService } from './services/brand.service';
-import { FlavourService } from './services/flavour.service';
-import { OwnerService } from './services/owner.service';
 import { CrispReadComponent } from './components/crisps/crisp-read/crisp-read.component';
 import { CrispCreateComponent } from './components/crisps/crisp-create/crisp-create.component';
 import { FlavourCreateComponent } from './components/flavours/flavour-create/flavour-create.component';
@@ -60,7 +57,7 @@ import { OwnerCreateComponent } from './components/owners/owner-create/owner-cre
     OrderModule,
     ReactiveFormsModule,
   ],
-  providers: [BrandService, CrispService, FlavourService, OwnerService],
+  providers: [CrudService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
