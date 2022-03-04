@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Crisp } from '../../../model/Crisp';
-import { CrispService } from '../../../services/crisp.service';
+import { CrudService } from '../../../services/crud.service';
 
 @Component({
   selector: 'app-crisp',
@@ -14,16 +14,18 @@ export class CrispComponent implements OnInit {
   crispsWorst: boolean = true;
   orderReviewScore: string = 'review_score';
 
-  constructor(private service: CrispService) {
+  private apiItemPath = 'crisps';
+
+  constructor(private service: CrudService) {
     this.crispsWorst === true; 
   }
 
   ngOnInit(): void {
-    this.service.getCrisps().subscribe((crisps) => (this.crisps = crisps));
+    this.service.getItems(this.apiItemPath).subscribe((crisps) => (this.crisps = crisps));
   }
 
   getAllCrisps(){
-    this.service.getCrisps().subscribe((crisps) => (this.crisps = crisps));
+    this.service.getItems(this.apiItemPath).subscribe((crisps) => (this.crisps = crisps));
   }
 
   showWorstCrisps(){
