@@ -2,10 +2,10 @@ const express = require("express");
 const ObjectID = require("mongodb").ObjectID;
 
 const createBrandsRouter = function (collection) {
+  const apiName = "/brands";
   const router = express.Router();
 
-  // INDEX
-  router.get("/brands", async (req, res) => {
+  router.get(`${apiName}`, async (req, res) => {
     collection
       .find()
       .toArray()
@@ -17,8 +17,7 @@ const createBrandsRouter = function (collection) {
       });
   });
 
-  // SHOW
-  router.get("/brands/:id", async (req, res) => {
+  router.get(`${apiName}/:id`, async (req, res) => {
     const id = req.params.id;
     collection
       .findOne({ _id: ObjectID(id) })
@@ -30,8 +29,7 @@ const createBrandsRouter = function (collection) {
       });
   });
 
-  // CREATE
-  router.post("/brands", async (req, res) => {
+  router.post(`${this.apiName}`, async (req, res) => {
     const newBrand = req.body;
     if (newBrand.brand_name.length < 3 || newBrand.brand_owner.length < 3) {
       res.status(422);
@@ -50,8 +48,7 @@ const createBrandsRouter = function (collection) {
     }
   });
 
-  // DESTROY
-  router.delete("/brands/delete/:id", async (req, res) => {
+  router.delete(`${this.apiName}/delete/:id`, async (req, res) => {
     const id = req.params.id;
     collection
       .deleteOne({ _id: ObjectID(id) })
@@ -65,8 +62,7 @@ const createBrandsRouter = function (collection) {
       });
   });
 
-  // UPDATE (PUT)
-  router.put("/brands/update/:id", async (req, res) => {
+  router.put(`${this.apiName}/update/:id`, async (req, res) => {
     const id = req.params.id;
     const updatedData = req.body;
     collection
