@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import { Brand } from '../../../model/Brand';
 import { BrandService } from '../../../services/brand.service';
+import { CrudService } from '../../../services/crud.service';
 import { CustomValidationService } from '../../../services/custom-validation.service';
 import { Owner } from '../../../model/Owner';
 import { OwnerService } from '../../../services/owner.service';
@@ -16,6 +17,8 @@ export class BrandCreateComponent implements OnInit {
 
   brands: Brand[] = [];
   owners: Owner[] = [];
+
+  private apiItemPath = 'brands';
  
   brandForm = new FormGroup({
     'brand_name':new FormControl('',[Validators.required, Validators.minLength(3)], this.customValidator.validateBrandNameNotTaken.bind(this.customValidator)),
@@ -27,7 +30,7 @@ export class BrandCreateComponent implements OnInit {
   getParamId: any;
   orderOwners: string = 'owner_name';
 
-  constructor(private customValidator: CustomValidationService, private service: BrandService, private serviceOwner: OwnerService, private router: ActivatedRoute) { }
+  constructor(private customValidator: CustomValidationService, private service: CrudService, private serviceOwner: OwnerService, private router: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.getParamId = this.router.snapshot.paramMap.get('id');
@@ -35,7 +38,7 @@ export class BrandCreateComponent implements OnInit {
     this.getAllOwners();
 
     if(this.getParamId){
-      this.service.getBrand(this.getParamId).subscribe((res)=>{
+      this.service.getItem(this.apiItemPath,this.getParamId).subscribe((res)=>{
         this.brandForm.patchValue({
           "brand_name":res.brand_name,
           "brand_owner":res.brand_owner
@@ -45,12 +48,12 @@ export class BrandCreateComponent implements OnInit {
   }
 
   addBrand(brand: Brand) {
-    this.service.addBrand(brand).subscribe((brand) => this.brands.push(brand));
+    this.service.addItem(this.apiItemPath, brand).subscribe((brand) => this.brands.push(brand));
   }
 
   brandSubmit() {
     if(this.brandForm.valid){
-      this.service.addBrand(this.brandForm.value).subscribe((res)=>{
+      this.service.addItem(this.apiItemPath,this.brandForm.value).subscribe((res)=>{
           this.brandForm.reset();
           this.successMsg = "Creation successful!";
       });
@@ -62,7 +65,7 @@ export class BrandCreateComponent implements OnInit {
 
   brandUpdate(){
     if(this.brandForm.value.brand_name.length > 2 && this.brandForm.value.brand_owner.length > 2){
-      this.service.updateBrand(this.brandForm.value, this.getParamId).subscribe((res)=>{
+      this.service.updateItem(this.apiItemPath, this.brandForm.value, this.getParamId).subscribe((res)=>{
           this.successMsg = "Update successful!";
       });
     }
