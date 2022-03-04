@@ -2,8 +2,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CustomValidationService } from '../../../services/custom-validation.service';
-import { Flavour } from '../../../model/Flavour';
 import { CrudService } from '../../../services/crud.service';
+import { Flavour } from '../../../model/Flavour';
 
 @Component({
   selector: 'app-flavour-create',

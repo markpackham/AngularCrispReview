@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Crisp } from '../../../model/Crisp';
-import { CrispService } from '../../../services/crisp.service';
+import { CrudService } from '../../../services/crud.service';
 
 @Component({
   selector: 'app-crisp-read',
@@ -14,7 +14,9 @@ export class CrispReadComponent implements OnInit {
   searchTerm!: string;
   @Output() onDeleteCrisp: EventEmitter<Crisp> = new EventEmitter();
 
-  constructor(private service: CrispService) { }
+  private apiItemPath = 'crisps';
+
+  constructor(private service: CrudService) { }
 
   ngOnInit(): void {
     this.getAllCrisps();
@@ -25,16 +27,14 @@ export class CrispReadComponent implements OnInit {
   }
 
   onDelete(id: any) {
-    this.service.deleteCrisp(id).subscribe((res)=>{
-      console.log(res,'deleteCrisp');
+    this.service.deleteItem(this.apiItemPath, id).subscribe(()=>{
       this.deleteMsg = "Deletion done!";
-
       this.getAllCrisps();
     });
   }
 
   getAllCrisps(){
-    this.service.getCrisps().subscribe((crisps) => (this.crisps = crisps));
+    this.service.getItems(this.apiItemPath).subscribe((crisps) => (this.crisps = crisps));
   }
 
 }

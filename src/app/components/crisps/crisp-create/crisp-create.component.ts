@@ -1,6 +1,6 @@
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Brand } from '../../../model/Brand';
 import { Crisp } from '../../../model/Crisp';
 import { Flavour } from '../../../model/Flavour';

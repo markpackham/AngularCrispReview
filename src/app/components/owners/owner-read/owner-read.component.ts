@@ -28,10 +28,8 @@ export class OwnerReadComponent implements OnInit {
   }
 
   onDelete(id: any) {
-    this.service.deleteItem(this.apiItemPath, id).subscribe((res)=>{
-      console.log(res,'deleteCrisp');
+    this.service.deleteItem(this.apiItemPath, id).subscribe(()=>{
       this.deleteMsg = "Deletion done!";
-
       this.getAllOwners();
     });
   }
