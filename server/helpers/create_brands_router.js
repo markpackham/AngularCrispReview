@@ -1,11 +1,10 @@
 const express = require("express");
 const ObjectID = require("mongodb").ObjectID;
 
-const createBrandsRouter = function (collection) {
-  const apiName = "/brands";
+const createBrandsRouter = function (apiName, collection) {
   const router = express.Router();
 
-  router.get(`${apiName}`, async (req, res) => {
+  router.get(apiName, async (req, res) => {
     collection
       .find()
       .toArray()
@@ -29,7 +28,7 @@ const createBrandsRouter = function (collection) {
       });
   });
 
-  router.post(`${this.apiName}`, async (req, res) => {
+  router.post(`${apiName}`, async (req, res) => {
     const newBrand = req.body;
     if (newBrand.brand_name.length < 3 || newBrand.brand_owner.length < 3) {
       res.status(422);
@@ -48,7 +47,7 @@ const createBrandsRouter = function (collection) {
     }
   });
 
-  router.delete(`${this.apiName}/delete/:id`, async (req, res) => {
+  router.delete(`${apiName}/delete/:id`, async (req, res) => {
     const id = req.params.id;
     collection
       .deleteOne({ _id: ObjectID(id) })
@@ -62,7 +61,7 @@ const createBrandsRouter = function (collection) {
       });
   });
 
-  router.put(`${this.apiName}/update/:id`, async (req, res) => {
+  router.put(`${apiName}/update/:id`, async (req, res) => {
     const id = req.params.id;
     const updatedData = req.body;
     collection

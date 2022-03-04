@@ -25,7 +25,7 @@ MongoClient.connect("mongodb://localhost:27017")
 
     // Database collections selected
     const brandsCollection = db.collection("brands");
-    const brandsRouter = createBrandsRouter(brandsCollection);
+    const brandsRouter = createBrandsRouter("/brands", brandsCollection);
     const crispsCollection = db.collection("crisps");
     const crispsRouter = createCrispsRouter(crispsCollection);
     const flavoursCollection = db.collection("flavours");
