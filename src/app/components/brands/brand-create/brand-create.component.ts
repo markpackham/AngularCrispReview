@@ -2,11 +2,9 @@ import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import { Brand } from '../../../model/Brand';
-import { BrandService } from '../../../services/brand.service';
 import { CrudService } from '../../../services/crud.service';
 import { CustomValidationService } from '../../../services/custom-validation.service';
 import { Owner } from '../../../model/Owner';
-import { OwnerService } from '../../../services/owner.service';
 
 @Component({
   selector: 'app-brand-create',
@@ -19,6 +17,7 @@ export class BrandCreateComponent implements OnInit {
   owners: Owner[] = [];
 
   private apiItemPath = 'brands';
+  private apiItemPathOwners = 'owners';
  
   brandForm = new FormGroup({
     'brand_name':new FormControl('',[Validators.required, Validators.minLength(3)], this.customValidator.validateBrandNameNotTaken.bind(this.customValidator)),
@@ -30,7 +29,7 @@ export class BrandCreateComponent implements OnInit {
   getParamId: any;
   orderOwners: string = 'owner_name';
 
-  constructor(private customValidator: CustomValidationService, private service: CrudService, private serviceOwner: OwnerService, private router: ActivatedRoute) { }
+  constructor(private customValidator: CustomValidationService, private service: CrudService, private router: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.getParamId = this.router.snapshot.paramMap.get('id');
@@ -75,7 +74,7 @@ export class BrandCreateComponent implements OnInit {
   }
 
   getAllOwners(){
-    this.serviceOwner.getOwners().subscribe((owners) => (this.owners = owners));
+    this.service.getItems(this.apiItemPathOwners).subscribe((owners) => (this.owners = owners));
   }
 
 }
