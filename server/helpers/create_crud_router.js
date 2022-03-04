@@ -1,11 +1,10 @@
 const express = require("express");
 const ObjectID = require("mongodb").ObjectID;
 
-const createOwnersRouter = function (collection) {
+const createCrudRouter = function (apiName, collection) {
   const router = express.Router();
 
-  // INDEX
-  router.get("/owners", async (req, res) => {
+  router.get(apiName, async (req, res) => {
     collection
       .find()
       .toArray()
@@ -17,8 +16,7 @@ const createOwnersRouter = function (collection) {
       });
   });
 
-  // SHOW
-  router.get("/owners/:id", async (req, res) => {
+  router.get(`${apiName}/:id`, async (req, res) => {
     const id = req.params.id;
     collection
       .findOne({ _id: ObjectID(id) })
@@ -30,24 +28,16 @@ const createOwnersRouter = function (collection) {
       });
   });
 
-  // CREATE
-  // What Json file looks like
-  //   {
-  //     "owner_name": "Walkers Snacks Ltd",
-  //     "owner_address": "450 South Oak Way, Green Park, Reading RG2 6UW",
-  //     "owner_phone": "800 274 777",
-  //     "owner_website": "https://www.walkers.co.uk/"
-  //    }
-  router.post("/owners", async (req, res) => {
-    const newOwner = req.body;
-    if (newOwner.owner_name.length < 5 || newOwner.owner_address.length < 5) {
+  router.post(`${apiName}`, async (req, res) => {
+    const newItem = req.body;
+    if (newItem == null) {
       res.status(422);
       res.json({ status: 422, error: "422 Unprocessable Entity" });
     } else {
       collection
-        .insertOne(newOwner)
+        .insertOne(newItem)
         .then((result) => {
-          res.status(201).json(newOwner);
+          res.status(201).json(newItem);
         })
         .catch((err) => {
           console.error(err);
@@ -57,8 +47,7 @@ const createOwnersRouter = function (collection) {
     }
   });
 
-  // DESTROY
-  router.delete("/owners/delete/:id", async (req, res) => {
+  router.delete(`${apiName}/delete/:id`, async (req, res) => {
     const id = req.params.id;
     collection
       .deleteOne({ _id: ObjectID(id) })
@@ -72,8 +61,7 @@ const createOwnersRouter = function (collection) {
       });
   });
 
-  // UPDATE (PUT)
-  router.put("/owners/update/:id", async (req, res) => {
+  router.put(`${apiName}/update/:id`, async (req, res) => {
     const id = req.params.id;
     const updatedData = req.body;
     collection
@@ -95,4 +83,4 @@ const createOwnersRouter = function (collection) {
   return router;
 };
 
-module.exports = createOwnersRouter;
+module.exports = createCrudRouter;

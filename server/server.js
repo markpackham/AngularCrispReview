@@ -11,10 +11,7 @@ const bodyParser = require("body-parser");
 const MongoClient = require("mongodb").MongoClient;
 
 // Helpers
-const createBrandsRouter = require("./helpers/create_brands_router.js");
-const createCrispsRouter = require("./helpers/create_crisps_router.js");
-const createFlavoursRouter = require("./helpers/create_flavours_router.js");
-const createOwnersRouter = require("./helpers/create_owners_router.js");
+const createCrudRouter = require("./helpers/create_crud_router.js");
 
 app.use(bodyParser.json());
 
@@ -25,13 +22,13 @@ MongoClient.connect("mongodb://localhost:27017")
 
     // Database collections selected
     const brandsCollection = db.collection("brands");
-    const brandsRouter = createBrandsRouter("/brands", brandsCollection);
+    const brandsRouter = createCrudRouter("/brands", brandsCollection);
     const crispsCollection = db.collection("crisps");
-    const crispsRouter = createCrispsRouter(crispsCollection);
+    const crispsRouter = createCrudRouter("/crisps", crispsCollection);
     const flavoursCollection = db.collection("flavours");
-    const flavoursRouter = createFlavoursRouter(flavoursCollection);
+    const flavoursRouter = createCrudRouter("/flavours", flavoursCollection);
     const ownersCollection = db.collection("owners");
-    const ownersRouter = createOwnersRouter(ownersCollection);
+    const ownersRouter = createCrudRouter("/owners", ownersCollection);
 
     // Route paths
     // eg http://localhost:3000/brands
