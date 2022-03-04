@@ -54,6 +54,10 @@ ul {
   margin: 0.25rem 0;
 }
 
+label {
+  font-weight: bold;
+}
+
 img {
   max-width: 100%;
 }
