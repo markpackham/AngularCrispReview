@@ -1,9 +1,9 @@
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CustomValidationService } from '../../../services/custom-validation.service';
 import { Owner } from '../../../model/Owner';
-import { OwnerService } from '../../../services/owner.service';
+import { CrudService } from '../../../services/crud.service';
 
 @Component({
   selector: 'app-owner-create',
@@ -25,13 +25,15 @@ export class OwnerCreateComponent implements OnInit {
   successMsg!: string;
   getParamId: any;
 
-  constructor(private customValidator: CustomValidationService, private service: OwnerService, private router: ActivatedRoute) { }
+  private apiItemPath = 'owners';
+
+  constructor(private customValidator: CustomValidationService, private service: CrudService, private router: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.getParamId = this.router.snapshot.paramMap.get('id');
 
     if(this.getParamId){
-      this.service.getOwner(this.getParamId).subscribe((res)=>{
+      this.service.getItem(this.apiItemPath, this.getParamId).subscribe((res)=>{
         this.ownerForm.patchValue({
           "owner_name":res.owner_name,
           "owner_address":res.owner_address,
@@ -43,12 +45,12 @@ export class OwnerCreateComponent implements OnInit {
   }
 
   addOwner(owner: Owner) {
-    this.service.addOwner(owner).subscribe((owner) => this.owners.push(owner));
+    this.service.addItem(this.apiItemPath, owner).subscribe((owner) => this.owners.push(owner));
   }
 
   ownerSubmit() {
     if(this.ownerForm.valid){
-      this.service.addOwner(this.ownerForm.value).subscribe((res)=>{
+      this.service.addItem(this.apiItemPath, this.ownerForm.value).subscribe((res)=>{
           this.ownerForm.reset();
           this.successMsg = "Creation successful!";
       });
@@ -60,7 +62,7 @@ export class OwnerCreateComponent implements OnInit {
 
   ownerUpdate(){
     if(this.ownerForm.value.owner_name.length > 4 && this.ownerForm.value.owner_address.length > 4){
-      this.service.updateOwner(this.ownerForm.value, this.getParamId).subscribe((res)=>{
+      this.service.updateItem(this.apiItemPath, this.ownerForm.value, this.getParamId).subscribe((res)=>{
         console.log(res);
           this.successMsg = "Update successful!";
       });

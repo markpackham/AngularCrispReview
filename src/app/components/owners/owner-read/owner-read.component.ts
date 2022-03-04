@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Owner } from '../../../model/Owner';
-import { OwnerService } from '../../../services/owner.service';
+import { CrudService } from '../../../services/crud.service';
 
 @Component({
   selector: 'app-owner-read',
@@ -12,9 +12,12 @@ export class OwnerReadComponent implements OnInit {
   owners: Owner[] = [];
   deleteMsg!: string;
   searchTerm!: string;
+
+  private apiItemPath = 'owners';
+
   @Output() onDeleteOwner: EventEmitter<Owner> = new EventEmitter();
 
-  constructor(private service: OwnerService) { }
+  constructor(private service: CrudService) { }
 
   ngOnInit(): void {
     this.getAllOwners();
@@ -25,7 +28,7 @@ export class OwnerReadComponent implements OnInit {
   }
 
   onDelete(id: any) {
-    this.service.deleteOwner(id).subscribe((res)=>{
+    this.service.deleteItem(this.apiItemPath, id).subscribe((res)=>{
       console.log(res,'deleteCrisp');
       this.deleteMsg = "Deletion done!";
 
@@ -34,7 +37,7 @@ export class OwnerReadComponent implements OnInit {
   }
 
   getAllOwners(){
-    this.service.getOwners().subscribe((owners) => (this.owners = owners));
+    this.service.getItems(this.apiItemPath).subscribe((owners) => (this.owners = owners));
   }
 
 }
