@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Brand } from '../../../model/Brand';
-import { BrandService } from '../../../services/brand.service';
+import { CrudService } from '../../../services/crud.service';
 
 @Component({
   selector: 'app-brand-read',
@@ -12,9 +12,12 @@ export class BrandReadComponent implements OnInit {
   brands: Brand[] = [];
   searchTerm!: string;
   deleteMsg!: string;
+
+  private apiItemPath = 'brands';
+
   @Output() onDeleteBrand: EventEmitter<Brand> = new EventEmitter();
 
-  constructor(private service: BrandService) { }
+  constructor(private service: CrudService) { }
 
   ngOnInit(): void {
     this.getAllBrands();
@@ -25,7 +28,7 @@ export class BrandReadComponent implements OnInit {
   }
 
   onDelete(id: any) {
-    this.service.deleteBrand(id).subscribe((res)=>{
+    this.service.deleteItem(this.apiItemPath,id).subscribe((res)=>{
       console.log(res,'deleteCrisp');
       this.deleteMsg = "Deletion done!";
 
@@ -35,7 +38,7 @@ export class BrandReadComponent implements OnInit {
   }
 
   getAllBrands(){
-    this.service.getBrands().subscribe((brands) => (this.brands = brands));
+    this.service.getItems(this.apiItemPath).subscribe((brands) => (this.brands = brands));
   }
 
 }
