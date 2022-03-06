@@ -70,6 +70,24 @@ button {
   padding: 0.25rem;
 }
 
+.fadeEffect {
+  animation: fadein 2s;
+}
+
+/* Keyframes */
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* Media Queries */
+
 @media(max-width: 60rem) {}
 
 @media(max-width:48rem) {}
