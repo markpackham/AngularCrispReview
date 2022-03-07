@@ -12,7 +12,6 @@ export class CrispReadComponent implements OnInit {
   crisps: Crisp[] = [];
   deleteMsg!: string;
   searchTerm!: string;
-  searchTermFlavour!: string;
   @Output() onDeleteCrisp: EventEmitter<Crisp> = new EventEmitter();
 
   private apiItemPath = 'crisps';
@@ -25,10 +24,6 @@ export class CrispReadComponent implements OnInit {
 
   clearSearch(){
     this.searchTerm = "";
-  }
-
-  clearSearchFlavour(){
-    this.searchTermFlavour = "";
   }
 
   onDelete(id: any) {

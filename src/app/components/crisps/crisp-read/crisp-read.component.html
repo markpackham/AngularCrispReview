@@ -6,14 +6,9 @@
   <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
 </div>
 
-<h4>Search For Crisp Name</h4>
+<h4>Search for Crisp Name or Flavour</h4>
 <input class="form-control" type="text" name="searchTerm" placeholder="Enter crisp name" [(ngModel)]="searchTerm">
 <button type="button" class="btn btn-sm btn-danger" (click)="clearSearch()">Clear Search</button>
-
-<h4>Search For Crisp Flavour</h4>
-<input class="form-control" type="text" name="searchTermFlavour" placeholder="Enter crisp flavour"
-  [(ngModel)]="searchTermFlavour">
-<button type="button" class="btn btn-sm btn-danger" (click)="clearSearchFlavour()">Clear Flavour Search</button>
 
 <table class="table table-bordered">
   <thead>
@@ -32,32 +27,24 @@
   <tbody>
     <tr *ngFor="let crisp of crisps">
       <th scope="row"
-        *ngIf="crisp.crisp_name.includes(searchTerm) || crisp.flavour_name.includes(searchTermFlavour) || (searchTerm==null && searchTermFlavour == null)">
+        *ngIf="crisp.crisp_name.includes(searchTerm) || crisp.flavour_name.includes(searchTerm) || searchTerm==null">
         {{ crisp.crisp_name }}</th>
-      <td
-        *ngIf="crisp.crisp_name.includes(searchTerm) || crisp.flavour_name.includes(searchTermFlavour) || (searchTerm==null && searchTermFlavour == null)">
+      <td *ngIf="crisp.crisp_name.includes(searchTerm) || crisp.flavour_name.includes(searchTerm) || searchTerm==null">
         <img class="crisp-img" src="{{ crisp.crisp_image }}" alt="Crisp Image"></td>
-      <td
-        *ngIf="crisp.crisp_name.includes(searchTerm) || crisp.flavour_name.includes(searchTermFlavour) || (searchTerm==null && searchTermFlavour == null)">
+      <td *ngIf="crisp.crisp_name.includes(searchTerm) || crisp.flavour_name.includes(searchTerm) || searchTerm==null">
         {{ crisp.flavour_name }}</td>
-      <td
-        *ngIf="crisp.crisp_name.includes(searchTerm) || crisp.flavour_name.includes(searchTermFlavour) || (searchTerm==null && searchTermFlavour == null)">
+      <td *ngIf="crisp.crisp_name.includes(searchTerm) || crisp.flavour_name.includes(searchTerm) || searchTerm==null">
         {{ crisp.brand_name }}</td>
-      <td
-        *ngIf="crisp.crisp_name.includes(searchTerm) || crisp.flavour_name.includes(searchTermFlavour) || (searchTerm==null && searchTermFlavour == null)">
+      <td *ngIf="crisp.crisp_name.includes(searchTerm) || crisp.flavour_name.includes(searchTerm) || searchTerm==null">
         {{ crisp.weight }}g</td>
-      <td
-        *ngIf="crisp.crisp_name.includes(searchTerm) || crisp.flavour_name.includes(searchTermFlavour) || (searchTerm==null && searchTermFlavour == null)">
+      <td *ngIf="crisp.crisp_name.includes(searchTerm) || crisp.flavour_name.includes(searchTerm) || searchTerm==null">
         {{ crisp.review }}</td>
-      <td
-        *ngIf="crisp.crisp_name.includes(searchTerm) || crisp.flavour_name.includes(searchTermFlavour) || (searchTerm==null && searchTermFlavour == null)">
+      <td *ngIf="crisp.crisp_name.includes(searchTerm) || crisp.flavour_name.includes(searchTerm) || searchTerm==null">
         {{ crisp.review_score }}/5</td>
-      <td
-        *ngIf="crisp.crisp_name.includes(searchTerm) || crisp.flavour_name.includes(searchTermFlavour) || (searchTerm==null && searchTermFlavour == null)">
+      <td *ngIf="crisp.crisp_name.includes(searchTerm) || crisp.flavour_name.includes(searchTerm) || searchTerm==null">
         <button class="btn btn-sm btn-danger" (click)="onDelete(crisp._id)">Delete</button>
       </td>
-      <td
-        *ngIf="crisp.crisp_name.includes(searchTerm) || crisp.flavour_name.includes(searchTermFlavour) || (searchTerm==null && searchTermFlavour == null)">
+      <td *ngIf="crisp.crisp_name.includes(searchTerm) || crisp.flavour_name.includes(searchTerm) || searchTerm==null">
         <a class="btn btn-sm btn-warning" [routerLink]="['/crisps/crisp-create',crisp._id]">Update</a>
       </td>
     </tr>
