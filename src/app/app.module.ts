@@ -26,6 +26,7 @@ import { FlavourCreateComponent } from './components/flavours/flavour-create/fla
 import { FlavourReadComponent } from './components/flavours/flavour-read/flavour-read.component';
 import { OwnerReadComponent } from './components/owners/owner-read/owner-read.component';
 import { OwnerCreateComponent } from './components/owners/owner-create/owner-create.component';
+import { AsideComponent } from './layouts/aside/aside.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { OwnerCreateComponent } from './components/owners/owner-create/owner-cre
     FlavourReadComponent,
     OwnerReadComponent,
     OwnerCreateComponent,
+    AsideComponent,
   ],
   imports: [
     AppRoutingModule,
