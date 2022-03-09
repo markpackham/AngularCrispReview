@@ -108,12 +108,12 @@ button {
 
 /* Media Queries */
 
-@media(max-width: 60rem) {
+@media(max-width: 960px) {
   aside {
     display: none;
   }
 }
 
-@media(max-width:48rem) {}
+@media(max-width:768px) {}
 
-@media(min-width: 90rem) {}
+@media(min-width: 1440px) {}
