@@ -108,7 +108,11 @@ button {
 
 /* Media Queries */
 
-@media(max-width: 60rem) {}
+@media(max-width: 60rem) {
+  aside {
+    display: none;
+  }
+}
 
 @media(max-width:48rem) {}
 
