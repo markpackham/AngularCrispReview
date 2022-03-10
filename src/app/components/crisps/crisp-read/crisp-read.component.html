@@ -20,6 +20,7 @@
       <th scope="col">Weight In Grams</th>
       <th scope="col">Review</th>
       <th scope="col">Review Score</th>
+      <th scope="col">Detail Page Link</th>
       <th scope="col">Delete</th>
       <th scope="col">Update</th>
     </tr>
@@ -41,6 +42,8 @@
         {{ crisp.review }}</td>
       <td *ngIf="crisp.crisp_name.includes(searchTerm) || crisp.flavour_name.includes(searchTerm) || searchTerm==null">
         {{ crisp.review_score }}/5</td>
+      <td *ngIf="crisp.crisp_name.includes(searchTerm) || crisp.flavour_name.includes(searchTerm) || searchTerm==null">
+        <a routerLink="/crisps/crisp-detail/{{ crisp._id }}">More Info</a></td>
       <td *ngIf="crisp.crisp_name.includes(searchTerm) || crisp.flavour_name.includes(searchTerm) || searchTerm==null">
         <button class="btn btn-sm btn-danger" (click)="onDelete(crisp._id)">Delete</button>
       </td>

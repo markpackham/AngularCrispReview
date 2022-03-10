@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Brand } from '../../../model/Brand';
 import { Crisp } from '../../../model/Crisp';
@@ -15,13 +16,17 @@ export class CrispDetailComponent implements OnInit {
   crisps: Crisp[] = [];
   flavours: Flavour[] = [];
 
+  getParamId: any;
+
   private apiItemPath = 'crisps';
   private apiItemPathBrand = 'brands';
   private apiItemPathFlavour = 'flavours';
 
-  constructor(private service: CrudService) { }
+  constructor(private service: CrudService, private router: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.getParamId = this.router.snapshot.paramMap.get('id');
+
     this.getAllBrands();
 
     this.getAllFlavours();
