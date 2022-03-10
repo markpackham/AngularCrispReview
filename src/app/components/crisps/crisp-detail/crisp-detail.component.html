@@ -1,1 +1,33 @@
-<p>crisp-detail works!</p>
+<h2>More Crisp Info</h2>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Crisp Name</th>
+      <th scope="col">Image</th>
+      <th scope="col">Flavour</th>
+      <th scope="col">Brand</th>
+      <th scope="col">Weight In Grams</th>
+      <th scope="col">Review</th>
+      <th scope="col">Review Score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">
+        {{ crisp.crisp_name }}</th>
+      <td>
+        <img class="crisp-img" src="{{ crisp.crisp_image }}" alt="Crisp Image - {{crisp.crisp_name}}"></td>
+      <td>
+        {{ crisp.flavour_name }}</td>
+      <td>
+        {{ crisp.brand_name }}</td>
+      <td>
+        {{ crisp.weight }}g</td>
+      <td>
+        {{ crisp.review }}</td>
+      <td>
+        {{ crisp.review_score }}/5</td>
+    </tr>
+  </tbody>
+</table>

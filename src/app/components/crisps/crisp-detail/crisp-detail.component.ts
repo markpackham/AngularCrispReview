@@ -13,9 +13,9 @@ import { CrudService } from '../../../services/crud.service';
 export class CrispDetailComponent implements OnInit {
 
   brands: Brand[] = [];
-  crisps: Crisp[] = [];
   flavours: Flavour[] = [];
 
+  crisp: any;
   getParamId: any;
 
   private apiItemPath = 'crisps';
@@ -26,6 +26,11 @@ export class CrispDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.getParamId = this.router.snapshot.paramMap.get('id');
+    console.log(this.getParamId);
+
+    this.getCrisp();
+
+    console.log(this.getCrisp)
 
     this.getAllBrands();
 
@@ -38,6 +43,10 @@ export class CrispDetailComponent implements OnInit {
 
   getAllFlavours(){
     this.service.getItems(this.apiItemPathFlavour).subscribe((flavours) => (this.flavours = flavours));
+  }
+
+  getCrisp(){
+    this.service.getItem(this.apiItemPath,this.getParamId).subscribe((crisp) => (this.crisp = crisp));
   }
 
 }
