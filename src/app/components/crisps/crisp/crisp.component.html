@@ -13,9 +13,8 @@
       <th scope="col">Image</th>
       <th scope="col">Flavour</th>
       <th scope="col">Brand</th>
-      <th scope="col">Weight In Grams</th>
-      <th scope="col">Review</th>
       <th scope="col">Review Score</th>
+      <th scope="col">Details</th>
     </tr>
   </thead>
   <tbody>
@@ -25,9 +24,8 @@
       <td><img class="crisp-img" src="{{ crisp.crisp_image }}" alt="Crisp Image"></td>
       <td>{{ crisp.flavour_name }}</td>
       <td>{{ crisp.brand_name }}</td>
-      <td>{{ crisp.weight }}g</td>
-      <td>{{ crisp.review }}</td>
       <td>{{ crisp.review_score }}/5</td>
+      <td><a routerLink="/crisps/crisp-detail/{{ crisp._id }}">More Info</a></td>
     </tr>
   </tbody>
 </table>

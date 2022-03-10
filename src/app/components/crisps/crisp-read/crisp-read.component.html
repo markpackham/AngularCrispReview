@@ -17,10 +17,7 @@
       <th scope="col">Image</th>
       <th scope="col">Flavour</th>
       <th scope="col">Brand</th>
-      <th scope="col">Weight In Grams</th>
-      <th scope="col">Review</th>
-      <th scope="col">Review Score</th>
-      <th scope="col">Detail Page Link</th>
+      <th scope="col">Details</th>
       <th scope="col">Delete</th>
       <th scope="col">Update</th>
     </tr>
@@ -36,12 +33,6 @@
         {{ crisp.flavour_name }}</td>
       <td *ngIf="crisp.crisp_name.includes(searchTerm) || crisp.flavour_name.includes(searchTerm) || searchTerm==null">
         {{ crisp.brand_name }}</td>
-      <td *ngIf="crisp.crisp_name.includes(searchTerm) || crisp.flavour_name.includes(searchTerm) || searchTerm==null">
-        {{ crisp.weight }}g</td>
-      <td *ngIf="crisp.crisp_name.includes(searchTerm) || crisp.flavour_name.includes(searchTerm) || searchTerm==null">
-        {{ crisp.review }}</td>
-      <td *ngIf="crisp.crisp_name.includes(searchTerm) || crisp.flavour_name.includes(searchTerm) || searchTerm==null">
-        {{ crisp.review_score }}/5</td>
       <td *ngIf="crisp.crisp_name.includes(searchTerm) || crisp.flavour_name.includes(searchTerm) || searchTerm==null">
         <a routerLink="/crisps/crisp-detail/{{ crisp._id }}">More Info</a></td>
       <td *ngIf="crisp.crisp_name.includes(searchTerm) || crisp.flavour_name.includes(searchTerm) || searchTerm==null">
