@@ -27,6 +27,7 @@ import { FlavourReadComponent } from './components/flavours/flavour-read/flavour
 import { OwnerReadComponent } from './components/owners/owner-read/owner-read.component';
 import { OwnerCreateComponent } from './components/owners/owner-create/owner-create.component';
 import { AsideComponent } from './layouts/aside/aside.component';
+import { CrispDetailComponent } from './components/crisps/crisp-detail/crisp-detail.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { AsideComponent } from './layouts/aside/aside.component';
     OwnerReadComponent,
     OwnerCreateComponent,
     AsideComponent,
+    CrispDetailComponent,
   ],
   imports: [
     AppRoutingModule,
