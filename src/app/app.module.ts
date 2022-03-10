@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { OrderModule } from 'ngx-order-pipe';
 import { NgModule } from '@angular/core';
-
 
 import { AboutComponent } from './content/about/about.component';
 import { AppComponent } from './app.component';
@@ -56,6 +56,7 @@ import { AsideComponent } from './layouts/aside/aside.component';
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    MatTooltipModule,
     OrderModule,
     ReactiveFormsModule,
   ],
