@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Flavour } from '../../../model/Flavour';
 import { CrudService } from '../../../services/crud.service';
 
