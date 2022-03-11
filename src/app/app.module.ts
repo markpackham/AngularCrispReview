@@ -27,6 +27,10 @@ import { FlavourReadComponent } from './components/flavours/flavour-read/flavour
 import { OwnerReadComponent } from './components/owners/owner-read/owner-read.component';
 import { OwnerCreateComponent } from './components/owners/owner-create/owner-create.component';
 import { AsideComponent } from './layouts/aside/aside.component';
+import { DataTableComponent } from './data-table/data-table.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -50,6 +54,7 @@ import { AsideComponent } from './layouts/aside/aside.component';
     OwnerReadComponent,
     OwnerCreateComponent,
     AsideComponent,
+    DataTableComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -59,6 +64,9 @@ import { AsideComponent } from './layouts/aside/aside.component';
     MatTooltipModule,
     OrderModule,
     ReactiveFormsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
   ],
   providers: [CrudService],
   bootstrap: [AppComponent]
