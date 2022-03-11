@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { OrderModule } from 'ngx-order-pipe';
 import { NgModule } from '@angular/core';
@@ -56,6 +57,7 @@ import { AsideComponent } from './layouts/aside/aside.component';
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    MatPaginatorModule,
     MatTooltipModule,
     OrderModule,
     ReactiveFormsModule,
