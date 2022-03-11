@@ -12,6 +12,7 @@ export class BrandReadComponent implements OnInit {
   brands: Brand[] = [];
   searchTerm!: string;
   deleteMsg!: string;
+  orderBrandName: string = 'brand_name';
 
   private apiItemPath = 'brands';
 

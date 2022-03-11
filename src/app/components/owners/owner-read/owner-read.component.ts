@@ -12,6 +12,7 @@ export class OwnerReadComponent implements OnInit {
   owners: Owner[] = [];
   deleteMsg!: string;
   searchTerm!: string;
+  orderOwnerName: string = 'owner_name';
 
   private apiItemPath = 'owners';
 

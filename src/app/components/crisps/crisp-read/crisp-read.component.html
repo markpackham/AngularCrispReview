@@ -24,7 +24,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let crisp of crisps">
+    <tr *ngFor="let crisp of crisps | orderBy: orderCrispName">
       <th scope="row"
         *ngIf="crisp.crisp_name.includes(searchTerm) || crisp.flavour_name.includes(searchTerm) || searchTerm==null">
         {{ crisp.crisp_name }}</th>

@@ -12,6 +12,8 @@ export class CrispReadComponent implements OnInit {
   crisps: Crisp[] = [];
   deleteMsg!: string;
   searchTerm!: string;
+  orderCrispName: string = 'crisp_name';
+
   @Output() onDeleteCrisp: EventEmitter<Crisp> = new EventEmitter();
 
   private apiItemPath = 'crisps';

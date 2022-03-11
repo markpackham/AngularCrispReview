@@ -12,6 +12,7 @@ export class FlavourReadComponent implements OnInit {
   flavours: Flavour[] = [];
   deleteMsg!: string;
   searchTerm!: string;
+  orderFlavourName: string = 'flavour_name';
 
   private apiItemPath = 'flavours';
 

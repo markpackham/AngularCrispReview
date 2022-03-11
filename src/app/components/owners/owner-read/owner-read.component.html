@@ -22,7 +22,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let owner of owners">
+    <tr *ngFor="let owner of owners | orderBy: orderOwnerName">
       <th scope="row" *ngIf="owner.owner_name.includes(searchTerm) || searchTerm==null">{{ owner.owner_name }}</th>
       <td *ngIf="owner.owner_name.includes(searchTerm) || searchTerm==null">{{ owner.owner_address }}</td>
       <td *ngIf="owner.owner_name.includes(searchTerm) || searchTerm==null">{{ owner.owner_phone }}</td>

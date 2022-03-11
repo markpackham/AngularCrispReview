@@ -19,7 +19,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let flavour of flavours">
+    <tr *ngFor="let flavour of flavours | orderBy: orderFlavourName">
       <th scope="row" *ngIf="flavour.flavour_name.includes(searchTerm) || searchTerm==null">{{ flavour.flavour_name }}
       </th>
       <td *ngIf="flavour.flavour_name.includes(searchTerm) || searchTerm==null">

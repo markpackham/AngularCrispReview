@@ -20,7 +20,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let brand of brands">
+    <tr *ngFor="let brand of brands | orderBy: orderBrandName">
       <th scope="row" *ngIf="brand.brand_name.includes(searchTerm) || searchTerm==null">{{ brand.brand_name }}</th>
       <td *ngIf="brand.brand_name.includes(searchTerm) || searchTerm==null">{{ brand.brand_owner }}</td>
       <td *ngIf="brand.brand_name.includes(searchTerm) || searchTerm==null">
