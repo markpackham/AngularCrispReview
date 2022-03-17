@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatTooltipModule } from '@angular/material/tooltip';
@@ -12,6 +13,7 @@ import { BrandComponent } from './components/brands/brand/brand.component';
 import { ContactComponent } from './content/contact/contact.component';
 import { CrispComponent } from './components/crisps/crisp/crisp.component';
 import { CrudService } from './services/crud.service';
+import { FaqComponent } from './content/faq/faq.component';
 import { FlavourComponent } from './components/flavours/flavour/flavour.component';
 import { FooterComponent } from './layouts/footer/footer.component';
 import { HeaderComponent } from './layouts/header/header.component';
@@ -27,6 +29,11 @@ import { FlavourReadComponent } from './components/flavours/flavour-read/flavour
 import { OwnerReadComponent } from './components/owners/owner-read/owner-read.component';
 import { OwnerCreateComponent } from './components/owners/owner-create/owner-create.component';
 import { AsideComponent } from './layouts/aside/aside.component';
+import { DataTableComponent } from './data-table/data-table.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -50,12 +57,19 @@ import { AsideComponent } from './layouts/aside/aside.component';
     OwnerReadComponent,
     OwnerCreateComponent,
     AsideComponent,
+    DataTableComponent,
+    FaqComponent,
   ],
   imports: [
     AppRoutingModule,
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
+    MatExpansionModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatTableModule,
     MatTooltipModule,
     OrderModule,
     ReactiveFormsModule,
