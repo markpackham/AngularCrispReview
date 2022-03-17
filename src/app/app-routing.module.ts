@@ -32,7 +32,7 @@ const routes: Routes = [
   { path: 'crisps/crisp-detail/:id', component: CrispDetailComponent },
   { path: 'crisps/crisp-read', component: CrispReadComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'faq', component: FaqComponent },
+  { path: 'frequently-asked-questions', component: FaqComponent },
   { path: 'flavours', component: FlavourComponent },
   { path: 'flavours/flavour-create', component: FlavourCreateComponent },
   { path: 'flavours/flavour-create/:id', component: FlavourCreateComponent },
