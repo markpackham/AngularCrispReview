@@ -4,10 +4,12 @@ import { AboutComponent } from './content/about/about.component';
 import { BrandComponent } from './components/brands/brand/brand.component';
 import { BrandCreateComponent } from './components/brands/brand-create/brand-create.component';
 import { BrandReadComponent } from './components/brands/brand-read/brand-read.component';
+import { ContactComponent } from './content/contact/contact.component';
 import { CrispComponent } from './components/crisps/crisp/crisp.component';
 import { CrispCreateComponent } from './components/crisps/crisp-create/crisp-create.component';
 import { CrispDetailComponent } from './components/crisps/crisp-detail/crisp-detail.component';
 import { CrispReadComponent } from './components/crisps/crisp-read/crisp-read.component';
+import { FaqComponent } from './content/faq/faq.component';
 import { FlavourComponent } from './components/flavours/flavour/flavour.component';
 import { FlavourCreateComponent } from './components/flavours/flavour-create/flavour-create.component';
 import { FlavourReadComponent } from './components/flavours/flavour-read/flavour-read.component';
@@ -29,6 +31,8 @@ const routes: Routes = [
   { path: 'crisps/crisp-create/:id', component: CrispCreateComponent },
   { path: 'crisps/crisp-detail/:id', component: CrispDetailComponent },
   { path: 'crisps/crisp-read', component: CrispReadComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: 'faq', component: FaqComponent },
   { path: 'flavours', component: FlavourComponent },
   { path: 'flavours/flavour-create', component: FlavourCreateComponent },
   { path: 'flavours/flavour-create/:id', component: FlavourCreateComponent },

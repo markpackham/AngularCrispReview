@@ -31,6 +31,8 @@ import { DataTableComponent } from './data-table/data-table.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { MatExpansionModule} from '@angular/material/expansion';
+import { FaqComponent } from './content/faq/faq.component';
 
 @NgModule({
   declarations: [
@@ -55,18 +57,20 @@ import { MatSortModule } from '@angular/material/sort';
     OwnerCreateComponent,
     AsideComponent,
     DataTableComponent,
+    FaqComponent,
   ],
   imports: [
     AppRoutingModule,
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    MatExpansionModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatTableModule,
     MatTooltipModule,
     OrderModule,
     ReactiveFormsModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule,
   ],
   providers: [CrudService],
   bootstrap: [AppComponent]
