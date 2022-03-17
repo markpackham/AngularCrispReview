@@ -2,6 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { OrderModule } from 'ngx-order-pipe';
 import { NgModule } from '@angular/core';
@@ -30,10 +36,6 @@ import { OwnerReadComponent } from './components/owners/owner-read/owner-read.co
 import { OwnerCreateComponent } from './components/owners/owner-create/owner-create.component';
 import { AsideComponent } from './layouts/aside/aside.component';
 import { DataTableComponent } from './data-table/data-table.component';
-import { MatTableModule } from '@angular/material/table';
-import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatSortModule } from '@angular/material/sort';
-import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -66,6 +68,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
+    MatCardModule,
+    MatDividerModule,
     MatExpansionModule,
     MatPaginatorModule,
     MatSortModule,
