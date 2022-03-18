@@ -8,6 +8,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
+import { MatTabsModule } from '@angular/material/tabs';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { OrderModule } from 'ngx-order-pipe';
 import { NgModule } from '@angular/core';
@@ -74,6 +75,7 @@ import { DataTableComponent } from './data-table/data-table.component';
     MatPaginatorModule,
     MatSortModule,
     MatTableModule,
+    MatTabsModule,
     MatTooltipModule,
     OrderModule,
     ReactiveFormsModule,
