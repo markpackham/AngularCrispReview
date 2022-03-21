@@ -11,6 +11,7 @@ export class FooterComponent implements OnInit {
   constructor() { }
 
   theCurrentYear = Temporal.Now.plainDateISO().year;
+  yourTimeZone = Temporal.Now.zonedDateTimeISO().toPlainTime();
 
   ngOnInit(): void {
   }
