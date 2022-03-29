@@ -2,6 +2,10 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Flavour } from '../../../model/Flavour';
 import { CrudService } from '../../../services/crud.service';
 
+export interface ColumnNames {
+  flavour_name: string;
+}
+
 @Component({
   selector: 'app-flavour-read',
   templateUrl: './flavour-read.component.html',
@@ -11,6 +15,7 @@ export class FlavourReadComponent implements OnInit {
 
   flavours: Flavour[] = [];
   deleteMsg!: string;
+  displayedColumns: string[] = ['flavour_name']
   searchTerm!: string;
   orderFlavourName: string = 'flavour_name';
 
