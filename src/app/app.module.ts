@@ -9,7 +9,6 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
-import { MatTableDataSource } from '@angular/material/table';
 import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatTooltipModule } from '@angular/material/tooltip';
@@ -39,7 +38,6 @@ import { FlavourReadComponent } from './components/flavours/flavour-read/flavour
 import { OwnerReadComponent } from './components/owners/owner-read/owner-read.component';
 import { OwnerCreateComponent } from './components/owners/owner-create/owner-create.component';
 import { AsideComponent } from './layouts/aside/aside.component';
-import { DataTableComponent } from './data-table/data-table.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +61,6 @@ import { DataTableComponent } from './data-table/data-table.component';
     OwnerReadComponent,
     OwnerCreateComponent,
     AsideComponent,
-    DataTableComponent,
     FaqComponent,
   ],
   imports: [
@@ -79,7 +76,6 @@ import { DataTableComponent } from './data-table/data-table.component';
     MatExpansionModule,
     MatPaginatorModule,
     MatSortModule,
-    MatTableDataSource,
     MatTableModule,
     MatTabsModule,
     MatTooltipModule,
