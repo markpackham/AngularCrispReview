@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Flavour } from '../../../model/Flavour';
 import { CrudService } from '../../../services/crud.service';
 
+
 @Component({
   selector: 'app-flavour-read',
   templateUrl: './flavour-read.component.html',
@@ -9,6 +10,7 @@ import { CrudService } from '../../../services/crud.service';
 })
 export class FlavourReadComponent implements OnInit {
 
+  console = console;
   flavours: Flavour[] = [];
   deleteMsg!: string;
   searchTerm!: string;
