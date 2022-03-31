@@ -7,9 +7,6 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatSortModule } from '@angular/material/sort';
-import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { NgModule } from '@angular/core';
@@ -74,9 +71,6 @@ import { OwnerReadComponent } from './components/owners/owner-read/owner-read.co
     MatDialogModule,
     MatDividerModule,
     MatExpansionModule,
-    MatPaginatorModule,
-    MatSortModule,
-    MatTableModule,
     MatTabsModule,
     MatTooltipModule,
     OrderModule,
