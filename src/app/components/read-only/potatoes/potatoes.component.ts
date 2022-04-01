@@ -9,6 +9,11 @@ export interface PotatoStructure {
 }
 
 const POTATO_DATA: PotatoStructure[] = [
+  {potato_name: 'Agata', potato_country: 'Netherlands'},
+  {potato_name: 'Bamberg', potato_country: 'Germany'},
+  {potato_name: 'Black Champion', potato_country: 'Ireland'},
+  {potato_name: 'British Queen', potato_country: 'UK'},
+  {potato_name: 'Dejima', potato_country: 'Japan'},
   {potato_name: 'Irish White', potato_country: 'Ireland'},
   {potato_name: 'King Edward', potato_country: 'UK'},
   {potato_name: 'Pink Fir Apple', potato_country: 'France'},
