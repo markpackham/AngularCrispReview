@@ -7,6 +7,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatTableModule } from '@angular/material/table';
@@ -75,6 +76,7 @@ import { PotatoesComponent } from './components/read-only/potatoes/potatoes.comp
     MatDialogModule,
     MatDividerModule,
     MatExpansionModule,
+    MatPaginatorModule,
     MatSortModule,
     MatTabsModule,
     MatTableModule,
