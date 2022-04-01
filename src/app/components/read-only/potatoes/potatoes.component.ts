@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { MatSort, Sort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 
 export interface PotatoStructure {
   potato_name: string;
@@ -23,6 +25,14 @@ export class PotatoesComponent implements OnInit {
   }
 
   displayedColumns: string[] = ['potato_name', 'potato_country'];
-  dataSource = POTATO_DATA;
+  dataSource = new MatTableDataSource(POTATO_DATA);
+
+  @ViewChild(MatSort)
+  sort!: MatSort;
+
+  ngAfterViewInit() {
+    this.dataSource.sort = this.sort;
+  }
+
 
 }

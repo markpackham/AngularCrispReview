@@ -1,12 +1,12 @@
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
 
   <ng-container matColumnDef="potato_name">
-    <th mat-header-cell *matHeaderCellDef>Potato Name</th>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Potato Name</th>
     <td mat-cell *matCellDef="let potato"> {{potato.potato_name}} </td>
   </ng-container>
 
   <ng-container matColumnDef="potato_country">
-    <th mat-header-cell *matHeaderCellDef>Country</th>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Country</th>
     <td mat-cell *matCellDef="let potato"> {{potato.potato_country}} </td>
   </ng-container>
 
