@@ -10,6 +10,7 @@ export interface PotatoStructure {
 const POTATO_DATA: PotatoStructure[] = [
   {potato_name: 'King Edward', potato_country: 'UK'},
   {potato_name: 'Yukon Gold', potato_country: 'Canada'},
+  {potato_name: 'Russian Blue', potato_country: 'Russia'},
 ];
 
 @Component({
@@ -33,6 +34,5 @@ export class PotatoesComponent implements OnInit {
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
   }
-
 
 }
