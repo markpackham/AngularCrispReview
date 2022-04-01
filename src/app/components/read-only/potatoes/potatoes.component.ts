@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { PageEvent } from '@angular/material/paginator';
+import { MatPaginator, PageEvent } from '@angular/material/paginator';
 
 export interface PotatoStructure {
   potato_name: string;
@@ -9,9 +9,14 @@ export interface PotatoStructure {
 }
 
 const POTATO_DATA: PotatoStructure[] = [
+  {potato_name: 'Irish White', potato_country: 'Ireland'},
   {potato_name: 'King Edward', potato_country: 'UK'},
-  {potato_name: 'Yukon Gold', potato_country: 'Canada'},
+  {potato_name: 'Pink Fir Apple', potato_country: 'France'},
+  {potato_name: 'Ranger Russet', potato_country: 'USA'},
+  {potato_name: 'Red Gold', potato_country: 'Canada'},
   {potato_name: 'Russian Blue', potato_country: 'Russia'},
+  {potato_name: 'Shetland Black', potato_country: 'UK'},
+  {potato_name: 'Yukon Gold', potato_country: 'Canada'},
 ];
 
 @Component({
@@ -21,11 +26,6 @@ const POTATO_DATA: PotatoStructure[] = [
 })
 
 export class PotatoesComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
   displayedColumns: string[] = ['potato_name', 'potato_country'];
   dataSource = new MatTableDataSource(POTATO_DATA);
@@ -37,12 +37,20 @@ export class PotatoesComponent implements OnInit {
   
   // MatPaginator Output
   pageEvent!: PageEvent;
+  @ViewChild(MatPaginator)
+  paginator!: MatPaginator;
 
   @ViewChild(MatSort)
   sort!: MatSort;
 
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
   }
 
 }
