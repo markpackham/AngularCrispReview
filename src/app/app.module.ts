@@ -35,6 +35,7 @@ import { NotFoundComponent } from './helpers/not-found/not-found.component';
 import { OwnerComponent } from './components/owners/owner/owner.component';
 import { OwnerCreateComponent } from './components/owners/owner-create/owner-create.component';
 import { OwnerReadComponent } from './components/owners/owner-read/owner-read.component';
+import { PotatoesComponent } from './components/read-only/potatoes/potatoes.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { OwnerReadComponent } from './components/owners/owner-read/owner-read.co
     OwnerComponent,
     OwnerCreateComponent,
     OwnerReadComponent,
+    PotatoesComponent,
   ],
   imports: [
     AppRoutingModule,

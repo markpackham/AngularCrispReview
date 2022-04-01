@@ -18,6 +18,7 @@ import { NotFoundComponent } from './helpers/not-found/not-found.component';
 import { OwnerComponent } from './components/owners/owner/owner.component';
 import { OwnerCreateComponent } from './components/owners/owner-create/owner-create.component';
 import { OwnerReadComponent } from './components/owners/owner-read/owner-read.component';
+import { PotatoesComponent } from './components/read-only/potatoes/potatoes.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -41,6 +42,7 @@ const routes: Routes = [
   { path: 'owners/owner-create', component: OwnerCreateComponent },
   { path: 'owners/owner-create/:id', component: OwnerCreateComponent },
   { path: 'owners/owner-read', component: OwnerReadComponent },
+  { path: 'potatoes', component: PotatoesComponent },
   { path: '**', component: NotFoundComponent },
 ];
 
