@@ -8,6 +8,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatTableModule } from '@angular/material/table';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { NgModule } from '@angular/core';
 import { OrderModule } from 'ngx-order-pipe';
@@ -74,6 +75,7 @@ import { PotatoesComponent } from './components/read-only/potatoes/potatoes.comp
     MatDividerModule,
     MatExpansionModule,
     MatTabsModule,
+    MatTableModule,
     MatTooltipModule,
     OrderModule,
     ReactiveFormsModule,
