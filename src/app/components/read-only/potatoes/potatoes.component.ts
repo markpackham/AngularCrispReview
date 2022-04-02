@@ -9,19 +9,19 @@ export interface PotatoStructure {
 }
 
 const POTATO_DATA: PotatoStructure[] = [
-  {potato_name: 'Agata', potato_country: 'Netherlands'},
-  {potato_name: 'Bamberg', potato_country: 'Germany'},
-  {potato_name: 'Black Champion', potato_country: 'Ireland'},
-  {potato_name: 'British Queen', potato_country: 'UK'},
-  {potato_name: 'Dejima', potato_country: 'Japan'},
-  {potato_name: 'Irish White', potato_country: 'Ireland'},
-  {potato_name: 'King Edward', potato_country: 'UK'},
-  {potato_name: 'Pink Fir Apple', potato_country: 'France'},
-  {potato_name: 'Ranger Russet', potato_country: 'USA'},
-  {potato_name: 'Red Gold', potato_country: 'Canada'},
-  {potato_name: 'Russian Blue', potato_country: 'Russia'},
-  {potato_name: 'Shetland Black', potato_country: 'UK'},
-  {potato_name: 'Yukon Gold', potato_country: 'Canada'},
+  {potato_name: "Agata", potato_country: "Netherlands"},
+  {potato_name: "Bamberg", potato_country: "Germany"},
+  {potato_name: "Black Champion", potato_country: "Ireland"},
+  {potato_name: "British Queen", potato_country: "UK"},
+  {potato_name: "Dejima", potato_country: "Japan"},
+  {potato_name: "Irish White", potato_country: "Ireland"},
+  {potato_name: "King Edward", potato_country: "UK"},
+  {potato_name: "Pink Fir Apple", potato_country: "France"},
+  {potato_name: "Ranger Russet", potato_country: "USA"},
+  {potato_name: "Red Gold", potato_country: "Canada"},
+  {potato_name: "Russian Blue", potato_country: "Russia"},
+  {potato_name: "Shetland Black", potato_country: "UK"},
+  {potato_name: "Yukon Gold", potato_country: "Canada"},
 ];
 
 @Component({

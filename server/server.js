@@ -12,6 +12,7 @@ const MongoClient = require("mongodb").MongoClient;
 
 // Helpers
 const createCrudRouter = require("./helpers/create_crud_router.js");
+const readOnlyRouter = require("./helpers/read_only_router.js");
 
 app.use(bodyParser.json());
 
@@ -29,6 +30,8 @@ MongoClient.connect("mongodb://localhost:27017")
     const flavoursRouter = createCrudRouter("/flavours", flavoursCollection);
     const ownersCollection = db.collection("owners");
     const ownersRouter = createCrudRouter("/owners", ownersCollection);
+    const potatoesCollection = db.collection("potatoes");
+    const potatoesRouter = createCrudRouter("/potatoes", potatoesCollection);
 
     // Route paths
     // eg http://localhost:3000/brands
@@ -36,6 +39,7 @@ MongoClient.connect("mongodb://localhost:27017")
     app.use("/", crispsRouter);
     app.use("/", flavoursRouter);
     app.use("/", ownersRouter);
+    app.use("/", potatoesRouter);
   })
 
   .catch(console.err);
