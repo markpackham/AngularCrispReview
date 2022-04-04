@@ -8,12 +8,6 @@ const httpOptions = {
   }),
 };
 
-export interface Potato{
-  potato_name: string,
-  potato_country: string
-}
-
-
 @Injectable({
   providedIn: 'root'
 })
@@ -23,7 +17,7 @@ export class PotatoesService {
 
   constructor(private http: HttpClient) { }
 
-  getPotatoes(): Observable<Potato[]> {
-    return this.http.get<Potato[]>(this.apiUrl);
+  getPotatoes(): Observable<any[]> {
+    return this.http.get<any[]>(this.apiUrl);
   }
 }
