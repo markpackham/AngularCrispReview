@@ -6,8 +6,6 @@ import { Observable } from 'rxjs';
 import { Potato, PotatoesService } from '../../../services/potatoes.service';
 
 
-const POTATO_DATA: Potato[] = [];
-
 @Component({
   selector: 'app-potatoes',
   templateUrl: './potatoes.component.html',
@@ -16,9 +14,8 @@ const POTATO_DATA: Potato[] = [];
 
 export class PotatoesComponent implements OnInit {
 
-  apiUrl = "http://localhost:3000/potatoes"
   displayedColumns: string[] = ['potato_name', 'potato_country'];
-  dataSource = new MatTableDataSource(POTATO_DATA);
+  dataSource: any;
 
   // MatPaginator Inputs
   length = 100;
@@ -35,7 +32,7 @@ export class PotatoesComponent implements OnInit {
 
   constructor(private service: PotatoesService) { 
     this.service.getPotatoes().subscribe(data => {
-      this.dataSource = data;
+      this.dataSource = new MatTableDataSource<Potato>(data);
     })
   }
 

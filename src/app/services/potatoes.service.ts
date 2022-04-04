@@ -23,7 +23,7 @@ export class PotatoesService {
 
   constructor(private http: HttpClient) { }
 
-  getPotatoes(): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl);
+  getPotatoes(): Observable<Potato[]> {
+    return this.http.get<Potato[]>(this.apiUrl);
   }
 }
