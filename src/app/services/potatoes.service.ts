@@ -8,12 +8,6 @@ const httpOptions = {
   }),
 };
 
-export interface Potato{
-  potato_name: string,
-  potato_country: string
-}
-
-
 @Injectable({
   providedIn: 'root'
 })
