@@ -1,8 +1,7 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { Observable } from 'rxjs';
 import { Potato, PotatoesService } from '../../../services/potatoes.service';
 
 
@@ -33,15 +32,12 @@ export class PotatoesComponent implements OnInit {
   constructor(private service: PotatoesService) { 
     this.service.getPotatoes().subscribe(data => {
       this.dataSource = new MatTableDataSource<Potato>(data);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
     })
   }
 
   ngOnInit(): void {
-  }
-
-  ngAfterViewInit() {
-    this.dataSource.sort = this.sort;
-    this.dataSource.paginator = this.paginator;
   }
 
 }
