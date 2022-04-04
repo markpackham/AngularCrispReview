@@ -39,6 +39,7 @@ import { OwnerComponent } from './components/owners/owner/owner.component';
 import { OwnerCreateComponent } from './components/owners/owner-create/owner-create.component';
 import { OwnerReadComponent } from './components/owners/owner-read/owner-read.component';
 import { PotatoesComponent } from './components/read-only/potatoes/potatoes.component';
+import { PotatoesService } from './services/potatoes.service';
 
 @NgModule({
   declarations: [
@@ -84,7 +85,7 @@ import { PotatoesComponent } from './components/read-only/potatoes/potatoes.comp
     OrderModule,
     ReactiveFormsModule,
   ],
-  providers: [CrudService],
+  providers: [CrudService, PotatoesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
