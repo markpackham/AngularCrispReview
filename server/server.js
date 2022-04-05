@@ -31,7 +31,7 @@ MongoClient.connect("mongodb://localhost:27017")
     const ownersCollection = db.collection("owners");
     const ownersRouter = createCrudRouter("/owners", ownersCollection);
     const potatoesCollection = db.collection("potatoes");
-    const potatoesRouter = createCrudRouter("/potatoes", potatoesCollection);
+    const potatoesRouter = readOnlyRouter("/potatoes", potatoesCollection);
 
     // Route paths
     // eg http://localhost:3000/brands
