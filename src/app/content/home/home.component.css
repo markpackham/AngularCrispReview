@@ -1,3 +1,21 @@
 .intro {
   margin: 0.3125rem;
 }
+
+.crisp_image_mix {
+  width: 500px;
+}
+
+@media(max-width: 960px) {
+  .crisp_image_mix {
+    width: 80%;
+  }
+}
+
+@media(max-width:768px) {
+  .crisp_image_mix {
+    width: 90%;
+  }
+}
+
+@media(min-width: 1440px) {}
