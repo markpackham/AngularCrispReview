@@ -38,7 +38,7 @@ footer {
   grid-area: footer;
 }
 
-/* */
+/* Header and Footer */
 
 nav,
 footer {
@@ -46,18 +46,18 @@ footer {
   padding: 0.3125rem;
 }
 
-table {
+nav {
+  margin: 0.625rem 0px;
+  background: var(--color-background);
+}
+
+nav ul {
   background: var(--color-light-background);
-  box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 20%), 0px 8px 10px 1px rgb(0 0 0 / 14%), 0px 3px 14px 2px rgb(0 0 0 / 12%);
+  padding: 0.25rem;
 }
 
-h2 {
-  margin: 0.625rem 0;
-}
+/* */
 
-h4 {
-  margin-top: 0.625rem;
-}
 
 a {
   text-decoration: none;
@@ -68,8 +68,29 @@ button {
   margin: 0.1875rem;
 }
 
+h2 {
+  margin: 0.625rem 0;
+}
+
+h4 {
+  margin-top: 0.625rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+label {
+  font-weight: 450;
+}
+
 p {
   margin: 0.3125rem;
+}
+
+table {
+  background: var(--color-light-background);
+  box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 20%), 0px 8px 10px 1px rgb(0 0 0 / 14%), 0px 3px 14px 2px rgb(0 0 0 / 12%);
 }
 
 ul {
@@ -78,15 +99,8 @@ ul {
   margin: 0.25rem 0;
 }
 
-label {
-  font-weight: 450;
-}
 
-img {
-  max-width: 100%;
-}
-
-
+/* Classes */
 .container {
   padding: 1rem;
 }
@@ -94,6 +108,7 @@ img {
 .fadeEffect {
   animation: fadein 2s;
 }
+
 
 /* Keyframes */
 @keyframes fadein {
