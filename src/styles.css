@@ -15,27 +15,6 @@
 body {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   background: var(--color-background);
-  display: grid;
-  grid-template-areas: 'header header'
-    'aside main'
-    'footer footer';
-}
-
-/* Grid Location */
-header {
-  grid-area: header;
-}
-
-main {
-  grid-area: main;
-}
-
-aside {
-  grid-area: aside;
-}
-
-footer {
-  grid-area: footer;
 }
 
 /* Header and Footer */

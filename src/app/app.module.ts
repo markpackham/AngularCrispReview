@@ -18,7 +18,6 @@ import { OrderModule } from 'ngx-order-pipe';
 import { AboutComponent } from './content/about/about.component';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { AsideComponent } from './layouts/aside/aside.component';
 import { BrandComponent } from './components/brands/brand/brand.component';
 import { BrandCreateComponent } from './components/brands/brand-create/brand-create.component';
 import { BrandReadComponent } from './components/brands/brand-read/brand-read.component';
@@ -45,7 +44,6 @@ import { PotatoesService } from './services/potatoes.service';
   declarations: [
     AboutComponent,
     AppComponent,
-    AsideComponent,
     BrandComponent,
     BrandCreateComponent,
     BrandReadComponent,
