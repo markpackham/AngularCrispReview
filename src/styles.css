@@ -17,7 +17,11 @@ body {
   background: var(--color-background);
 }
 
-/* Header and Footer */
+main {
+  padding: 0.5rem;
+}
+
+/* Nav and Footer */
 
 nav,
 footer {

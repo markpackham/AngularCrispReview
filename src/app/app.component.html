@@ -2,9 +2,20 @@
   <header>
     <app-header></app-header>
   </header>
-  <main>
-    <router-outlet></router-outlet>
-  </main>
+
+  <div class="row">
+    <div class="col-2">
+      <aside>
+        <app-sidebar></app-sidebar>
+      </aside>
+    </div>
+    <div class="col-10">
+      <main>
+        <router-outlet></router-outlet>
+      </main>
+    </div>
+  </div>
+
   <footer>
     <app-footer></app-footer>
   </footer>

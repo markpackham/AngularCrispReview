@@ -39,6 +39,7 @@ import { OwnerCreateComponent } from './components/owners/owner-create/owner-cre
 import { OwnerReadComponent } from './components/owners/owner-read/owner-read.component';
 import { PotatoesComponent } from './components/read-only/potatoes/potatoes.component';
 import { PotatoesService } from './services/potatoes.service';
+import { SidebarComponent } from './layouts/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { PotatoesService } from './services/potatoes.service';
     OwnerCreateComponent,
     OwnerReadComponent,
     PotatoesComponent,
+    SidebarComponent,
   ],
   imports: [
     AppRoutingModule,

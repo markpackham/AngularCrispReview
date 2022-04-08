@@ -1,0 +1,61 @@
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <ul class="navbar-nav">
+
+      <button class="btn btn-info" type="button" routerLink="/">
+        Home
+      </button>
+
+      <div class="dropdown">
+        <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButtonBrand"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          Brands
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonBrand">
+          <li><a class="dropdown-item" routerLink="/brands/brand-read">Brand List</a></li>
+          <li><a class="dropdown-item" routerLink="/brands/brand-create">Create Brand</a></li>
+          <li><a class="dropdown-item" routerLink="/brands">About Brands</a></li>
+        </ul>
+      </div>
+
+      <div class="dropdown">
+        <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButtonCrisp"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          Crisps
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonCrisp">
+          <li><a class="dropdown-item" routerLink="/crisps/crisp-read">Crisp List</a></li>
+          <li><a class="dropdown-item" routerLink="/crisps/crisp-create">Create Crisp</a></li>
+          <li><a class="dropdown-item" routerLink="/crisps">About Crisps</a></li>
+        </ul>
+      </div>
+
+      <div class="dropdown">
+        <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButtonFlavour"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          Flavours
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonFlavour">
+          <li><a class="dropdown-item" routerLink="/flavours/flavour-read">Flavour List</a></li>
+          <li><a class="dropdown-item" routerLink="/flavours/flavour-create">Create Flavour</a></li>
+          <li><a class="dropdown-item" routerLink="/flavours">About Flavours</a></li>
+        </ul>
+      </div>
+
+      <div class="dropdown">
+        <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButtonFlavour"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          Owners
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonOwner">
+          <li><a class="dropdown-item" routerLink="/owners/owner-read">Owner List</a></li>
+          <li><a class="dropdown-item" routerLink="/owners/owner-create">Create Owner</a></li>
+          <li><a class="dropdown-item" routerLink="/owners">About Owners</a></li>
+        </ul>
+      </div>
+
+      <button class="btn btn-info" type="button" routerLink="/potatoes">
+        Potatoes
+      </button>
+
+    </ul>
+  </nav>

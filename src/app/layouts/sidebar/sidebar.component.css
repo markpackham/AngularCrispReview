@@ -1,0 +1,8 @@
+.navbar-nav {
+  margin-top: 60%;
+  flex-direction: column;
+}
+
+button {
+  width: 130px;
+}
