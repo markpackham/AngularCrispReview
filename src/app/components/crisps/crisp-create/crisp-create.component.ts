@@ -16,7 +16,9 @@ export class CrispCreateComponent implements OnInit {
 
   brands: Brand[] = [];
   crisps: Crisp[] = [];
+  fileImage: any;
   flavours: Flavour[] = [];
+  imageData!: string;
   orderBrands: string = 'brand_name';
   orderFlavours: string = 'flavour_name';
 
@@ -53,6 +55,7 @@ export class CrispCreateComponent implements OnInit {
         this.crispForm.patchValue({
           "crisp_name":res.crisp_name,
           "crisp_image":res.crisp_image,
+          "crisp_image_upload":res.crisp_image_upload,
           "flavour_name":res.flavour_name,
           "brand_name":res.brand_name,
           "weight":res.weight,
@@ -97,6 +100,15 @@ export class CrispCreateComponent implements OnInit {
 
   getAllFlavours(){
     this.service.getItems(this.apiItemPathFlavour).subscribe((flavours) => (this.flavours = flavours));
+  }
+
+  onFileSelect(event: Event) {
+    const allowedMimeTypes = ["image/png", "image/jpeg", "image/jpg"];
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      this.imageData = reader.result as string;
+    };
   }
 
 }

@@ -17,6 +17,9 @@
   <input class="form-control" type="text" name="crisp_image" id="crisp_image" placeholder="Add Image"
     formControlName="crisp_image" />
 
+  <input class="form-control" (change)="onFileSelect($event)" type="file" name="crisp_image_upload"
+    formControlName="crisp_image_upload" />
+
   <label class="m-2" for="flavour_name">Flavour Name</label>
 
   <select class="form-select" name="flavour_name" id="flavour_name" formControlName="flavour_name">
