@@ -16,6 +16,7 @@
     <tr>
       <th scope="col">Crisp Name</th>
       <th scope="col">Image</th>
+      <th scope="col">Imag Upload</th>
       <th scope="col">Flavour</th>
       <th scope="col">Brand</th>
       <th scope="col">Details</th>
@@ -30,6 +31,8 @@
         {{ crisp.crisp_name }}</th>
       <td *ngIf="crisp.crisp_name.includes(searchTerm) || crisp.flavour_name.includes(searchTerm) || searchTerm==null">
         <img class="crisp-img" src="{{ crisp.crisp_image }}" alt="Crisp Image - {{crisp.crisp_name}}"></td>
+      <td *ngIf="crisp.crisp_name.includes(searchTerm) || crisp.flavour_name.includes(searchTerm) || searchTerm==null">
+        <img class="crisp-img" src="{{ crisp.crisp_image_upload }}" alt="Crisp Image - {{crisp.crisp_name}}"></td>
       <td *ngIf="crisp.crisp_name.includes(searchTerm) || crisp.flavour_name.includes(searchTerm) || searchTerm==null">
         {{ crisp.flavour_name }}</td>
       <td *ngIf="crisp.crisp_name.includes(searchTerm) || crisp.flavour_name.includes(searchTerm) || searchTerm==null">

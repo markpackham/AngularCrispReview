@@ -5,6 +5,7 @@
     <tr>
       <th scope="col">Crisp Name</th>
       <th scope="col">Image</th>
+      <th scope="col">Image Upload</th>
       <th scope="col">Flavour</th>
       <th scope="col">Brand</th>
       <th scope="col">Weight In Grams</th>
@@ -18,6 +19,9 @@
         {{ crisp.crisp_name }}</th>
       <td>
         <img class="crisp-img" src="{{ crisp.crisp_image }}" alt="Crisp Image - {{crisp.crisp_name}}"></td>
+      <td>
+      <td>
+        <img class="crisp-img" src="{{ crisp.crisp_image_upload }}" alt="Crisp Image - {{crisp.crisp_name}}"></td>
       <td>
         {{ crisp.flavour_name }}</td>
       <td>
