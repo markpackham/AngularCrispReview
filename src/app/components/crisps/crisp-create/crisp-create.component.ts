@@ -30,6 +30,7 @@ export class CrispCreateComponent implements OnInit {
   crispForm = new FormGroup({
     'crisp_name':new FormControl('',[Validators.required, Validators.minLength(3)], this.customValidator.validateCrispNameNotTaken.bind(this.customValidator)),
     'crisp_image':new FormControl(''),
+    'crisp_image_upload':new FormControl(''),
     'flavour_name':new FormControl('',[Validators.required]),
     'brand_name':new FormControl('',[Validators.required]),
     'weight':new FormControl('',[Validators.required, Validators.min(1), Validators.minLength(1)]),
@@ -103,6 +104,9 @@ export class CrispCreateComponent implements OnInit {
   }
 
   onFileSelect(event: Event) {
+    const file = (event.target as HTMLInputElement).files;
+    console.log(file)
+
     const allowedMimeTypes = ["image/png", "image/jpeg", "image/jpg"];
 
     const reader = new FileReader();
