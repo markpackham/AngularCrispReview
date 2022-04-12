@@ -106,13 +106,16 @@ export class CrispCreateComponent implements OnInit {
   onFileSelect(event: Event) {
     const file = (event.target as HTMLInputElement).files![0];
     console.log(file)
-
+    this.crispForm.patchValue({ image: file });
     const allowedMimeTypes = ["image/png", "image/jpeg", "image/jpg"];
 
-    const reader = new FileReader();
-    reader.onload = () => {
-      this.imageData = reader.result as string;
-    };
+    if (file && allowedMimeTypes.includes(file.type)) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        this.imageData = reader.result as string;
+      };
+      reader.readAsDataURL(file);
+    }
   }
 
 }
