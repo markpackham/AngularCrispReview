@@ -104,7 +104,7 @@ export class CrispCreateComponent implements OnInit {
   }
 
   onFileSelect(event: Event) {
-    const file = (event.target as HTMLInputElement).files;
+    const file = (event.target as HTMLInputElement).files![0];
     console.log(file)
 
     const allowedMimeTypes = ["image/png", "image/jpeg", "image/jpg"];
