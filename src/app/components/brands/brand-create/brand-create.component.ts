@@ -52,7 +52,7 @@ export class BrandCreateComponent implements OnInit {
 
   brandSubmit() {
     if(this.brandForm.valid){
-      this.service.addItem(this.apiItemPath,this.brandForm.value).subscribe((res)=>{
+      this.service.addItem(this.apiItemPath,this.brandForm.value).subscribe(()=>{
           this.brandForm.reset();
           this.successMsg = "Creation successful!";
       });

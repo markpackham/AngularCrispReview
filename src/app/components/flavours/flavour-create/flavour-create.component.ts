@@ -44,7 +44,7 @@ export class FlavourCreateComponent implements OnInit {
 
   flavourSubmit() {
     if(this.flavourForm.valid){
-      this.service.addItem(this.apiItemPath, this.flavourForm.value).subscribe((res)=>{
+      this.service.addItem(this.apiItemPath, this.flavourForm.value).subscribe(()=>{
           this.flavourForm.reset();
           this.successMsg = "Creation successful!";
       });
