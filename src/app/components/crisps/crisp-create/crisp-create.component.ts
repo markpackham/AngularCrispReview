@@ -6,6 +6,7 @@ import { Crisp } from '../../../model/Crisp';
 import { Flavour } from '../../../model/Flavour';
 import { CrudService } from '../../../services/crud.service';
 import { CustomValidationService } from '../../../services/custom-validation.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-crisp-create',
@@ -16,7 +17,6 @@ export class CrispCreateComponent implements OnInit {
 
   brands: Brand[] = [];
   crisps: Crisp[] = [];
-  fileImage: any;
   flavours: Flavour[] = [];
   imageData!: string;
   orderBrands: string = 'brand_name';
@@ -42,7 +42,7 @@ export class CrispCreateComponent implements OnInit {
   successMsg!: string;
   getParamId: any;
 
-  constructor(private customValidator: CustomValidationService, private service: CrudService, private router: ActivatedRoute) { }
+  constructor(private customValidator: CustomValidationService, private service: CrudService, private router: ActivatedRoute, private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
     this.getParamId = this.router.snapshot.paramMap.get('id');
@@ -75,7 +75,6 @@ export class CrispCreateComponent implements OnInit {
     if(this.crispForm.valid){
       this.service.addItem(this.apiItemPath, this.crispForm.value).subscribe(()=>{
           this.crispForm.reset();
-          this.fileImage = "";
           this.successMsg = "Creation successful!";
       });
     }
