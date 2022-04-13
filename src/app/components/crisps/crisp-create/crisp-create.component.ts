@@ -115,6 +115,7 @@ export class CrispCreateComponent implements OnInit {
       reader.onload = () => {
         this.imageData = reader.result as string;
       };
+      this.sanitizer.bypassSecurityTrustHtml(this.imageData);
       reader.readAsDataURL(file);
     }
   }
