@@ -73,7 +73,7 @@ export class CrispCreateComponent implements OnInit {
 
   crispSubmit() {
     if(this.crispForm.valid){
-      this.service.addItem(this.apiItemPath, this.crispForm.value).subscribe((res)=>{
+      this.service.addItem(this.apiItemPath, this.crispForm.value).subscribe(()=>{
           this.crispForm.reset();
           this.fileImage = "";
           this.successMsg = "Creation successful!";
