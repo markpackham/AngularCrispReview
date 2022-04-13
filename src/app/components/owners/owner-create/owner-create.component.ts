@@ -50,7 +50,7 @@ export class OwnerCreateComponent implements OnInit {
 
   ownerSubmit() {
     if(this.ownerForm.valid){
-      this.service.addItem(this.apiItemPath, this.ownerForm.value).subscribe((res)=>{
+      this.service.addItem(this.apiItemPath, this.ownerForm.value).subscribe(()=>{
           this.ownerForm.reset();
           this.successMsg = "Creation successful!";
       });
