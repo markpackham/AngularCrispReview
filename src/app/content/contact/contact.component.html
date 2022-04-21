@@ -2,3 +2,10 @@
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, inventore dignissimos? Sed saepe perferendis
   laboriosam excepturi quasi nisi, fuga magnam distinctio veniam quaerat, consequuntur, placeat deleniti minima labore
   vero libero.</p>
+<div class="example-container">
+  <mat-form-field appearance="fill">
+    <mat-label>Enter your email</mat-label>
+    <input matInput placeholder="test@example.com" [formControl]="email" required>
+    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+  </mat-form-field>
+</div>
